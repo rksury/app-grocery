@@ -1,0 +1,181 @@
+<ion-menu side="start" content-id="main-content">
+
+    <ion-content>
+        <ion-list>
+
+            <ion-menu-toggle auto-hide="true">
+                 <header>
+                    <div class="header-wrapper header-css">
+                        <div class="container space-y--15">
+                            <div class="row align-items-center">
+
+
+                                <div class="col d-flex justify-content-center">
+                                    <!-- header search -->
+                                    <div class="store-name-loc">
+                                        <h4>Srinivas K/S <a>
+                                            <img src="assets/img/icons/edit-white.svg"></a>
+                                        </h4>
+                                        <p>Honda Showroom -233445</p>
+                                    </div>
+                                </div>
+
+                                <div class="col-auto">
+                                    <!-- header menu trigger -->
+                                    <button class="header-menu-trigger" id="header-menu-trigger">
+<!--                                        <img src="assets/img/icons/menu.svg" class="injectable" alt="">-->
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <div id="offcanvas-menu">
+                    <div class="profile-card text-center">
+                        <a href="#">
+                            <div class="profile-card__image ">
+                                <img src="assets/img/icons/user-white.png" class="img-fluid" alt="">
+                                <div class="profile-card__content">
+                                    <p class="name">WelCome <span class="id">Srinivas K/S</span></p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="profile-card address text-center">
+                        <a href="#">
+                            <div class="profile-card__image ">
+                                <img src="assets/img/icons/map.png" class="img-fluid" alt="">
+                                <div class="profile-card__content">
+                                    <p class="name">Lorem ipsum, or lipsum as it is sometimes known,</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="profile-card address help text-center">
+                        <div class="profile-card__image ">
+                            <div class="profile-card__content">
+                                <p class="name">Register Here if You have No</p>
+                                <a [routerLink]="['/login']">
+                                    <i class="fa fa-phone"></i>
+                                    Login</a>
+                                <a [routerLink]="['/signup']">
+                                    <i class="fa fa-envelope"></i>
+                                Signup</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="offcanvas-navigation-wrapper clearfix">
+                        <ul class="offcanvas-navigation">
+                            <li><a href="#">Shop By Category</a></li>
+                            <li><a href="#">Active Orders</a></li>
+                            <li><a href="#">My Acount</a></li>
+                            <li><a href="#">User Agent</a></li>
+                            <li><a href="#">Offer Zone</a></li>
+                            <li><a href="#">Change Store</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+
+<!--                <ion-item (click)="profile()" routerDirection="forward">-->
+<!--                    <ion-icon name="person-outline" slot="start"></ion-icon>-->
+<!--                    <div>-->
+<!--                        <ion-text style="font-size: 6vw; color:#eb445a;">Profile Name</ion-text>-->
+<!--                        <br>-->
+<!--                        <ion-text style="font-size: 4vw;">Email@gmail.com</ion-text>-->
+<!--                    </div>-->
+<!--                </ion-item>-->
+
+<!--                <ion-item class="menu_link">-->
+<!--                    <ion-icon name="heart-outline" slot="start"></ion-icon>-->
+<!--                    <ion-label>Favorite</ion-label>-->
+<!--                    <ion-icon name="chevron-forward-outline"></ion-icon>-->
+<!--                </ion-item>-->
+
+<!--                <ion-item class="menu_link">-->
+<!--                    <ion-icon name="help-circle-outline" slot="start"></ion-icon>-->
+<!--                    <ion-label>Help & Support</ion-label>-->
+
+<!--                </ion-item>-->
+<!--                <ion-item class="menu_link">-->
+<!--                    <ion-icon name="receipt-outline" slot="start"></ion-icon>-->
+<!--                    <ion-label>Terms & Policy</ion-label>-->
+<!--                </ion-item>-->
+
+<!--                <ion-item class="menu_link">-->
+<!--                    <ion-icon name="share-social-outline" slot="start"></ion-icon>-->
+<!--                    <ion-label>Share</ion-label>-->
+<!--                </ion-item>-->
+
+<!--                <ion-item class="menu_link">-->
+<!--                    <ion-icon name="cog-outline" slot="start"></ion-icon>-->
+<!--                    <ion-label>Settings</ion-label>-->
+<!--                    <ion-icon name="chevron-forward-outline"></ion-icon>-->
+
+<!--                </ion-item>-->
+
+<!--                <ion-item class="menu_link" (click)="logout()" routerDirection="forward">-->
+<!--                    <ion-icon name="log-out-outline" slot="start" color="danger"></ion-icon>-->
+<!--                    <ion-label>Log Out</ion-label>-->
+<!--                </ion-item>-->
+
+
+            </ion-menu-toggle>
+
+        </ion-list>
+    </ion-content>
+
+</ion-menu>
+
+
+<div class="ion-page" id="main-content">
+
+    <ion-header>
+        <ion-toolbar color="tertiary">
+
+            <ion-buttons slot="start">
+                <ion-menu-button color="light"></ion-menu-button>
+                 <ion-toolbar class="search" color="tertiary">
+                            <ion-searchbar></ion-searchbar>
+                        </ion-toolbar>
+
+            </ion-buttons>
+
+        </ion-toolbar>
+    </ion-header>
+    <ion-tabs>
+
+        <ion-tab-bar slot="bottom" color="light">
+
+            <ion-tab-button class="bottom_icon" tab="tab1">
+                <ion-icon name="home"></ion-icon>
+                <ion-label>Home</ion-label>
+            </ion-tab-button>
+
+
+            <ion-tab-button class="bottom_icon" (click)="category()" routerDirection="forward">
+                <ion-icon name="library"></ion-icon>
+                <ion-label>Category</ion-label>
+            </ion-tab-button>
+
+             <ion-tab-button class="bottom_icon" (click)="offer()" routerDirection="forward">
+                 <ion-icon name="pricetags"></ion-icon>
+                 <ion-label>Offer</ion-label>
+            </ion-tab-button>
+
+             <ion-tab-button class="bottom_icon" (click)="cart()" routerDirection="forward">
+                <ion-icon name="cart"></ion-icon>
+                <ion-label>Cart</ion-label>
+            </ion-tab-button>
+
+             <ion-tab-button class="bottom_icon" (click)="profile()" routerDirection="forward">
+                <ion-icon name="person"></ion-icon>
+                <ion-label>Profile</ion-label>
+            </ion-tab-button>
+
+        </ion-tab-bar>
+
+    </ion-tabs>
+
+</div>

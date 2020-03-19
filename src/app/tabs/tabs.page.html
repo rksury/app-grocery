@@ -16,7 +16,7 @@
                                         <h4>Srinivas K/S <a>
                                             <img src="assets/img/icons/edit-white.svg"></a>
                                         </h4>
-                                        <p>Honda Showroom -233445</p>
+                                        <p>indore-452020</p>
                                     </div>
                                 </div>
 
@@ -56,10 +56,10 @@
                         <div class="profile-card__image ">
                             <div class="profile-card__content">
                                 <p class="name">Register Here if You have No</p>
-                                <a [routerLink]="['/login']">
+                                <a (click)="login()" routerDirection="forward">
                                     <i class="fa fa-phone"></i>
                                     Login</a>
-                                <a [routerLink]="['/signup']">
+                                <a (click)="signup()" routerDirection="forward">
                                     <i class="fa fa-envelope"></i>
                                 Signup</a>
                             </div>

@@ -22,5 +22,11 @@ export class TabsPage {
   profile() {
     this.router.navigate(['tabs/profile']);
   }
+  login() {
+    this.router.navigate(['tabs/login']);
+  }
+  signup() {
+    this.router.navigate(['tabs/signup']);
+  }
 
 }

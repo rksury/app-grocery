@@ -21,19 +21,22 @@
                   <div class="col-12">
                      <!-- Auth form -->
                      <div class="auth-form">
-                        <form >
-                           <div class="auth-form__single-field space-mb--20">
+
+                         <form [formGroup]="submitform" (ngSubmit)="onSubmit()">
+                           <div class="auth-form__single-field space-mb--20 form-field">
                               <label for="emailAddress">Email Address</label>
-                              <input type="text" name="emailAddress" id="emailAddress" placeholder="Enter Email Address">
+                              <input type="text" formControlName="email" id="emailAddress" placeholder="Enter Email Address">
                            </div>
-                           <div class="auth-form__single-field space-mb--20">
+                           <div class="auth-form__single-field space-mb--20 form-field ">
                               <label for="password">Password</label>
-                              <input type="password" name="password" id="password" placeholder="Enter Password">
+                              <input type="password" formControlName="password" id="password" placeholder="Enter Password">
                            </div>
-                           <div class="auth-form__single-field space-mb--20">
-                              <p class="auth-form__info-text">Don't have an account? <a href="register.html">Sign up Now</a></p>
+                           <div class="auth-form__single-field space-mb--20 ">
+                              <p class="auth-form__info-text">Don't have an account? <a [routerLink]="['/tabs/signup']">Sign up Now</a></p>
                            </div>
-                           <button class="auth-form__button">Login</button>
+                               <div class="form-field">
+                                    <button class="auth-form__button"  type="submit" [disabled]="!submitform.valid">Login</button>
+                               </div>
                         </form>
                      </div>
                   </div>

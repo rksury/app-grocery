@@ -1,10 +1,10 @@
-<ion-menu side="start" content-id="main-content">
+<ion-menu content-id="main-content" side="start">
 
     <ion-content>
         <ion-list>
 
             <ion-menu-toggle auto-hide="true">
-                 <header>
+                <header>
                     <div class="header-wrapper header-css">
                         <div class="container space-y--15">
                             <div class="row align-items-center">
@@ -23,7 +23,7 @@
                                 <div class="col-auto">
                                     <!-- header menu trigger -->
                                     <button class="header-menu-trigger" id="header-menu-trigger">
-<!--                                        <img src="assets/img/icons/menu.svg" class="injectable" alt="">-->
+                                        <!--                                        <img src="assets/img/icons/menu.svg" class="injectable" alt="">-->
                                     </button>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@
                     <div class="profile-card text-center">
                         <a href="#">
                             <div class="profile-card__image ">
-                                <img src="assets/img/icons/user-white.png" class="img-fluid" alt="">
+                                <img alt="" class="img-fluid" src="assets/img/icons/user-white.png">
                                 <div class="profile-card__content">
                                     <p class="name">WelCome <span class="id">Srinivas K/S</span></p>
                                 </div>
@@ -45,7 +45,7 @@
                     <div class="profile-card address text-center">
                         <a href="#">
                             <div class="profile-card__image ">
-                                <img src="assets/img/icons/map.png" class="img-fluid" alt="">
+                                <img alt="" class="img-fluid" src="assets/img/icons/map.png">
                                 <div class="profile-card__content">
                                     <p class="name">Lorem ipsum, or lipsum as it is sometimes known,</p>
                                 </div>
@@ -61,24 +61,29 @@
                                     Login</a>
                                 <a (click)="signup()" routerDirection="forward">
                                     <i class="fa fa-envelope"></i>
-                                Signup</a>
+                                    Signup</a>
                             </div>
                         </div>
                     </div>
 
                     <div>
-                    <ion-item class="menu_link">
-                        <ion-icon name="albums-outline" slot="start"></ion-icon>
-                        <ion-label>Shop by Category</ion-label>
-                        <ion-icon name="chevron-forward-outline"></ion-icon>
-                    </ion-item>
+                        <ion-item class="menu_link">
+                            <ion-icon name="albums-outline" slot="start"></ion-icon>
+                            <ion-label>Shop by Category</ion-label>
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </ion-item>
 
-                <ion-item class="menu_link">
-                    <ion-icon name="medkit-outline" slot="start"></ion-icon>
-                    <ion-label>Stores</ion-label>
-                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                        <ion-item class="menu_link">
+                            <ion-icon name="medkit-outline" slot="start"></ion-icon>
+                            <ion-label>Stores</ion-label>
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </ion-item>
 
-                </ion-item>
+                        <ion-item class="menu_link" (click)="products()" routerDirection="forward">
+                            <ion-icon name="cube-outline" slot="start"></ion-icon>
+                            <ion-label>Products</ion-label>
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </ion-item>
 
                         <ion-item class="menu_link">
                             <ion-icon name="radio-button-on-outline" slot="start"></ion-icon>
@@ -86,15 +91,15 @@
                             <ion-icon name="chevron-forward-outline"></ion-icon>
                         </ion-item>
 
-                <ion-item class="menu_link">
-                    <ion-icon name="receipt-outline" slot="start"></ion-icon>
-                    <ion-label>Terms & Policy</ion-label>
-                </ion-item>
+                        <ion-item class="menu_link">
+                            <ion-icon name="receipt-outline" slot="start"></ion-icon>
+                            <ion-label>Terms & Policy</ion-label>
+                        </ion-item>
 
-                <ion-item class="menu_link">
-                    <ion-icon name="share-social-outline" slot="start"></ion-icon>
-                    <ion-label>Share</ion-label>
-                </ion-item>
+                        <ion-item class="menu_link">
+                            <ion-icon name="share-social-outline" slot="start"></ion-icon>
+                            <ion-label>Share</ion-label>
+                        </ion-item>
                     </div>
 
                 </div>
@@ -114,9 +119,9 @@
 
             <ion-buttons slot="start">
                 <ion-menu-button color="light"></ion-menu-button>
-                 <ion-toolbar class="search" color="tertiary">
-                            <ion-searchbar></ion-searchbar>
-                        </ion-toolbar>
+                <ion-toolbar class="search" color="tertiary">
+                    <ion-searchbar></ion-searchbar>
+                </ion-toolbar>
 
             </ion-buttons>
 
@@ -124,7 +129,7 @@
     </ion-header>
     <ion-tabs>
 
-        <ion-tab-bar slot="bottom" color="light">
+        <ion-tab-bar color="light" slot="bottom">
 
             <ion-tab-button class="bottom_icon" tab="tab1">
                 <ion-icon name="home"></ion-icon>
@@ -132,22 +137,22 @@
             </ion-tab-button>
 
 
-            <ion-tab-button class="bottom_icon" (click)="category()" routerDirection="forward">
+            <ion-tab-button (click)="category()" class="bottom_icon" routerDirection="forward">
                 <ion-icon name="library"></ion-icon>
                 <ion-label>Category</ion-label>
             </ion-tab-button>
 
-             <ion-tab-button class="bottom_icon" (click)="offer()" routerDirection="forward">
-                 <ion-icon name="pricetags"></ion-icon>
-                 <ion-label>Offer</ion-label>
+            <ion-tab-button (click)="offer()" class="bottom_icon" routerDirection="forward">
+                <ion-icon name="pricetags"></ion-icon>
+                <ion-label>Offer</ion-label>
             </ion-tab-button>
 
-             <ion-tab-button class="bottom_icon" (click)="cart()" routerDirection="forward">
+            <ion-tab-button (click)="cart()" class="bottom_icon" routerDirection="forward">
                 <ion-icon name="cart"></ion-icon>
                 <ion-label>Cart</ion-label>
             </ion-tab-button>
 
-             <ion-tab-button class="bottom_icon" (click)="profile()" routerDirection="forward">
+            <ion-tab-button (click)="profile()" class="bottom_icon" routerDirection="forward">
                 <ion-icon name="person"></ion-icon>
                 <ion-label>Profile</ion-label>
             </ion-tab-button>

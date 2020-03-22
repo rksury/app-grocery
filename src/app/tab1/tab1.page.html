@@ -1,9 +1,9 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Tab 1
-    </ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>
+            Tab 1
+        </ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
@@ -14,11 +14,9 @@
         <div class="body-wrapper space-pt--20 space-pb--50">
 
 
-
-
             <!--====================  header area ====================-->
 
-<!--                    <script src="assets/js/main.js"></script>-->
+            <!--                    <script src="assets/js/main.js"></script>-->
             <div class="hero-slider bg-color--grey space-y--10 main-content-top-padding">
 
                 <div class="container">
@@ -27,13 +25,13 @@
                         <div class="col-12">
                             <div class="hero-slider-wrapper">
                                 <div class="hero-slider-item d-flex bg-img">
-                                     <img src="assets/img/hero-slider/slider-1.jpg">
+                                    <img src="assets/img/hero-slider/slider-1.jpg">
                                     <div class="container">
 
                                     </div>
                                 </div>
                                 <div class="hero-slider-item d-flex bg-img">
-                                     <img src="assets/img/hero-slider/slider-2.jpg">
+                                    <img src="assets/img/hero-slider/slider-2.jpg">
                                     <div class="container">
 
                                     </div>
@@ -54,19 +52,20 @@
                             <!-- category slider -->
                             <div class="featured-product-wrapper space-mb-m--15">
                                 <div class="row row-5">
-                                    <div class="col-4">
+                                    <div *ngFor="let category of categories" class="col-4">
                                         <div class="cat-main-box">
-                                            <div class="featured-product cat-box1 space-mb--15">
+                                            <div [ngStyle]="{'background-color': category.backgroud_color}"
+                                                 class="featured-product cat-box1 space-mb--15">
                                                 <a>
 
                                                     <div class="featured-product__image">
-                                                        <img src="assets/img/products/featured/masala-product-cat.png"
+                                                        <img src="{{category.image}}"
                                                              class="img-fluid" alt="">
                                                     </div>
                                                 </a>
                                             </div>
                                             <div class="featured-product__content">
-                                                <a href="#"><h4>Grocery & Staples</h4></a>
+                                                <a href="#"><h4>{{category.title}}</h4></a>
                                             </div>
                                         </div>
                                     </div>
@@ -674,42 +673,42 @@
             <!-- Featured Products end -->
             <!--====================  End of products area  ====================-->
             <!--====================  footer area ====================-->
-<!--            <footer>-->
-<!--                <div class="footer-nav-wrapper">-->
-<!--                    <a href="index.html" class="footer-nav-single">-->
-<!--                        <div class="menu-wrapper">-->
-<!--                            <img src="assets/img/icons/home.svg" class="injectable" alt="">-->
-<!--                            <span>Home</span>-->
-<!--                        </div>-->
-<!--                    </a>-->
+            <!--            <footer>-->
+            <!--                <div class="footer-nav-wrapper">-->
+            <!--                    <a href="index.html" class="footer-nav-single">-->
+            <!--                        <div class="menu-wrapper">-->
+            <!--                            <img src="assets/img/icons/home.svg" class="injectable" alt="">-->
+            <!--                            <span>Home</span>-->
+            <!--                        </div>-->
+            <!--                    </a>-->
 
 
-<!--                    <a href="#" class="footer-nav-single">-->
-<!--                        <div class="menu-wrapper">-->
-<!--                            <img src="assets/img/icons/list.svg" class="injectable" alt="">-->
-<!--                            <span>Category</span>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                    <a href="#" class="footer-nav-single">-->
-<!--                        <div class="menu-wrapper">-->
-<!--                            <img src="assets/img/icons/offer.svg" class="injectable" alt="">-->
-<!--                            <span>Offer</span>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                    <a href="#" class="footer-nav-single">-->
-<!--                        <div class="menu-wrapper">-->
-<!--                            <img src="assets/img/icons/cart.svg" class="injectable" alt="">-->
-<!--                            <span>Cart</span>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                    <a href="#" class="footer-nav-single">-->
-<!--                        <div class="menu-wrapper">-->
-<!--                            <img src="assets/img/icons/profile.svg" class="injectable" alt="">-->
-<!--                            <span>Profile</span>-->
-<!--                        </div>-->
-<!--                    </a>-->
-<!--                </div>-->
-<!--            </footer>-->
+            <!--                    <a href="#" class="footer-nav-single">-->
+            <!--                        <div class="menu-wrapper">-->
+            <!--                            <img src="assets/img/icons/list.svg" class="injectable" alt="">-->
+            <!--                            <span>Category</span>-->
+            <!--                        </div>-->
+            <!--                    </a>-->
+            <!--                    <a href="#" class="footer-nav-single">-->
+            <!--                        <div class="menu-wrapper">-->
+            <!--                            <img src="assets/img/icons/offer.svg" class="injectable" alt="">-->
+            <!--                            <span>Offer</span>-->
+            <!--                        </div>-->
+            <!--                    </a>-->
+            <!--                    <a href="#" class="footer-nav-single">-->
+            <!--                        <div class="menu-wrapper">-->
+            <!--                            <img src="assets/img/icons/cart.svg" class="injectable" alt="">-->
+            <!--                            <span>Cart</span>-->
+            <!--                        </div>-->
+            <!--                    </a>-->
+            <!--                    <a href="#" class="footer-nav-single">-->
+            <!--                        <div class="menu-wrapper">-->
+            <!--                            <img src="assets/img/icons/profile.svg" class="injectable" alt="">-->
+            <!--                            <span>Profile</span>-->
+            <!--                        </div>-->
+            <!--                    </a>-->
+            <!--                </div>-->
+            <!--            </footer>-->
             <!--====================  End of footer area  ====================-->
         </div>
     </div>

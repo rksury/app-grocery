@@ -22,4 +22,6 @@ export class Tab1Page {
         });
     }
 
+    open_category_products(pk) {
+    }
 }

@@ -12,6 +12,7 @@ import {Router} from '@angular/router';
 export class LoginPage implements OnInit {
     // tslint:disable-next-line:ban-types
     loginresdata: Object = {token: null, user: null}
+    // user: [''];
     submitform = new FormGroup({
         username: new FormControl(''),
         password: new FormControl(''),
@@ -30,10 +31,10 @@ export class LoginPage implements OnInit {
     onSubmit() {
         this.loginService.Login(this.submitform.value).subscribe(data => {
                 this.loginresdata = data;
-                window.localStorage.setItem('token', this.loginresdata['token']);
+                // window.localStorage.setItem('token', this.loginresdata['token']);
                 // window.localStorage.setItem('token', data.token);
-                window.localStorage.setItem('user', data.user);
-                this.utils.presentToast('Logged in as ' + data.user.name);
+                // window.localStorage.setItem('user', data.user);
+                // this.utils.presentToast('Logged in as ' + data.user.name);
                 this.router.navigate(['/tabs/tab1']);
             }
         )

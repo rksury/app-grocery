@@ -16,30 +16,39 @@
                 <div class="col-12">
                     <!-- edit profile form -->
                     <div class="edit-profile-form">
-                        <form>
-                            <div class="edit-profile-form__single-field space-mb--20">
+
+                        <form (ngSubmit)="onSubmit()" [formGroup]="submitform">
+
+                            <div class="edit-profile-form__single-field space-mb--20 form-field">
                                 <label for="fullName">Full Name</label>
-                                <input id="fullName" name="fullName" placeholder="Enter Full Name" type="text">
-                            </div>
-                            <div class="edit-profile-form__single-field space-mb--20">
-                                <label for="userName">User Name</label>
-                                <input id="userName" name="userName" placeholder="Enter User Name" type="text">
-                            </div>
-                            <div class="edit-profile-form__single-field space-mb--20">
-                                <label for="phoneNo">Phone</label>
-                                <input id="phoneNo" name="phoneNo" placeholder="Enter Phone Number" type="text">
-                            </div>
-                            <div class="edit-profile-form__single-field space-mb--20">
-                                <label for="emailAddress">Email Address</label>
-                                <input id="emailAddress" name="emailAddress" placeholder="Enter Email Address"
+                                <input formControlName="fullName" id="fullName" placeholder="Enter Full Name"
                                        type="text">
                             </div>
-                            <div class="edit-profile-form__single-field space-mb--20">
-                                <label for="shippingAddress">Shipping Address</label>
-                                <textarea cols="30" id="shippingAddress" name="shippingAddress" placeholder="Enter Shipping Address"
-                                          rows="5"></textarea>
+                            <div class="edit-profile-form__single-field space-mb--20 form-field">
+                                <label for="userName">User Name</label>
+                                <input formControlName="userName" id="userName" placeholder="Enter User Name"
+                                       type="text">
                             </div>
-                            <button class="edit-profile-form__button">Update</button>
+                            <div class="edit-profile-form__single-field space-mb--20 form-field">
+                                <label for="phoneNo">Phone</label>
+                                <input formControlName="number" id="phoneNo" placeholder="Enter Phone Number"
+                                       type="number">
+                            </div>
+                            <div class="edit-profile-form__single-field space-mb--20 form-field">
+                                <label for="emailAddress">Email Address</label>
+                                <input formControlName="email" id="emailAddress" placeholder="Enter Email Address"
+                                       type="email">
+                            </div>
+                            <div class="edit-profile-form__single-field space-mb--20 form-field">
+                                <label for="shippingAddress">Shipping Address</label>
+                                <textarea cols="50" formControlName="shipping" id="shippingAddress"
+                                          placeholder="Enter Shipping Address"
+                                          rows="3"></textarea>
+                            </div>
+                            <div class="form-field">
+                                <button type="submit" class="edit-profile-form__button" [disabled]="!submitform.valid">Update</button>
+                            </div>
+
                         </form>
                     </div>
                 </div>

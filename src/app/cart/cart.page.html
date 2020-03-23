@@ -11,8 +11,18 @@
 
         <!--====================  End of mobile menu overlay  ====================-->
         <!--====================  breadcrumb area ====================-->
-        <div class="container" class="product_div">
-
+        <div *ngIf="!isloggedin" class="discount-code-wrapper space-mt--20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="title-wrap">
+                            <h1 class="cart-bottom-title">Please Login!</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div *ngIf="isloggedin" class="container" class="product_div">
             <div class="cart-product-area">
                 <div *ngFor="let product of products" class="cart-product border-bottom--medium">
                     <div class="cart-product__image">
@@ -51,7 +61,7 @@
             </div>
         </div>
         <!--====================  End of cart product area  ====================-->
-        <div class="discount-code-wrapper space-mt--20">
+        <div *ngIf="isloggedin" class="discount-code-wrapper space-mt--20">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -69,7 +79,7 @@
                 </div>
             </div>
         </div>
-        <div class="grand-total space-mt--20">
+        <div *ngIf="isloggedin" class="grand-total space-mt--20">
             <div class="container">
                 <div class="row">
                     <div class="col-12">

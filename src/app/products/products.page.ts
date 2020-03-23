@@ -37,6 +37,7 @@ export class ProductsPage implements OnInit {
     get_products(params) {
         this.producteService.get_products(params).subscribe(data => {
                 this.products = data;
+                console.log(data);
             }, error => {
                 console.error(error);
                 this.utils.presentToast('Some Error Occurred');

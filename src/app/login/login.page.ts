@@ -22,7 +22,7 @@ export class LoginPage implements OnInit {
     constructor(private loginService: LoginService,
                 private utils: UtilsService,
                 private router: Router,
-                ) {
+    ) {
     }
 
     ngOnInit() {

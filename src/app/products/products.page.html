@@ -20,16 +20,18 @@
                     <div class="item">
                         <img alt="" class="injectable" src="{{product.image}}">
                         <div class="content-div">
-                            <h4><img class="icons" src="assets/img/icons/money.svg">25.00</h4>
+                            <p style="font-size:15px;">₹ <s>{{product.price}}</s><i
+                                    style="color: #3a7be0"> {{product.discounted_price}}</i></p>
+
                             <p>{{product.title}}</p>
 
                             <form [formGroup]="submitform" (ngSubmit)="onSubmit()">
-                                <div class="form-field">
-                                    <input type="text" style="display: none" value="{{product.id}}" formControlName="pk">
-                                    <select class="dropdown_item" formControlName="Quantity">
-                                        <option value="1">1 kg</option>
-                                        <option value="2">500 gm</option>
-                                        <option value="3">250 gm</option>
+                                <div>
+                                    <input type="text" style="display: none" value="{{product.id}}"
+                                           formControlName="pk">
+                                    <select class="dropdown_item" value="Quantity" formControlName="Quantity">
+                                        <option *ngFor="let sku of product.skus"
+                                                value="{{sku.id}}">{{sku.name}}</option>
                                     </select>
                                 </div>
                                 <div class="form-field">

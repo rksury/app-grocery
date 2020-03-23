@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {HomeService} from './home.service';
 import {NavigationExtras, Router} from '@angular/router';
-import {error} from "util";
-import {UtilsService} from "../utils.service";
+import {UtilsService} from '../utils.service';
+import {TabsPage} from '../tabs/tabs.page';
 
 @Component({
     selector: 'app-tab1',
@@ -13,11 +13,15 @@ export class Tab1Page {
     categories: {};
     params: {}
 
-    constructor(private homeService: HomeService, private router: Router, private utils: UtilsService,) {
+    constructor(private homeService: HomeService,
+                private router: Router,
+                private utils: UtilsService,
+                private tabPage: TabsPage) {
     }
 
     ionViewWillEnter() {
         this.get_categories();
+        this.tabPage.refresh();
     }
 
     get_categories() {

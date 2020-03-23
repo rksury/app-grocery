@@ -21,7 +21,8 @@ export class LoginPage implements OnInit {
 
     constructor(private loginService: LoginService,
                 private utils: UtilsService,
-                private router: Router) {
+                private router: Router,
+                ) {
     }
 
     ngOnInit() {
@@ -33,7 +34,7 @@ export class LoginPage implements OnInit {
                 this.loginresdata = data;
                 try {
                     window.localStorage.setItem('token', data['token']);
-                    window.localStorage.setItem('user', data['user']);
+                    window.localStorage.setItem('user', data['user'].name);
                     this.utils.presentToast('Logged in as ' + data['user'].name);
                     // window.localStorage.setItem('user', data.user);
                     // this.utils.presentToast('Logged in as ' + data.user.name);

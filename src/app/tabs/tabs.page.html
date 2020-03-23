@@ -13,18 +13,17 @@
                                 <div class="col d-flex justify-content-center">
                                     <!-- header search -->
                                     <div class="store-name-loc">
-                                        <h4>Srinivas K/S <a>
+                                        <h4>{{user}} <a>
                                             <img src="assets/img/icons/edit-white.svg"></a>
                                         </h4>
-                                        <p>indore-452020</p>
                                     </div>
                                 </div>
 
                                 <div class="col-auto">
                                     <!-- header menu trigger -->
-                                    <button class="header-menu-trigger" id="header-menu-trigger">
-                                        <!--                                        <img src="assets/img/icons/menu.svg" class="injectable" alt="">-->
-                                    </button>
+<!--                                    <button (click)="refresh()" class="header-menu-trigger" id="header-menu-trigger">-->
+<!--                                                                                <img src="assets/img/icons/menu.svg" class="injectable" alt="">-->
+<!--                                    </button>-->
                                 </div>
                             </div>
                         </div>
@@ -52,8 +51,8 @@
                             </div>
                         </a>
                     </div>
-                    <div class="profile-card address help text-center">
-                        <div class="profile-card__image ">
+                    <div *ngIf="islogedin" class="profile-card address help text-center">
+                        <div  class="profile-card__image ">
                             <div class="profile-card__content">
                                 <p class="name">Register Here if You have No</p>
                                 <a (click)="login()" routerDirection="forward">
@@ -99,6 +98,10 @@
                         <ion-item class="menu_link">
                             <ion-icon name="share-social-outline" slot="start"></ion-icon>
                             <ion-label>Share</ion-label>
+                        </ion-item>
+                        <ion-item (click)="logout()" *ngIf="!islogedin" class="menu_link">
+                            <ion-icon name="share-social-outline" slot="start"></ion-icon>
+                            <ion-label>Log out</ion-label>
                         </ion-item>
                     </div>
 

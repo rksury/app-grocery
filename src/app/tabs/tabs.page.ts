@@ -14,14 +14,11 @@ export class TabsPage {
 
     constructor(private router: Router,
     ) {
-        // this.events.subscribe('user:loggedin', user => {
-        //     console.log(user);
-        // });
+        this.refresh();
     }
 
     ionViewWillEnter() {
         this.islogedin = window.localStorage.getItem('token') === null;
-        console.log(this.user);
 
     }
 
@@ -29,6 +26,7 @@ export class TabsPage {
         this.islogedin = window.localStorage.getItem('token') === null;
         this.user = window.localStorage.getItem('user');
         if (this.user === null) {
+            this.user = 'Welcome Guest';
 
         }
 

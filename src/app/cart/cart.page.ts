@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {CartService} from './cart.service';
+import {UtilsService} from '../utils.service';
 
 @Component({
     selector: 'app-cart',
@@ -10,7 +11,7 @@ export class CartPage implements OnInit {
     cart;
     products;
 
-    constructor(private cartService: CartService) {
+    constructor(private cartService: CartService, private utils: UtilsService) {
     }
 
     ngOnInit() {
@@ -23,6 +24,8 @@ export class CartPage implements OnInit {
                 this.cart = data;
                 this.products = this.cart.products;
                 console.log(this.cart.products);
+            }, error => {
+                this.utils.presentToast('Some Error Occurred');
             }
         );
     }

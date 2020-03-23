@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from './product.service';
 import {CartService} from '../cart/cart.service';
+import {UtilsService} from '../utils.service';
 
 @Component({
     selector: 'app-products',
@@ -14,7 +15,8 @@ export class ProductsPage implements OnInit {
 
     constructor(private route: ActivatedRoute,
                 private producteService: ProductService,
-                private cartService: CartService) {
+                private cartService: CartService,
+                private utils: UtilsService) {
     }
 
     ngOnInit() {
@@ -27,17 +29,22 @@ export class ProductsPage implements OnInit {
     }
 
     get_products(params) {
-        console.log('params');
         this.producteService.get_products(params).subscribe(data => {
-            this.products = data;
-        });
+                this.products = data;
+            }, error => {
+                console.error(error);
+                this.utils.presentToast('Some Error Occurred');
+            }
+        );
     }
 
     add_to_cart(pk) {
         this.cartService.add_to_cart(pk).subscribe(data => {
-            console.log(data);
+            this.utils.presentToast('Added to cart.');
         }, error => {
-            console.log(error);
+            console.error(error);
+
+            this.utils.presentToast('Some Error Occurred');
         });
     }
 

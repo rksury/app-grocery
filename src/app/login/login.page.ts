@@ -31,12 +31,19 @@ export class LoginPage implements OnInit {
     onSubmit() {
         this.loginService.Login(this.submitform.value).subscribe(data => {
                 this.loginresdata = data;
-                window.localStorage.setItem('token', this.loginresdata['token']);
-                window.localStorage.setItem('user', this.loginresdata['user']);
-                this.utils.presentToast('Logged in as ' + data.user.name);
-                // window.localStorage.setItem('user', data.user);
-                // this.utils.presentToast('Logged in as ' + data.user.name);
-                this.router.navigate(['/tabs/tab1']);
+                try {
+                    window.localStorage.setItem('token', data['token']);
+                    window.localStorage.setItem('user', data['user']);
+                    this.utils.presentToast('Logged in as ' + data['user'].name);
+                    // window.localStorage.setItem('user', data.user);
+                    // this.utils.presentToast('Logged in as ' + data.user.name);
+                    this.router.navigate(['/tabs/tab1']);
+                } catch (e) {
+                    this.utils.presentToast(e.toString());
+                }
+            },
+            error => {
+                this.utils.presentToast('Some Error Occurred');
             }
         )
         ;

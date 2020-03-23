@@ -32,8 +32,8 @@ export class LoginPage implements OnInit {
                 this.loginresdata = data;
                 window.localStorage.setItem('token', this.loginresdata['token']);
                 // window.localStorage.setItem('token', data.token);
-                window.localStorage.setItem('user', data.user);
-                this.utils.presentToast('Logged in as ' + data.user.name);
+                //window.localStorage.setItem('user', data.user);
+                //this.utils.presentToast('Logged in as ' + data.user.name);
                 this.router.navigate(['/tabs/tab1']);
             }
         )

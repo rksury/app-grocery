@@ -3,6 +3,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from './product.service';
 import {CartService} from '../cart/cart.service';
 import {UtilsService} from '../utils.service';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
     selector: 'app-products',
@@ -10,6 +11,11 @@ import {UtilsService} from '../utils.service';
     styleUrls: ['./products.page.scss'],
 })
 export class ProductsPage implements OnInit {
+    submitform = new FormGroup({
+        Quantity: new FormControl(''),
+        pk: new FormControl(''),
+    });
+
     special;
     products;
 
@@ -39,13 +45,18 @@ export class ProductsPage implements OnInit {
     }
 
     add_to_cart(pk) {
-        this.cartService.add_to_cart(pk).subscribe(data => {
+        const quantity = this.submitform.value.Quantity;
+        this.cartService.add_to_cart(pk, quantity).subscribe(data => {
             this.utils.presentToast('Added to cart.');
         }, error => {
             console.error(error);
 
             this.utils.presentToast('Some Error Occurred');
         });
+    }
+
+    onSubmit() {
+        console.log(this.submitform.value);
     }
 
 }

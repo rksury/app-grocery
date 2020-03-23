@@ -7,6 +7,7 @@ import {CartService} from './cart.service';
     styleUrls: ['./cart.page.scss'],
 })
 export class CartPage implements OnInit {
+    cart;
     products;
 
     constructor(private cartService: CartService) {
@@ -19,8 +20,15 @@ export class CartPage implements OnInit {
     getCart() {
         this.cartService.getCart().subscribe(
             data => {
-                this.products = data;
+                this.cart = data;
+                this.products = this.cart.products;
+                console.log(this.cart.products);
             }
         );
+    }
+
+
+    update_quantity() {
+        console.log('dsad');
     }
 }

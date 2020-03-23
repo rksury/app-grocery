@@ -14,16 +14,17 @@
         <div class="container" class="product_div">
 
             <div class="cart-product-area">
-                <div class="cart-product border-bottom--medium">
+                <div *ngFor="let product of products" class="cart-product border-bottom--medium">
                     <div class="cart-product__image">
                         <a>
-                            <img alt="" class="img-fluid" src="assets/img/products/featured/best-salt-img.png">
+                            <img alt="" class="img-fluid" src="{{product.product.image}}">
                         </a>
                     </div>
                     <div class="cart-product__content">
-                        <h4><img class="icons" src="assets/img/icons/money.svg"> 25.00</h4>
-                        <h3 class="title"><a href="shop-product.html">Salt</a></h3>
-                        <p class="no-pcs">1 pcs</p>
+                        <h4><img class="icons" src="assets/img/icons/money.svg"> {{product.product.discounted_price}}
+                        </h4>
+                        <h3 class="title"><a href="shop-product.html">{{product.product.title}}</a></h3>
+                        <p class="no-pcs">{{product.quantity}}</p>
 
                     </div>
                     <div class="cart-product__counter">
@@ -34,7 +35,8 @@
                   <span class=" fa fa-minus"></span>
                 </button>
                 </span>
-                            <input class="form-control input-number" max="99" min="1" name="quant[1]" type="text"
+                            <input (change)="update_quantity()" class="form-control input-number" max="99" min="1"
+                                   name="quant[1]" type="text"
                                    value="1">
                             <span class="input-group-btn">
               <button class="btn btn-default right btn-number" data-field="quant[1]" data-type="plus" type="button">
@@ -74,7 +76,7 @@
                         <div class="title-wrap">
                             <h4 class="cart-bottom-title">Summary</h4>
                         </div>
-                        <h5>Sub Total <span>$260.00</span></h5>
+                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>
 
                         <h4 class="grand-total-title">Total <span>$260.00</span></h4>
                         <a>Proceed to Checkout</a>

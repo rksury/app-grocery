@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 import {environment} from '../../environments/environment';
-import { catchError } from 'rxjs/operators';
+import {catchError} from 'rxjs/operators';
 
 @Injectable({
     providedIn: 'root'
@@ -20,13 +20,18 @@ export class LoginService {
     Login(payload) {
         return this.httpclient.post(this.base_url + 'auth/login', payload);
     }
+
+    VerifyLogin() {
+        const payload = {token: window.localStorage.getItem('token')};
+        return this.httpclient.post(this.base_url + 'auth/verify-token', payload);
+    }
 }
 
 
-            // .subscribe(data => {
-          // window.localStorage.setItem('token', data.token);
-          // window.localStorage.setItem('user', data.user);
-        // }).pipe(
-    // catchError(this.handleError)
-    // }
+// .subscribe(data => {
+// window.localStorage.setItem('token', data.token);
+// window.localStorage.setItem('user', data.user);
+// }).pipe(
+// catchError(this.handleError)
+// }
 // }

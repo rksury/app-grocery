@@ -43,7 +43,6 @@
             </div>
             <!--====================  End of hero slider  ====================-->
             <!--====================  category slider ====================-->
-            <app-products></app-products>
             <div class="categorys bg-color--grey space-pb--25 space-mb--25 ">
                 <div class="container">
                     <div class="row">
@@ -53,7 +52,7 @@
                             <!-- category slider -->
                             <div class="featured-product-wrapper space-mb-m--15">
                                 <div class="row row-5">
-                                    <div *ngFor="let category of categories" class="col-4">
+                                    <div (click)="open_category_products(category.id)" *ngFor="let category of categories" class="col-4">
                                         <div class="cat-main-box">
                                             <div [ngStyle]="{'background-color': category.backgroud_color}"
                                                  class="featured-product cat-box1 space-mb--15">

@@ -12,14 +12,14 @@ export class CartService {
     constructor(private httpclient: HttpClient) {
     }
 
-    add_to_cart(pk, quantity) {
+    add_to_cart(pk, q) {
         const httpOptions = {
             headers: new HttpHeaders({
                     Authorization: 'Bearer ' + window.localStorage.getItem('token')
                 }
             )
         };
-        return this.httpclient.post(this.base_url + 'cart/', {quantity: quantity, product: pk}, httpOptions);
+        return this.httpclient.post(this.base_url + 'cart/', {quantity: q, product: pk}, httpOptions);
 
     }
 

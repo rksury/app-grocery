@@ -6,96 +6,97 @@
 
 <ion-content>
 
-    <div class="body-wrapper bg-color--gradient space-pt--20 space-pb--50">
-        <!--====================  header area ====================-->
+    <!--    <div class="body-wrapper bg-color&#45;&#45;gradient space-pt&#45;&#45;20 space-pb&#45;&#45;50">-->
 
-        <!--====================  End of mobile menu overlay  ====================-->
-        <!--====================  breadcrumb area ====================-->
-        <div *ngIf="!isloggedin" class="discount-code-wrapper space-mt--20">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="title-wrap">
-                            <h1 class="cart-bottom-title">Please Login!</h1>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div *ngIf="isloggedin" class="container" class="product_div">
-            <div class="cart-product-area">
-                <div *ngFor="let product of products" class="cart-product border-bottom--medium">
-                    <div class="cart-product__image">
-                        <a>
-                            <img alt="" class="img-fluid" src="{{product.product.image}}">
-                        </a>
-                    </div>
-                    <div class="cart-product__content">
-                        <h4>{{product.product.title}}
-                        </h4>
-                        <h3 class="title"><a href="shop-product.html">{{product.package.quantity }}</a></h3>
-                        <p class="no-pcs">{{product.package.price * product.package.quantity}} inr</p>
-
-                    </div>
-                    <div class="cart-product__counter">
-                        <div class="input-group">
-                <span class="input-group-btn">
-              <button class="btn btn-default btn-number" (click)="incriment(product.id)" data-field="quant[1]"
-                      data-type="minus"
-                      type="button">
-                  <span class=" fa fa-minus"></span>
-                </button>
-                </span>
-                            <input (change)="update_quantity()" class="form-control input-number" max="99" min="1"
-                                   name="quant[1]" type="text"
-                                   value="1">
-                            <span class="input-group-btn">
-              <button class="btn btn-default right btn-number" (click)="incriment(product.product.id)"
-                      data-field="quant[1]" data-type="plus" type="button">
-                  <span class=" fa fa-plus"></span>
-                </button>
-                </span>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-        <!--====================  End of cart product area  ====================-->
-        <div *ngIf="isloggedin" class="discount-code-wrapper space-mt--20">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="title-wrap">
-                            <h4 class="cart-bottom-title">Use Coupon Code</h4>
-                        </div>
-                        <div class="discount-code">
-                            <p>Enter your coupon code if you have one.</p>
-                            <form>
-                                <input name="name" required="" type="text">
-                                <button class="cart-btn-2" type="submit">Apply Coupon</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div *ngIf="isloggedin" class="grand-total space-mt--20">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="title-wrap">
-                            <h4 class="cart-bottom-title">Summary</h4>
-                        </div>
-                        <!--                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>-->
-
-                        <h4 class="grand-total-title">Total <span>$260.00</span></h4>
-                        <a>Proceed to Checkout</a>
+    <!--====================  breadcrumb area ====================-->
+    <div *ngIf="!isloggedin" class="discount-code-wrapper space-mt--20">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title-wrap">
+                        <h1 class="cart-bottom-title">Please Login!</h1>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <div *ngIf="isloggedin" class="container" class="product_div">
+        <div class="cart-product-area">
+            <div *ngFor="let product of products" class="cart-product border-bottom--medium">
+                <div class="cart-product__image">
+                    <a>
+                        <img alt="" class="img-fluid" src="{{product.product.image}}">
+                    </a>
+                </div>
+
+                <div class="cart-product__content">
+                    <h4>{{product.product.title}}</h4>
+                    <h3 class="title"><a href="shop-product.html">{{product.package.quantity }}</a></h3>
+                    <p class="no-pcs">{{product.package.price * product.package.quantity}} inr</p>
+                </div>
+
+                <div class="cart-product__counter">
+                    <div class="input-group">
+
+                        <span class="input-group-btn">
+                          <button (click)="decrement(product.id)" class="btn btn-default btn-number" data-field="quant[1]"
+                                  data-type="minus" type="button">
+                              <span class=" fa fa-minus"></span>
+                          </button>
+                        </span>
+
+                        <input (change)="update_quantity()" class="form-control input-number" max="99" min="1" name="quant[1]" type="text" value="1">
+
+                        <span class="input-group-btn">
+                        <button (click)="increment(product.product.id)" class="btn btn-default right btn-number"
+                                data-field="quant[1]" data-type="plus" type="button">
+                            <span class=" fa fa-plus"></span>
+                        </button>
+                        </span>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    <!--====================  End of cart product area  ====================-->
+    <div *ngIf="isloggedin" class="discount-code-wrapper space-mt--20">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title-wrap">
+                        <h4 class="cart-bottom-title">Use Coupon Code</h4>
+                    </div>
+                    <div class="discount-code">
+                        <p>Enter your coupon code if you have one.</p>
+                        <form>
+                            <input name="name" required="" type="text">
+                            <button class="cart-btn-2" type="submit">Apply Coupon</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="isloggedin" class="grand-total space-mt--20">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="title-wrap">
+                        <h4 class="cart-bottom-title">Summary</h4>
+                    </div>
+                    <!--                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>-->
+
+                    <h4 class="grand-total-title">Total <span>$260.00</span></h4>
+                    <a>Proceed to Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--    </div>-->
 </ion-content>
 

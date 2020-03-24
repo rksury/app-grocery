@@ -5,23 +5,21 @@
 </ion-header>
 
 <ion-content>
-<ion-grid></ion-grid>
+    <ion-grid></ion-grid>
     <div class="category-slider-area all-category categorys bg-color--grey slider3 space-pb--25 space-mb--25">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <ul class="accordion" id="accordion">
-                        <li>
+                        <li *ngFor="let category of categories">
                             <div class="cat-link link cat-box1">
-                                <img alt="" class="img-fluid" src="assets/img/category-img/img1.png">
-                                Grocery & Staples<i class="fa fa-chevron-down"></i>
+                                <img alt="" class="img-fluid" src="{{category.image}}">
+                                {{category.title}}<i class="fa fa-chevron-down"></i>
                             </div>
                             <ul class="submenu">
-                                <li><a href="#">Edile Oils</a></li>
-                                <li><a href="#">Ghee & Vanspati</a></li>
-                                <li><a href="#">Atta & Other Flors</a></li>
-                                <li><a href="#">Dal & Pulse</a></li>
-                                <li><a href="#">Poha & Daliya</a></li>
+                                <li *ngFor="let subcat of category.sub_categories"><a
+                                        (click)="get_subcategory_products(subcat.id)">{{subcat.title}}</a></li>
+                                <!--                                <li *ngFor="let subcat of category.sub_categories"><a href="#">{{subcat.title}}</a></li>-->
                             </ul>
                         </li>
                         <li>

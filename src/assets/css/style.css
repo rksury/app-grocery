@@ -5429,6 +5429,7 @@ header {
 
 .slider3 .products-box-left {
 	padding-left: 10px;
+
 }
 
 .slider3 .products-box-right {
@@ -6083,17 +6084,18 @@ header {
 
 .item .offer {
 	color: white;
+	z-index: 111;
 	background: #5205e7;
-	width: 55px;
-	height: 55px;
+	width: 70px;
+	height: 70px;
 	border-radius: 100%;
-	padding: 16px 19px;
+	padding: 20px 20px;
 	line-height: 14px;
 	font-weight: 700;
 	position: absolute;
 	top: -10px;
 	left: -8px;
-	font-size: 12px;
+	font-size: 15px;
 }
 
 .costprice {

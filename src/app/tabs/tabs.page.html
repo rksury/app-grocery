@@ -67,40 +67,40 @@
 
                     <div>
                         <ion-item class="menu_link">
-                            <ion-icon name="albums-outline" slot="start"></ion-icon>
+                            <ion-icon name="albums-outline" class="menu_link" slot="start"></ion-icon>
                             <ion-label>Shop by Category</ion-label>
                             <ion-icon name="chevron-forward-outline"></ion-icon>
                         </ion-item>
 
                         <ion-item class="menu_link">
-                            <ion-icon name="medkit-outline" slot="start"></ion-icon>
+                            <ion-icon name="medkit-outline" class="menu_link" slot="start"></ion-icon>
                             <ion-label>Stores</ion-label>
                             <ion-icon name="chevron-forward-outline"></ion-icon>
                         </ion-item>
 
                         <ion-item class="menu_link" (click)="products()" routerDirection="forward">
-                            <ion-icon name="cube-outline" slot="start"></ion-icon>
+                            <ion-icon name="cube-outline" class="menu_link" slot="start"></ion-icon>
                             <ion-label>Products</ion-label>
                             <ion-icon name="chevron-forward-outline"></ion-icon>
                         </ion-item>
 
                         <ion-item class="menu_link">
-                            <ion-icon name="radio-button-on-outline" slot="start"></ion-icon>
+                            <ion-icon name="radio-button-on-outline" class="menu_link" slot="start"></ion-icon>
                             <ion-label>Active orders</ion-label>
                             <ion-icon name="chevron-forward-outline"></ion-icon>
                         </ion-item>
 
                         <ion-item class="menu_link">
-                            <ion-icon name="receipt-outline" slot="start"></ion-icon>
+                            <ion-icon name="receipt-outline" class="menu_link" slot="start"></ion-icon>
                             <ion-label>Terms & Policy</ion-label>
                         </ion-item>
 
                         <ion-item class="menu_link">
-                            <ion-icon name="share-social-outline" slot="start"></ion-icon>
+                            <ion-icon name="share-social-outline" class="menu_link" slot="start"></ion-icon>
                             <ion-label>Share</ion-label>
                         </ion-item>
                         <ion-item (click)="logout()" *ngIf="!islogedin" class="menu_link">
-                            <ion-icon name="share-social-outline" slot="start"></ion-icon>
+                            <ion-icon name="exit-outline" class="menu_link" slot="start"></ion-icon>
                             <ion-label>Log out</ion-label>
                         </ion-item>
                     </div>
@@ -130,37 +130,35 @@
 
         </ion-toolbar>
     </ion-header>
+
     <ion-tabs>
-
         <ion-tab-bar color="light" slot="bottom" >
-
-            <ion-tab-button  tab="tab1" class="footer_icon">
-                <ion-icon name="home" ></ion-icon>
-                <ion-label>Home</ion-label>
+            <ion-tab-button  tab="tab1">
+                <ion-icon name="home" class="footer_icon" ></ion-icon>
+                <ion-label >Home</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button class="footer_icon"(click)="category()" routerDirection="forward">
-                <ion-icon name="library" ></ion-icon>
-                <ion-label>Category</ion-label>
+            <ion-tab-button class=""(click)="category()" routerDirection="forward">
+                <ion-icon name="library" class="footer_icon"></ion-icon>
+                <ion-label >Category</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button class="footer_icon"(click)="offer()"  routerDirection="forward">
-                <ion-icon name="pricetags" ></ion-icon>
-                <ion-label>Offer</ion-label>
+            <ion-tab-button class=""(click)="offer()"  routerDirection="forward">
+                <ion-icon name="pricetags" class="footer_icon" ></ion-icon>
+                <ion-label >Offer</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button class="footer_icon" (click)="cart()"  routerDirection="forward">
-                <ion-icon name="cart"></ion-icon>
-                <ion-label>Cart</ion-label>
+            <ion-tab-button class="" (click)="cart()"  routerDirection="forward">
+                <ion-icon name="cart" class="footer_icon"></ion-icon>
+                <ion-label >Cart</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button class="footer_icon" (click)="profile()"  routerDirection="forward">
-                <ion-icon name="person" ></ion-icon>
-                <ion-label>Profile</ion-label>
+            <ion-tab-button  (click)="profile()"  routerDirection="forward">
+                <ion-icon name="person" class="footer_icon"></ion-icon>
+                <ion-label >Profile</ion-label>
             </ion-tab-button>
 
         </ion-tab-bar>
-
     </ion-tabs>
 
 </div>

@@ -43,6 +43,9 @@ export class CartPage implements OnInit {
         );
     }
 
+    incriment(pk) {
+        console.log(pk);
+    }
 
     update_quantity() {
         console.log('dsad');

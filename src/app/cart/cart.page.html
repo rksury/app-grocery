@@ -40,7 +40,8 @@
                     <div class="cart-product__counter">
                         <div class="input-group">
                 <span class="input-group-btn">
-              <button class="btn btn-default btn-number" data-field="quant[1]" data-type="minus" disabled="disabled"
+              <button class="btn btn-default btn-number" (click)="incriment(product.id)" data-field="quant[1]"
+                      data-type="minus"
                       type="button">
                   <span class=" fa fa-minus"></span>
                 </button>
@@ -49,7 +50,8 @@
                                    name="quant[1]" type="text"
                                    value="1">
                             <span class="input-group-btn">
-              <button class="btn btn-default right btn-number" data-field="quant[1]" data-type="plus" type="button">
+              <button class="btn btn-default right btn-number" (click)="incriment(product.product.id)"
+                      data-field="quant[1]" data-type="plus" type="button">
                   <span class=" fa fa-plus"></span>
                 </button>
                 </span>

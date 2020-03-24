@@ -18,6 +18,7 @@ export class ProductsPage implements OnInit {
 
     special;
     products;
+    mySelect;
 
     constructor(private route: ActivatedRoute,
                 private producteService: ProductService,
@@ -45,9 +46,12 @@ export class ProductsPage implements OnInit {
         );
     }
 
-    add_to_cart(pk) {
-        const quantity = this.submitform.value.Quantity;
-        this.cartService.add_to_cart(pk, quantity).subscribe(data => {
+    showSelectValue(i) {
+        console.log(i);
+    }
+
+    onSubmit(pk, mySelect) {
+        this.cartService.add_to_cart(pk, mySelect.detail.value).subscribe(data => {
             this.utils.presentToast('Added to cart.');
         }, error => {
             console.error(error);
@@ -55,9 +59,4 @@ export class ProductsPage implements OnInit {
             this.utils.presentToast('Some Error Occurred');
         });
     }
-
-    onSubmit() {
-        console.log(this.submitform.value);
-    }
-
 }

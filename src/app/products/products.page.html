@@ -25,20 +25,26 @@
 
                             <p>{{product.title}}</p>
 
-                            <form [formGroup]="submitform" (ngSubmit)="onSubmit()">
-                                <div>
-                                    <input type="text" style="display: none" value="{{product.id}}"
-                                           formControlName="pk">
-                                    <select class="dropdown_item" value="Quantity" formControlName="Quantity">
-                                        <option *ngFor="let sku of product.skus"
-                                                value="{{sku.id}}">{{sku.name}}</option>
-                                    </select>
-                                </div>
-                                <div class="form-field">
-                                    <button><a (click)="add_to_cart(product.id)">Add To Cart</a>
-                                    </button>
-                                </div>
-                            </form>
+                            <!--                            <form >-->
+                            <ion-select okText="Add to cart"
+                                        (ionChange)="onSubmit(product.id, $event)"
+                                        placeholder="Select" cancelText="Cancel">
+                                <ion-select-option *ngFor="let sku of product.skus"
+                                                   value="{{sku.id}}">{{sku.name}}</ion-select-option>
+                            </ion-select>
+                            <!--                                <div>-->
+                            <!--                                    <input type="text" style="display: none" value="{{product.id}}"-->
+                            <!--                                           formControlName="pk">-->
+                            <!--                                    <select class="dropdown_item" value="Quantity" formControlName="Quantity">-->
+                            <!--                                        <option *ngFor="let sku of product.skus"-->
+                            <!--                                                value="{{sku.id}}">{{sku.name}}</option>-->
+                            <!--                                    </select>-->
+                            <!--                                </div>-->
+                            <!--                                <div class="form-field">-->
+                            <!--                                    <button><a (click)="add_to_cart(product.id)">Add To Cart</a>-->
+                            <!--                                    </button>-->
+                            <!--                                </div>-->
+                            <!--                            </form>-->
                         </div>
                     </div>
                 </div>

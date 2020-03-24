@@ -13,13 +13,14 @@ export class CartService {
     }
 
     add_to_cart(pk, q) {
+        const data = {product: pk, quantity: q};
         const httpOptions = {
             headers: new HttpHeaders({
                     Authorization: 'Bearer ' + window.localStorage.getItem('token')
                 }
             )
         };
-        return this.httpclient.post(this.base_url + 'cart/', {quantity: q, product: pk}, httpOptions);
+        return this.httpclient.post(this.base_url + 'cart/', data, httpOptions);
 
     }
 

@@ -34,4 +34,14 @@ export class CartService {
         return this.httpclient.get(this.base_url + 'cart/', httpOptions);
 
     }
+
+    place_order() {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                    Authorization: 'Bearer ' + window.localStorage.getItem('token')
+                }
+            )
+        };
+        return this.httpclient.post(this.base_url + 'cart/order', null, httpOptions);
+    }
 }

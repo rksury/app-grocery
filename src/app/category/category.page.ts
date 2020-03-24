@@ -27,6 +27,12 @@ export class CategoryPage implements OnInit {
         });
     }
 
+    get_subcategory(pk) {
+        this.categoryService.getSubCategories(pk).subscribe(data => {
+            this.categories = data;
+        });
+    }
+
     get_subcategory_products(pk) {
         const params = {category: pk}
         const navigationExtras: NavigationExtras = {

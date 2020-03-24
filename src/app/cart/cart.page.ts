@@ -43,6 +43,13 @@ export class CartPage implements OnInit {
         );
     }
 
+    place_order() {
+        this.cartService.place_order().subscribe(data => {
+        }, error => {
+            this.utils.presentToast('Some error Occured');
+        });
+    }
+
     decrement(pk) {
         console.log(pk);
     }

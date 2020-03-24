@@ -12,15 +12,11 @@
                 <div class="col-12">
                     <ul class="accordion" id="accordion">
                         <li *ngFor="let category of categories">
-                            <div class="cat-link link cat-box1">
+                            <div (click)="get_subcategory(category.id)" class="cat-link link cat-box1">
                                 <img alt="" class="img-fluid" src="{{category.image}}">
-                                {{category.title}}<i class="fa fa-chevron-down"></i>
+                                {{category.title}}
                             </div>
-                            <ul class="submenu">
-                                <li *ngFor="let subcat of category.sub_categories"><a
-                                        (click)="get_subcategory_products(subcat.id)">{{subcat.title}}</a></li>
-                                <!--                                <li *ngFor="let subcat of category.sub_categories"><a href="#">{{subcat.title}}</a></li>-->
-                            </ul>
+
                         </li>
                         <li>
                             <div class="cat-link link cat-box2">

@@ -46,10 +46,6 @@ export class ProductsPage implements OnInit {
         );
     }
 
-    showSelectValue(i) {
-        console.log(i);
-    }
-
     onSubmit(pk, mySelect) {
         this.cartService.add_to_cart(pk, mySelect.detail.value).subscribe(data => {
             this.utils.presentToast('Added to cart.');

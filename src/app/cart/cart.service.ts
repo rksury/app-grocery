@@ -13,7 +13,7 @@ export class CartService {
     }
 
     add_to_cart(pk, q) {
-        const data = {product: pk, quantity: q};
+        const data = {product: pk, quantity: 1, package: q};
         const httpOptions = {
             headers: new HttpHeaders({
                     Authorization: 'Bearer ' + window.localStorage.getItem('token')

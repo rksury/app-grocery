@@ -31,10 +31,10 @@
                         </a>
                     </div>
                     <div class="cart-product__content">
-                        <h4><img class="icons" src="assets/img/icons/money.svg"> {{product.product.discounted_price}}
+                        <h4>{{product.product.title}}
                         </h4>
-                        <h3 class="title"><a href="shop-product.html">{{product.product.title}}</a></h3>
-                        <p class="no-pcs">{{product.quantity}}</p>
+                        <h3 class="title"><a href="shop-product.html">{{product.package.quantity }}</a></h3>
+                        <p class="no-pcs">{{product.package.price * product.package.quantity}} inr</p>
 
                     </div>
                     <div class="cart-product__counter">
@@ -86,7 +86,7 @@
                         <div class="title-wrap">
                             <h4 class="cart-bottom-title">Summary</h4>
                         </div>
-                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>
+                        <!--                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>-->
 
                         <h4 class="grand-total-title">Total <span>$260.00</span></h4>
                         <a>Proceed to Checkout</a>

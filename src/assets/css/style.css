@@ -4884,7 +4884,7 @@ header .header-menu-trigger:focus {
 
 .discount-code-wrapper .discount-code form input {
 	width: 59%;
-	height: 43px;
+	height: 35px;
 	margin-bottom: 10px;
 	padding-left: 10px;
 	padding: 5px 14px;
@@ -4907,10 +4907,10 @@ header .header-menu-trigger:focus {
 	background: linear-gradient(90deg, rgba(1, 243, 157, 1) 0%, rgba(1, 254, 207, 1) 100%);
 	font-weight: 700;
 	border-radius: 5px;
-	width: 47%;
+	width: 50%;
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
-	margin-left: -25px;
+	margin-left: -50px;
 }
 
 .grand-total {
@@ -5012,13 +5012,14 @@ header .header-menu-trigger:focus {
 	font-weight: 500;
 	line-height: 1;
 	display: block;
-	padding: 18px 10px 17px;
+	padding: 12px 10px 15px;
 	text-align: center;
 	text-transform: uppercase;
 	color: #FFFFFF;
 	background: linear-gradient(90deg, rgba(1, 243, 157, 1) 0%, rgba(1, 254, 207, 1) 100%);
 	font-weight: 700;
 	border-radius: 20px;
+	height: 40px;
 }
 
 

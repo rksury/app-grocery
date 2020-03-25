@@ -65,35 +65,37 @@
         </div>
     </div>
     <!--====================  End of cart product area  ====================-->
-    <div *ngIf="isloggedin" class="discount-code-wrapper space-mt--20">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="title-wrap">
-                        <h4 class="cart-bottom-title">Use Coupon Code</h4>
-                    </div>
-                    <div class="discount-code">
-                        <p>Enter your coupon code if you have one.</p>
-                        <form>
-                            <input name="name" required="" type="text">
-                            <button class="cart-btn-2" type="submit">Apply Coupon</button>
-                        </form>
+    <div *ngIf="showcart">
+        <div *ngIf="isloggedin" class="discount-code-wrapper space-mt--20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="title-wrap">
+                            <h4 class="cart-bottom-title">Use Coupon Code</h4>
+                        </div>
+                        <div class="discount-code">
+                            <p>Enter your coupon code if you have one.</p>
+                            <form>
+                                <input name="name" required="" type="text">
+                                <button class="cart-btn-2" type="submit">Apply Coupon</button>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <div *ngIf="isloggedin" class="grand-total space-mt--20">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="title-wrap">
-                        <h4 class="cart-bottom-title">Summary</h4>
-                    </div>
-                    <!--                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>-->
+        <div *ngIf="isloggedin" class="grand-total space-mt--20">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="title-wrap">
+                            <h4 class="cart-bottom-title">Summary</h4>
+                        </div>
+                        <!--                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>-->
 
-                    <h4 class="grand-total-title">Total <span>$260.00</span></h4>
-                    <a (click)="place_order()">Proceed to Checkout</a>
+                        <h4 class="grand-total-title">Total <span>{{cart.discounted_price}}</span></h4>
+                        <a (click)="payWithRazor()">Proceed to Checkout</a>
+                    </div>
                 </div>
             </div>
         </div>

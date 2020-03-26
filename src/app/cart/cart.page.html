@@ -21,7 +21,7 @@
         </div>
     </div>
     <div *ngIf="isloggedin" class="container" class="product_div">
-        <div class="cart-product-area">
+        <div *ngIf="showcart" class="cart-product-area">
             <div *ngFor="let product of products" class="cart-product border-bottom--medium">
                 <div class="cart-product__image">
                     <a>
@@ -32,14 +32,15 @@
                 <div class="cart-product__content">
                     <h4>{{product.product.title}}</h4>
                     <h3 class="title"><a href="shop-product.html">{{product.package.quantity }}</a></h3>
-                    <p class="no-pcs">{{product.package.price * product.package.quantity}} inr</p>
+                    <p class="no-pcs">{{product.price}} inr</p>
                 </div>
 
                 <div class="cart-product__counter">
                     <div class="input-group">
 
                         <span class="input-group-btn">
-                          <button (click)="decrement(product.id)" class="btn btn-default btn-number"
+                          <button (click)="remove_product(product.id)"
+                                  class="btn btn-default btn-number"
                                   data-field="quant[1]"
                                   data-type="minus" type="button">
                               <span class=" fa fa-minus"></span>
@@ -47,10 +48,11 @@
                         </span>
 
                         <input (change)="update_quantity()" class="form-control input-number" max="99" min="1"
-                               name="quant[1]" type="text" value="1">
+                               name="quant[1]" type="text" value="{{product.quantity}}">
 
                         <span class="input-group-btn">
-                        <button (click)="increment(product.product.id)" class="btn btn-default right btn-number"
+                        <button (click)="add_product(product.id)"
+                                class="btn btn-default right btn-number"
                                 data-field="quant[1]" data-type="plus" type="button">
                             <span class=" fa fa-plus"></span>
                         </button>

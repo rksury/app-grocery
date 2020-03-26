@@ -41,10 +41,13 @@ export class CartPage implements OnInit {
                 this.products = this.cart.products;
                 this.showcart = true;
             }, error => {
-                // this.cart = {};
+                this.cart = {};
                 this.showcart = false;
                 this.products = {};
                 if (error.status === 404) {
+                    this.cart = {};
+                    this.showcart = false;
+                    this.products = {};
                     this.utils.presentToast('Please add items to cart first');
                 } else {
                     this.utils.presentToast('Some Error Occurred');
@@ -60,6 +63,20 @@ export class CartPage implements OnInit {
 
         }, error => {
             this.utils.presentToast('Some error Occured');
+        });
+    }
+
+    add_product(id) {
+        this.cartService.add_item(id).subscribe(data => {
+            this.cart = data;
+            this.products = this.cart.products;
+        });
+    }
+
+    remove_product(id) {
+        this.cartService.remove_item(id).subscribe(data => {
+            this.cart = data;
+            this.products = this.cart.products;
         });
     }
 

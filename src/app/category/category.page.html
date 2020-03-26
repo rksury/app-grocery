@@ -12,7 +12,16 @@
                 <div class="col-12">
                     <ul class="accordion" id="accordion">
                         <li *ngFor="let category of categories">
-                            <div (click)="get_subcategory(category.id)" class="cat-link link cat-box1">
+
+                            <div *ngIf="!category.parent_category"
+                                 (click)="get_subcategory(category.id)"
+                                 class="cat-link link cat-box1">
+                                <img alt="" class="img-fluid" src="{{category.image}}">
+                                {{category.title}}
+                            </div>
+                            <div *ngIf="category.parent_category"
+                                 (click)="get_subcategory_products(category.id)"
+                                 class="cat-link link cat-box1">
                                 <img alt="" class="img-fluid" src="{{category.image}}">
                                 {{category.title}}
                             </div>

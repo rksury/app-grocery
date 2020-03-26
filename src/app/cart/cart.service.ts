@@ -60,4 +60,26 @@ export class CartService {
         return this.httpclient.post(this.base_url + 'product/capture-payment', data, httpOptions);
 
     }
+
+    add_item(pk) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                    Authorization: 'Bearer ' + window.localStorage.getItem('token')
+                }
+            )
+        };
+        const data = {id: pk};
+        return this.httpclient.post(this.base_url + 'cart/add-item', data, httpOptions)
+    }
+
+    remove_item(pk) {
+        const httpOptions = {
+            headers: new HttpHeaders({
+                    Authorization: 'Bearer ' + window.localStorage.getItem('token')
+                }
+            )
+        };
+        const data = {id: pk};
+        return this.httpclient.post(this.base_url + 'cart/remove-item', data, httpOptions)
+    }
 }

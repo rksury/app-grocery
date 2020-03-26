@@ -66,4 +66,14 @@ export class ProductsPage implements OnInit {
             }
         });
     }
+
+    doRefresh(event) {
+        this.route.queryParams.subscribe(params => {
+            if (params && params.special) {
+                this.special = JSON.parse(params.special);
+                this.get_products(this.special);
+                event.target.complete();
+            }
+        });
+    }
 }

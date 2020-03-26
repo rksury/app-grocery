@@ -7,7 +7,14 @@
 <ion-content>
 
     <!--    <div class="body-wrapper bg-color&#45;&#45;gradient space-pt&#45;&#45;20 space-pb&#45;&#45;50">-->
-
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="arrow-dropdown"
+                pullingText="Pull to refresh"
+                refreshingSpinner="circles"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
     <!--====================  breadcrumb area ====================-->
     <div *ngIf="!isloggedin" class="discount-code-wrapper space-mt--20">
         <div class="container">

@@ -6,7 +6,14 @@
 
 <ion-content>
     <div class="container">
-
+        <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+            <ion-refresher-content
+                    pullingIcon="arrow-dropdown"
+                    pullingText="Pull to refresh"
+                    refreshingSpinner="circles"
+                    refreshingText="Refreshing...">
+            </ion-refresher-content>
+        </ion-refresher>
 
         <div class="profile-main-div space-pt--10 space-mb--30">
             <div class="profile-header-area space-pt--10 space-mb--30">

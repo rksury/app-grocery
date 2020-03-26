@@ -60,5 +60,10 @@ export class CategoryPage implements OnInit {
         this.router.navigate(['/tabs/products'], navigationExtras);
     }
 
+    doRefresh(event) {
+        this.get_categories();
+        event.target.complete()
+    }
+
 
 }

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {CartService} from './cart.service';
 import {UtilsService} from '../utils.service';
 import {Router} from '@angular/router';
+
 declare var RazorpayCheckout: any;
 
 @Component({
@@ -143,5 +144,6 @@ export class CartPage implements OnInit {
         RazorpayCheckout.open(options, successCallback, cancelCallback);
     }
 
-
+    doRefresh(ev) {
+    }
 }

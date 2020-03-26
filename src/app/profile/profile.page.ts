@@ -51,5 +51,10 @@ export class ProfilePage implements OnInit {
             });
     }
 
+    doRefresh(event) {
+        this.getUser();
+        event.target.complete();
+    }
+
 
 }

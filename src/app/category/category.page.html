@@ -5,6 +5,14 @@
 </ion-header>
 
 <ion-content>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="arrow-dropdown"
+                pullingText="Pull to refresh"
+                refreshingSpinner="circles"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
     <ion-grid></ion-grid>
     <div class="category-slider-area all-category categorys bg-color--grey slider3 space-pb--25 space-mb--25">
         <div class="container">

@@ -8,6 +8,14 @@
     <div class="breadcrumb-area bg-color--grey space-y--15">
 
     </div>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content
+                pullingIcon="arrow-dropdown"
+                pullingText="Pull to refresh"
+                refreshingSpinner="circles"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
 
     <div class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
         <div class="container">

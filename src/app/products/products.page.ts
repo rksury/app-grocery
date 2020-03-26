@@ -18,12 +18,12 @@ export class ProductsPage implements OnInit {
 
     special;
     products;
-    mySelect;
 
     constructor(private route: ActivatedRoute,
                 private producteService: ProductService,
                 private cartService: CartService,
-                private utils: UtilsService) {
+                private utils: UtilsService,
+                private router: Router) {
     }
 
     ngOnInit() {
@@ -40,19 +40,30 @@ export class ProductsPage implements OnInit {
                 this.products = data;
                 console.log(data);
             }, error => {
-                console.error(error);
-                this.utils.presentToast('Some Error Occurred');
+                try {
+                    this.utils.presentToast(error.error.error[0]);
+                } catch (e) {
+                    this.utils.presentToast('Some Error Occurred');
+
+                }
             }
         );
     }
 
-    onSubmit(pk, mySelect) {
-        this.cartService.add_to_cart(pk, mySelect.detail.value).subscribe(data => {
+    onSubmit(pk) {
+        this.cartService.add_to_cart(pk).subscribe(data => {
             this.utils.presentToast('Added to cart.');
         }, error => {
-            console.error(error);
+            try {
+                this.utils.presentToast(error.error.error[0]);
+            } catch (e) {
+                this.utils.presentToast('Some Error Occurred');
 
-            this.utils.presentToast('Some Error Occurred');
+            }
+            if (error.status === 401) {
+                this.router.navigate(['tabs/login']);
+
+            }
         });
     }
 }

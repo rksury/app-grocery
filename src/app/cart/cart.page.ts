@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {CartService} from './cart.service';
 import {UtilsService} from '../utils.service';
 import {Router} from '@angular/router';
-
 declare var RazorpayCheckout: any;
 
 @Component({
@@ -50,7 +49,13 @@ export class CartPage implements OnInit {
                     this.products = {};
                     this.utils.presentToast('Please add items to cart first');
                 } else {
-                    this.utils.presentToast('Some Error Occurred');
+                    try {
+                        this.utils.presentToast(error.error.error[0]);
+                    } catch (e) {
+                        this.utils.presentToast('Some Error Occurred');
+
+                    }
+
                 }
             }
         );
@@ -62,7 +67,12 @@ export class CartPage implements OnInit {
             this.utils.presentToast('Order Placed.');
 
         }, error => {
-            this.utils.presentToast('Some error Occured');
+            try {
+                this.utils.presentToast(error.error.error[0]);
+            } catch (e) {
+                this.utils.presentToast('Some Error Occurred');
+
+            }
         });
     }
 
@@ -70,6 +80,13 @@ export class CartPage implements OnInit {
         this.cartService.add_item(id).subscribe(data => {
             this.cart = data;
             this.products = this.cart.products;
+        }, error => {
+            try {
+                this.utils.presentToast(error.error.error[0]);
+            } catch (e) {
+                this.utils.presentToast('Some Error Occurred');
+
+            }
         });
     }
 
@@ -77,6 +94,13 @@ export class CartPage implements OnInit {
         this.cartService.remove_item(id).subscribe(data => {
             this.cart = data;
             this.products = this.cart.products;
+        }, error => {
+            try {
+                this.utils.presentToast(error.error.error[0]);
+            } catch (e) {
+                this.utils.presentToast('Some Error Occurred');
+
+            }
         });
     }
 
@@ -86,8 +110,8 @@ export class CartPage implements OnInit {
             image: 'https://i.imgur.com/3g7nmJC.png',
             currency: 'INR', // your 3 letter currency code
             key: 'rzp_test_2nAiN0h9QN68NR', // your Key Id from Razorpay dashboard
-            amount: this.cart.discounted_price * 100, // Payment amount in smallest denomiation e.g. cents for USD
-            name: 'foo',
+            amount: this.cart.final_price * 100, // Payment amount in smallest denomiation e.g. cents for USD
+            name: 'The Saving Bazaar',
             // prefill: {
             //     email: 'admin@enappd.com',
             //     contact: '9621323231',
@@ -119,8 +143,5 @@ export class CartPage implements OnInit {
         RazorpayCheckout.open(options, successCallback, cancelCallback);
     }
 
-    update_quantity() {
-        console.log('dsad');
-    }
 
 }

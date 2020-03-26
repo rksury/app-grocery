@@ -41,7 +41,12 @@ export class ProfilePage implements OnInit {
                     this.tabpage.logout();
                     this.router.navigate(['tabs/login']);
                 } else {
-                    this.utils.presentToast('Some error occured');
+                    try {
+                        this.utils.presentToast(error.error.error[0]);
+                    } catch (e) {
+                        this.utils.presentToast('Some Error Occurred');
+
+                    }
                 }
             });
     }

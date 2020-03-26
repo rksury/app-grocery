@@ -4,6 +4,7 @@ import {TabsPage} from '../tabs/tabs.page';
 import {UtilsService} from '../utils.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
+import {EditProfileService} from "./edit-profile.service";
 
 @Component({
     selector: 'app-editprofile',
@@ -29,7 +30,8 @@ export class EditprofilePage implements OnInit {
     constructor(private profileService: ProfileService,
                 private tabpage: TabsPage,
                 private utils: UtilsService,
-                private router: Router) {
+                private router: Router,
+                private updateService: EditProfileService) {
     }
 
     ngOnInit() {
@@ -51,13 +53,27 @@ export class EditprofilePage implements OnInit {
                     this.tabpage.logout();
                     this.router.navigate(['tabs/login']);
                 } else {
-                    this.utils.presentToast('Some error occured');
+                    try {
+                        this.utils.presentToast(error.error.error[0]);
+                    } catch (e) {
+                        this.utils.presentToast('Some Error Occurred');
+
+                    }
                 }
             });
     }
 
     update_profile() {
-        console.log(this.updateForm.value);
+        this.updateService.update_user(this.updateForm.value).subscribe(data => {
+            this.utils.presentToast('User Updated');
+        }, error => {
+            try {
+                this.utils.presentToast(error.error.error[0]);
+            } catch (e) {
+                this.utils.presentToast('Some Error Occurred');
+
+            }
+        });
     }
 
 

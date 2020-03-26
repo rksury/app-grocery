@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CategoryService} from './category.service';
-import {NavigationExtras, Router} from "@angular/router";
+import {NavigationExtras, Router} from '@angular/router';
+import {UtilsService} from '../utils.service';
 
 @Component({
     selector: 'app-category',
@@ -8,10 +9,11 @@ import {NavigationExtras, Router} from "@angular/router";
     styleUrls: ['./category.page.scss'],
 })
 export class CategoryPage implements OnInit {
-    categories: {}
+    categories: {};
 
     constructor(private categoryService: CategoryService,
-                private router: Router) {
+                private router: Router,
+                private utils: UtilsService) {
     }
 
     ionViewWillEnter() {
@@ -24,17 +26,31 @@ export class CategoryPage implements OnInit {
     get_categories() {
         this.categoryService.getCategories().subscribe(data => {
             this.categories = data;
+        }, error => {
+            try {
+                this.utils.presentToast(error.error.error[0]);
+            } catch (e) {
+                this.utils.presentToast('Some Error Occurred');
+
+            }
         });
     }
 
     get_subcategory(pk) {
         this.categoryService.getSubCategories(pk).subscribe(data => {
             this.categories = data;
+        }, error => {
+            try {
+                this.utils.presentToast(error.error.error[0]);
+            } catch (e) {
+                this.utils.presentToast('Some Error Occurred');
+
+            }
         });
     }
 
     get_subcategory_products(pk) {
-        const params = {category: pk}
+        const params = {category: pk};
         const navigationExtras: NavigationExtras = {
                 queryParams: {
                     special: JSON.stringify(params)

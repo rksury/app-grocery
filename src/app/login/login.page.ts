@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
+import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from './login.service';
 import {UtilsService} from '../utils.service';
 import {Router} from '@angular/router';
@@ -11,11 +11,11 @@ import {Router} from '@angular/router';
 })
 export class LoginPage implements OnInit {
     // tslint:disable-next-line:ban-types
-    loginresdata: Object = {token: null, user: null}
+    loginresdata: Object = {token: null, user: null};
     // user: [''];
     submitform = new FormGroup({
-        username: new FormControl(''),
-        password: new FormControl(''),
+        username: new FormControl('', [Validators.required]),
+        password: new FormControl('', [Validators.required]),
 
     });
 
@@ -44,7 +44,7 @@ export class LoginPage implements OnInit {
                 }
             },
             error => {
-                this.utils.presentToast('Some Error Occurred');
+                this.utils.presentToast(error.error.error[0]);
             }
         )
         ;

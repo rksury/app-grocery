@@ -18,20 +18,22 @@
                 <!-- section title -->
                 <div *ngFor="let product of products" class=" col-6 products-box-right">
                     <div class="item">
+                        <div *ngIf="product.discount" class="offer">{{product.discount}}% Off</div>
                         <img alt="" class="injectable" src="{{product.image}}">
                         <div class="content-div">
-                            <p style="font-size:15px;">₹ <s>{{product.price}}</s><i
-                                    style="color: #3a7be0"> {{product.discounted_price}}</i></p>
+                            <p style="font-size:15px;">₹ <s>{{product.selling_price}}</s><i
+                                    style="color: #3a7be0"> {{product.final_price}}</i></p>
 
-                            <p>{{product.title}}</p>
+                            <p>{{product.item_name}}  |  {{product.weight}}</p>
+                            <a (click)="onSubmit(product.id)">Add To Cart</a>
 
                             <!--                            <form >-->
-                            <ion-select okText="Add to cart"
-                                        (ionChange)="onSubmit(product.id, $event)"
-                                        placeholder="Select" cancelText="Cancel">
-                                <ion-select-option *ngFor="let sku of product.skus"
-                                                   value="{{sku.id}}">{{sku.name}} \₹ {{sku.price}}</ion-select-option>
-                            </ion-select>
+                            <!--                            <ion-select okText="Add to cart"-->
+                            <!--                                        (ionChange)="onSubmit(product.id, $event)"-->
+                            <!--                                        placeholder="Select" cancelText="Cancel">-->
+                            <!--                                <ion-select-option *ngFor="let sku of product.skus"-->
+                            <!--                                                   value="{{sku.id}}">{{sku.name}} \₹ {{sku.price}}</ion-select-option>-->
+                            <!--                            </ion-select>-->
                         </div>
                     </div>
                 </div>

@@ -12,8 +12,8 @@ export class CartService {
     constructor(private httpclient: HttpClient) {
     }
 
-    add_to_cart(pk, q) {
-        const data = {product: pk, quantity: 1, package: q};
+    add_to_cart(pk) {
+        const data = {product: pk, quantity: 1};
         const httpOptions = {
             headers: new HttpHeaders({
                     Authorization: 'Bearer ' + window.localStorage.getItem('token')

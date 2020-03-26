@@ -30,9 +30,9 @@
                 </div>
 
                 <div class="cart-product__content">
-                    <h4>{{product.product.title}}</h4>
-                    <h3 class="title"><a href="shop-product.html">{{product.package.quantity }}</a></h3>
-                    <p class="no-pcs">{{product.price}} inr</p>
+                    <h4>{{product.product.item_name}}</h4>
+                    <!--                    <h3 class="title"><a href="shop-product.html">{{product.product.weight}}</a></h3>-->
+                    <p class="no-pcs">{{product.total_price}} inr</p>
                 </div>
 
                 <div class="cart-product__counter">
@@ -47,7 +47,7 @@
                           </button>
                         </span>
 
-                        <input (change)="update_quantity()" class="form-control input-number" max="99" min="1"
+                        <input readonly class="form-control input-number" max="99" min="1"
                                name="quant[1]" type="text" value="{{product.quantity}}">
 
                         <span class="input-group-btn">
@@ -68,24 +68,24 @@
     </div>
     <!--====================  End of cart product area  ====================-->
     <div *ngIf="showcart">
-        <div *ngIf="isloggedin" class="discount-code-wrapper space-mt--20">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="title-wrap">
-                            <h4 class="cart-bottom-title">Use Coupon Code</h4>
-                        </div>
-                        <div class="discount-code">
-                            <p>Enter your coupon code if you have one.</p>
-                            <form>
-                                <input name="name" required="" type="text">
-                                <button class="cart-btn-2" type="submit">Apply Coupon</button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <!--        <div *ngIf="isloggedin" class="discount-code-wrapper space-mt&#45;&#45;20">-->
+        <!--            <div class="container">-->
+        <!--                <div class="row">-->
+        <!--                    <div class="col-12">-->
+        <!--                        <div class="title-wrap">-->
+        <!--                            <h4 class="cart-bottom-title">Use Coupon Code</h4>-->
+        <!--                        </div>-->
+        <!--                        <div class="discount-code">-->
+        <!--                            <p>Enter your coupon code if you have one.</p>-->
+        <!--                            <form>-->
+        <!--                                <input name="name" required="" type="text">-->
+        <!--                                <button class="cart-btn-2" type="submit">Apply Coupon</button>-->
+        <!--                            </form>-->
+        <!--                        </div>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
         <div *ngIf="isloggedin" class="grand-total space-mt--20">
             <div class="container">
                 <div class="row">
@@ -95,7 +95,10 @@
                         </div>
                         <!--                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>-->
 
-                        <h4 class="grand-total-title">Total <span>{{cart.discounted_price}}</span></h4>
+                        <h4 class="grand-total-title">Total Price <span>{{cart.total_price}}</span></h4>
+                        <h4 class="grand-total-title">Total
+                            Discount<span>-{{cart.total_price - cart.final_price}}</span></h4>
+                        <h4 class="grand-total-title">Final Price To Pay<span>{{cart.final_price}}</span></h4>
                         <a (click)="payWithRazor()">Proceed to Checkout</a>
                     </div>
                 </div>

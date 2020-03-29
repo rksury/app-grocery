@@ -145,5 +145,7 @@ export class CartPage implements OnInit {
     }
 
     doRefresh(ev) {
+        this.getCart();
+        ev.target.complete();
     }
 }

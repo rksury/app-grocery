@@ -27,14 +27,17 @@ export class SignupPage implements OnInit {
 
     onSubmit() {
         this.registerService.Register(this.submitform.value).subscribe(data => {
-            this.utils.presentToast('You have registered succesfully, please login');
+            this.utils.presentToast('You have registered successfully, please login');
+            // this.submitform.reset();
         }, error => {
+            console.log(error);
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
                 this.utils.presentToast('Some Error Occurred');
 
             }
+
         });
     }
 }

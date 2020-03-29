@@ -13,7 +13,8 @@ export class ProfilePage implements OnInit {
     user = {
         id: 1,
         name: '',
-        username: 'admin',
+        username: '',
+        email: '',
         mobile_number: '',
         address: null
     };
@@ -31,6 +32,11 @@ export class ProfilePage implements OnInit {
     ngOnInit() {
         this.getUser();
     }
+
+    ionViewWillEnter() {
+        this.getUser();
+    }
+
 
     getUser() {
         this.profileService.get_user().subscribe(data => {

@@ -64,6 +64,10 @@ const routes: Routes = [
                 loadChildren: () => import('../editprofile/editprofile.module').then(m => m.EditprofilePageModule)
             },
             {
+                path: 'product/:id',
+                loadChildren: () => import('../product-info/product-info.module').then(m => m.ProductInfoPageModule)
+            },
+            {
                 path: '',
                 redirectTo: '/tabs/tab1',
                 pathMatch: 'full'

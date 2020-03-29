@@ -1,11 +1,13 @@
 import {Component, QueryList, ViewChildren} from '@angular/core';
+import {FCM} from '@ionic-native/fcm/ngx';
 import {
     ActionSheetController,
     IonRouterOutlet,
     MenuController,
     ModalController, NavController,
     Platform,
-    PopoverController
+    PopoverController,
+
 } from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
@@ -32,6 +34,7 @@ export class AppComponent {
         private popoverCtrl: PopoverController,
         private router: Router,
         public navCtrl: NavController,
+        private fcm: FCM,
     ) {
         this.initializeApp();
     }
@@ -41,6 +44,9 @@ export class AppComponent {
             this.statusBar.styleDefault();
             this.splashScreen.hide();
             this.backButtonEvent();
+            this.fcm.getToken().then(token => {
+                console.log(token);
+            });
 
         });
     }

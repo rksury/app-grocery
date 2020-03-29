@@ -17,11 +17,12 @@ export class EditprofilePage implements OnInit {
         name: '',
         username: '',
         mobile_number: '',
+        email: '',
         address: null
     };
     updateForm = new FormGroup({
         name: new FormControl(this.user.name),
-        username: new FormControl(this.user.username),
+        email: new FormControl(this.user.email),
         mobile_number: new FormControl(this.user.mobile_number),
         address: new FormControl(this.user.address)
     });
@@ -38,12 +39,16 @@ export class EditprofilePage implements OnInit {
         this.get_profile();
     }
 
+    ionViewWillEnter() {
+        this.get_profile();
+    }
+
     get_profile() {
         this.profileService.get_user().subscribe(data => {
                 this.user = data;
                 this.updateForm.setValue({
                     name: this.user.name,
-                    username: this.user.username,
+                    email: this.user.email,
                     mobile_number: this.user.mobile_number,
                     address: this.user.address
                 });
@@ -66,6 +71,7 @@ export class EditprofilePage implements OnInit {
     update_profile() {
         this.updateService.update_user(this.updateForm.value).subscribe(data => {
             this.utils.presentToast('User Updated');
+            this.router.navigate(['/tabs/profile']);
         }, error => {
             try {
                 this.utils.presentToast(error.error.error[0]);

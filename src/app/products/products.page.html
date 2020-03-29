@@ -26,13 +26,18 @@
                 <!-- section title -->
                 <div *ngFor="let product of products" class=" col-6 products-box-right">
                     <div class="item">
-                        <div *ngIf="product.discount" class="offer">{{product.discount}}% Off</div>
-                        <img alt="" class="injectable" src="{{product.image}}">
-                        <div class="content-div">
-                            <p style="font-size:15px;">₹ <s>{{product.selling_price}}</s><i
-                                    style="color: #3a7be0"> {{product.final_price}}</i></p>
+                        <a [routerLink]="['/tabs/product', product.id]">
+                            <div *ngIf="product.discount" class="offer">{{product.discount}}% Off</div>
+                            <img alt="" class="injectable" src="{{product.image}}">
+                            <div class="content-div">
+                                <p style="font-size:15px;">₹ <s>{{product.selling_price}}</s><i
+                                        style="color: #3a7be0"> {{product.final_price}}</i></p>
 
-                            <p>{{product.item_name}}  |  {{product.weight}}</p>
+                                <p>{{product.item_name}}  |  {{product.weight}}</p>
+                            </div>
+                        </a>
+                        <div class="content-div">
+
                             <a (click)="onSubmit(product.id)">Add To Cart</a>
 
                             <!--                            <form >-->

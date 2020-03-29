@@ -35,6 +35,16 @@ export class ProductsPage implements OnInit {
         });
     }
 
+    ionViewWillEnter() {
+        this.route.queryParams.subscribe(params => {
+            if (params && params.special) {
+                this.special = JSON.parse(params.special);
+                this.get_products(this.special);
+            }
+        });
+
+    }
+
     get_products(params) {
         this.producteService.get_products(params).subscribe(data => {
                 this.products = data;

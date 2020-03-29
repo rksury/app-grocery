@@ -123,7 +123,7 @@
             <ion-buttons slot="start">
                 <ion-menu-button color="light"></ion-menu-button>
                 <ion-toolbar class="search" color="tertiary">
-                    <ion-searchbar></ion-searchbar>
+                    <ion-searchbar [(ngModel)]="searchQuery" (change)="search($event)" autocorrect="off"showCancelButton="focus" animated></ion-searchbar>
                 </ion-toolbar>
 
             </ion-buttons>

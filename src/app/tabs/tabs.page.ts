@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {Router} from '@angular/router';
+import {NavigationExtras, Router} from '@angular/router';
 
 // import {Events} from 'ionic-angular';
 
@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class TabsPage {
     islogedin = window.localStorage.getItem('token') === null;
     user = window.localStorage.getItem('user');
+    searchQuery = ''
 
     constructor(private router: Router,
     ) {
@@ -64,6 +65,17 @@ export class TabsPage {
     logout() {
         window.localStorage.clear();
         this.refresh();
+    }
+
+    search(event) {
+        const params = {search: this.searchQuery};
+        const navigationExtras: NavigationExtras = {
+                queryParams: {
+                    special: JSON.stringify(params)
+                }
+            }
+        ;
+        this.router.navigate(['/tabs/products'], navigationExtras);
     }
 
 }

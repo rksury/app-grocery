@@ -15,7 +15,7 @@ export class ProductsPage implements OnInit {
         Quantity: new FormControl(''),
         pk: new FormControl(''),
     });
-
+    showProducts = false;
     special;
     products;
 
@@ -45,11 +45,18 @@ export class ProductsPage implements OnInit {
 
     }
 
+    ionViewWillLeave() {
+        this.products = [];
+        this.special = {};
+    }
+
     get_products(params) {
         this.producteService.get_products(params).subscribe(data => {
+                this.showProducts = true;
                 this.products = data;
-                console.log(data);
+
             }, error => {
+                this.showProducts = false;
                 try {
                     this.utils.presentToast(error.error.error[0]);
                 } catch (e) {

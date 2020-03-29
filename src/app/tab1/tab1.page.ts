@@ -11,7 +11,8 @@ import {TabsPage} from '../tabs/tabs.page';
 })
 export class Tab1Page {
     categories: {};
-    params: {}
+    params: {};
+    HomeOffers: [];
 
     constructor(private homeService: HomeService,
                 private router: Router,
@@ -22,6 +23,7 @@ export class Tab1Page {
     ionViewWillEnter() {
         this.get_categories();
         this.tabPage.refresh();
+        this.getHomeOffers();
     }
 
     get_categories() {
@@ -43,5 +45,11 @@ export class Tab1Page {
             }
         ;
         this.router.navigate(['/tabs/products'], navigationExtras);
+    }
+
+    getHomeOffers() {
+        this.homeService.getHomeOffers().subscribe(data => {
+            this.HomeOffers = data;
+        });
     }
 }

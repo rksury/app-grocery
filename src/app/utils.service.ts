@@ -12,7 +12,7 @@ export class UtilsService {
     async presentToast(msg) {
         const toast = await this.toastController.create({
             message: msg,
-            duration: 2000
+            duration: 1000
         });
         toast.present();
     }

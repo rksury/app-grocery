@@ -71,7 +71,15 @@ const routes: Routes = [
                 path: '',
                 redirectTo: '/tabs/tab1',
                 pathMatch: 'full'
-            }
+            },
+            {
+                path: 'order-history',
+                loadChildren: () => import('../order-history/order-history.module').then(m => m.OrderHistoryPageModule)
+            },
+            {
+                path: 'oder-details/:id',
+                loadChildren: () => import('../oder-details/oder-details.module').then(m => m.OderDetailsPageModule)
+            },
         ]
     },
     {

@@ -96,6 +96,7 @@ export class CartPage implements OnInit {
             this.cart = data;
             this.products = this.cart.products;
         }, error => {
+            this.getCart();
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {

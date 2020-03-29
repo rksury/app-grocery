@@ -16,8 +16,46 @@
                 refreshingText="Refreshing...">
         </ion-refresher-content>
     </ion-refresher>
+    <div *ngIf="!showProducts" class="body-wrapper body-new-wrapper bg-color--gradient space-pt--70 space-pb--120">
+        <!--====================  header area ====================-->
+        <div id="headerr"></div>
+        <!--====================  End of mobile menu overlay  ====================-->
+        <!--====================  profile header ====================-->
+        <!--====================  breadcrumb area ====================-->
+        <div class="breadcrumb-area bg-color--grey space-y--15">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-3">
+<!--                        <a href="index.html" class="back-link"> <i class="fa fa-angle-left"></i> Back</a>-->
+                    </div>
+                    <div class="col-6">
+                        <h4 class="page-title text-center"> </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="activeorder category-slider-area all-category categorys bg-color--grey space-pb--25 space-mb--25">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 my-order-div">
+                        <div class="my-order">
+                            <img src="assets/img/category-img/img2.png" class="img-fluid" alt="">
+                            <h5 class="active">No Products Found</h5>
+                            <a href="#">
+                                <button class="btn btn-primary activebtn">Start Shopping</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====================  End of profile body  ====================-->
+        <!--====================  footer area ====================-->
+        <div id="footerr"></div>
+        <!--====================  End of footer area  ====================-->
+    </div>
 
-    <div class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
+    <div *ngIf="showProducts" class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
         <div class="container">
 
             <div class="row">
@@ -32,7 +70,6 @@
                             <div class="content-div">
                                 <p style="font-size:15px;">₹ <s>{{product.selling_price}}</s><i
                                         style="color: #3a7be0"> {{product.final_price}}</i></p>
-
                                 <p>{{product.item_name}}  |  {{product.weight}}</p>
                             </div>
                         </a>

@@ -3,7 +3,7 @@ import {RegisterService} from './register.service';
 import {UtilsService} from '../utils.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
-import {TabsPage} from "../tabs/tabs.page";
+import {TabsPage} from '../tabs/tabs.page';
 
 @Component({
     selector: 'app-signup',
@@ -18,7 +18,6 @@ export class SignupPage implements OnInit {
         ],
         email: [
             {type: 'required', message: 'email address required'},
-            {type: 'minlength', message: 'valid email address'},
 
         ],
         mobile_number: [
@@ -28,8 +27,6 @@ export class SignupPage implements OnInit {
         ],
         password: [
             {type: 'required', message: 'password required'},
-            {type: 'maxlength', message: 'username cant be longer than 50 characters'},
-            {type: 'minlength', message: 'username must be 4 characters'},
 
         ],
         confirm_password: [
@@ -38,7 +35,7 @@ export class SignupPage implements OnInit {
             {type: 'minlength', message: 'confirm password must be same as password'},
 
         ]
-    }
+    };
 
     submitform = this.formBuilder.group({
         name: ['', [Validators.required]],

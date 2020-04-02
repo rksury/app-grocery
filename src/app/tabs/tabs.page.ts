@@ -65,6 +65,7 @@ export class TabsPage {
     logout() {
         window.localStorage.clear();
         this.refresh();
+        this.router.navigate(['/tabs/tab1']);
     }
 
     search(event) {

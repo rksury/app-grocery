@@ -15,7 +15,7 @@ export class ProductsPage implements OnInit {
         Quantity: new FormControl(''),
         pk: new FormControl(''),
     });
-    showProducts = false;
+    showProducts = true;
     special;
     products;
 

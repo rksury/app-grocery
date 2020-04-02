@@ -3,6 +3,7 @@ import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {LoginService} from './login.service';
 import {UtilsService} from '../utils.service';
 import {Router} from '@angular/router';
+import {TabsPage} from '../tabs/tabs.page';
 
 @Component({
     selector: 'app-login',
@@ -22,6 +23,7 @@ export class LoginPage implements OnInit {
     constructor(private loginService: LoginService,
                 private utils: UtilsService,
                 private router: Router,
+                private tabPage: TabsPage,
     ) {
     }
 
@@ -39,6 +41,9 @@ export class LoginPage implements OnInit {
                     // window.localStorage.setItem('user', data.user);
                     // this.utils.presentToast('Logged in as ' + data.user.name);
                     this.router.navigate(['/tabs/tab1']);
+                    this.tabPage.refresh();
+                    this.submitform.reset();
+
                 } catch (e) {
                     this.utils.presentToast(e.toString());
                 }

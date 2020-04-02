@@ -11,7 +11,7 @@ import {NavigationExtras, Router} from '@angular/router';
 export class TabsPage {
     islogedin = window.localStorage.getItem('token') === null;
     user = window.localStorage.getItem('user');
-    searchQuery = ''
+    searchQuery = '';
 
     constructor(private router: Router,
     ) {
@@ -39,7 +39,7 @@ export class TabsPage {
     }
 
     offer() {
-        this.router.navigate(['tabs/offer']);
+        this.router.navigate(['tabs/products']);
     }
 
     cart() {

@@ -49,6 +49,8 @@ export class CartPage implements OnInit {
                     this.showcart = false;
                     this.products = {};
                     this.utils.presentToast('Please add items to cart first');
+                } else if (error.status === 401) {
+
                 } else {
                     try {
                         this.utils.presentToast(error.error.error[0]);
@@ -66,6 +68,7 @@ export class CartPage implements OnInit {
         this.cartService.place_order().subscribe(data => {
             // this.getCart();
             this.utils.presentToast('Order Placed.');
+            this.router.navigate(['/tabs/order-history']);
 
         }, error => {
             try {
@@ -132,7 +135,12 @@ export class CartPage implements OnInit {
             this.cartService.capture_payment(paymentid).subscribe(data => {
                 this.place_order();
             }, error => {
-                this.utils.presentToast('Some error Occured');
+                try {
+                    this.utils.presentToast(error.error.error[0]);
+                } catch (e) {
+                    this.utils.presentToast('Some Error Occurred');
+
+                }
 
             });
             alert('payment_id: ' + paymentid);

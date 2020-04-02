@@ -13,7 +13,11 @@ export class ProductService {
     }
 
     get_products(params) {
-        return this.httpclient.get(this.base_url + 'product/', { params});
+        return this.httpclient.get(this.base_url + 'product/', {params});
+    }
+
+    get_all_products() {
+        return this.httpclient.get(this.base_url + 'product/', );
     }
 
 

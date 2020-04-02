@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from '@angular/forms';
 import {RegisterService} from './register.service';
-import {UtilsService} from "../utils.service";
+import {UtilsService} from '../utils.service';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {TabsPage} from "../tabs/tabs.page";
 
 @Component({
     selector: 'app-signup',
@@ -9,17 +11,53 @@ import {UtilsService} from "../utils.service";
     styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
-    submitform = new FormGroup({
-        name: new FormControl(''),
-        email: new FormControl(''),
-        mobile_number: new FormControl(''),
-        password: new FormControl(''),
-        confirm_password: new FormControl(''),
+    public errorMessage = {
+        name: [
+            {type: 'required', message: 'fullname required'},
 
-    });
+        ],
+        email: [
+            {type: 'required', message: 'email address required'},
+            {type: 'minlength', message: 'valid email address'},
+
+        ],
+        mobile_number: [
+            {type: 'required', message: 'mobile number required'},
+            {type: 'maxlength', message: 'mobile number cant be longer than 10 characters'},
+
+        ],
+        password: [
+            {type: 'required', message: 'password required'},
+            {type: 'maxlength', message: 'username cant be longer than 50 characters'},
+            {type: 'minlength', message: 'username must be 4 characters'},
+
+        ],
+        confirm_password: [
+            {type: 'required', message: 'password required'},
+            {type: 'maxlength', message: 'confirm password must be same as password'},
+            {type: 'minlength', message: 'confirm password must be same as password'},
+
+        ]
+    }
+
+    submitform = this.formBuilder.group({
+        name: ['', [Validators.required]],
+
+        email: ['', Validators.compose([
+            Validators.required, Validators.pattern('^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$')
+        ])],
+
+        mobile_number: ['', [Validators.required, Validators.maxLength(10)]],
+        password: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(4)]],
+        confirm_password: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(4)]]
+    }, {validators: this.checkPasswords});
+
 
     constructor(private registerService: RegisterService,
-                private utils: UtilsService) {
+                private utils: UtilsService,
+                private formBuilder: FormBuilder,
+                private router: Router,
+                private tabPage: TabsPage,) {
     }
 
     ngOnInit() {
@@ -28,7 +66,12 @@ export class SignupPage implements OnInit {
     onSubmit() {
         this.registerService.Register(this.submitform.value).subscribe(data => {
             this.utils.presentToast('You have registered successfully, please login');
-            // this.submitform.reset();
+            window.localStorage.setItem('token', data['token']);
+            window.localStorage.setItem('user', data['user'].name);
+            this.utils.presentToast('Logged in as ' + data['user'].name);
+            this.router.navigate(['/tabs/tab1']);
+            this.tabPage.refresh();
+            this.submitform.reset();
         }, error => {
             console.log(error);
             try {
@@ -40,4 +83,34 @@ export class SignupPage implements OnInit {
 
         });
     }
+
+    checkPasswords(group: FormGroup) { // here we have the 'passwords' group
+        let pass = group.get('password').value;
+        let confirmPass = group.get('confirm_password').value;
+        console.log(group);
+        return pass === confirmPass ? null : {notSame: true};
+    }
+
+    get name() {
+        return this.submitform.get('name');
+    }
+
+    get email() {
+        return this.submitform.get('email');
+    }
+
+    get mobile_number() {
+        return this.submitform.get('mobile_number');
+    }
+
+    get password() {
+        return this.submitform.get('password');
+    }
+
+    get confirm_password() {
+        return this.submitform.get('confirm_password');
+
+    }
+
+
 }

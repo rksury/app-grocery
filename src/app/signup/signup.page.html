@@ -1,59 +1,113 @@
-
-
 <ion-content>
 
-  <div class="body-wrapper bg-color--gradient space-pt--20 login-signup space-pb--50">
-         <!-- auth page header -->
-         <div class="auth-page-header space-mb--20 login-signup-head">
+    <div class="body-wrapper bg-color--gradient space-pt--20 login-signup space-pb--50">
+        <!-- auth page header -->
+        <div class="auth-page-header space-mb--20 login-signup-head">
             <div class="container">
-               <div class="row">
-                  <div class="col-12">
-                     <h3 class="auth-page-header__title">Welcome</h3>
-                     <p class="auth-page-header__text">Don't have account? <br> Please sign up for creating a new account.</p>
-                  </div>
-               </div>
+                <div class="row">
+                    <div class="col-12">
+                        <h3 class="auth-page-header__title">Welcome</h3>
+                        <p class="auth-page-header__text">Don't have account? <br> Please sign up for creating a new
+                            account.</p>
+                    </div>
+                </div>
             </div>
-         </div>
-         <!-- auth page body -->
-         <div class="auth-page-body">
+        </div>
+        <!-- auth page body -->
+        <div class="auth-page-body">
             <div class="container">
-               <div class="row">
-                  <div class="col-12">
-                     <!-- Auth form -->
-                     <div class="auth-form">
-                        <form [formGroup]="submitform" (ngSubmit)="onSubmit()">
-                           <div class="auth-form__single-field space-mb--20 form-field ">
-                              <label for="name">Name</label>
-                              <input type="text" formControlName="name" id="name" placeholder="Enter Full name">
-                           </div>
-                           <div class="auth-form__single-field space-mb--20 form-field">
-                              <label for="emailAddress">Email Address</label>
-                              <input type="email" formControlName="email" id="emailAddress" placeholder="Enter Email Address">
-                           </div>
-                            <div class="auth-form__single-field space-mb--20 form-field">
-                              <label for="Number">Mobile Number</label>
-                              <input type="text" formControlName="mobile_number" id="Number" placeholder="Enter Mobile Number">
-                           </div>
-                           <div class="auth-form__single-field space-mb--20 form-field">
-                              <label for="password">Password</label>
-                              <input type="password" formControlName="password" id="password" placeholder="Enter Password">
-                           </div>
-                            <div class="auth-form__single-field space-mb--20 form-field">
-                              <label for="password-con">Confirm Password</label>
-                              <input type="password" formControlName="confirm_password" id="password-con" placeholder="Enter Confirm Password">
-                           </div>
-                           <div class="auth-form__single-field space-mb--20 form-field">
-                              <p class="auth-form__info-text">Already have an account? <a [routerLink]="['/tabs/login']">Login in Now</a></p>
-                           </div>
-                            <div class="form-field">
-                           <button class="auth-form__button" type="submit" [disabled]="!submitform.valid">Sign Up</button>
-                            </div>
-                        </form>
-                     </div>
-                  </div>
-               </div>
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Auth form -->
+                        <div class="auth-form">
+                            <form (ngSubmit)="onSubmit()" [formGroup]="submitform">
+
+
+                                <div class="auth-form__single-field space-mb--20 form-field">
+                                    <label for="name">Name <span class="error-message">*</span></label>
+                                    <input class="form-control" formControlName="name" id="name"
+                                           placeholder="Enter Full name"
+                                           type="text">
+                                    <div *ngFor="let error of errorMessage.name">
+                                        <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
+                                            <small class="error-message">{{error.message}}</small>
+                                        </ng-container>
+                                    </div>
+                                </div>
+
+
+                                <div class="auth-form__single-field space-mb--20 form-field">
+                                    <label for="emailAddress">Email Address <span class="error-message">*</span></label>
+                                    <input class="form-control" formControlName="email" id="emailAddress"
+                                           placeholder="Enter Email Address"
+                                           type="email">
+                                    <div *ngFor="let error of errorMessage.email">
+                                        <ng-container
+                                                *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
+                                            <small class="error-message">{{error.message}}</small>
+                                        </ng-container>
+                                    </div>
+                                </div>
+
+                                <div class="auth-form__single-field space-mb--20 form-field">
+                                    <label for="Number">Mobile Number <span class="error-message">*</span></label>
+                                    <input class="form-control" formControlName="mobile_number" id="Number"
+                                           placeholder="Enter Mobile Number"
+                                           type="tel">
+                                    <div *ngFor="let error of errorMessage.mobile_number">
+                                        <ng-container
+                                                *ngIf="mobile_number.hasError(error.type) && (mobile_number.dirty || mobile_number.touched)">
+                                            <small class="error-message">{{error.message}}</small>
+                                        </ng-container>
+                                    </div>
+                                </div>
+
+                                <div class="auth-form__single-field space-mb--20 form-field">
+                                    <label for="password">Password <span class="error-message">*</span></label>
+                                    <input class="form-control" formControlName="password" id="password"
+                                           placeholder="Enter Password"
+                                           type="password">
+                                    <div *ngFor="let error of errorMessage.password">
+                                        <ng-container
+                                                *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
+                                            <small class="error-message">{{error.message}}</small>
+                                        </ng-container>
+                                    </div>
+                                </div>
+
+                                <div class="auth-form__single-field space-mb--20 form-field">
+                                    <label for="password-con">Confirm Password <span
+                                            class="error-message">*</span></label>
+                                    <input class="form-control" formControlName="confirm_password" id="password-con"
+                                           placeholder="Enter Confirm Password" type="password">
+
+                                    <div>
+                                        <ng-container
+                                                *ngIf="submitform.errors && submitform.errors.notSame">
+                                            <small class="error-message">confirm password must be same as
+                                                password</small>
+                                            <!--                                            <small class="error-message">{{error.message}}</small>-->
+                                        </ng-container>
+                                    </div>
+                                </div>
+
+                                <div class="auth-form__single-field space-mb--20">
+                                    <p class="auth-form__info-text">Already have an account? <a
+                                            [routerLink]="['/tabs/login']">Login in Now</a></p>
+                                </div>
+
+                                <div class="form-field">
+                                    <button [disabled]="!submitform.valid" class="auth-form__button" type="submit">Sign
+                                        Up
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
-         </div>
-         <!-- auth page footer -->
-      </div>
+        </div>
+
+        <!-- auth page footer -->
+    </div>
 </ion-content>

@@ -31,6 +31,9 @@ export class ProductsPage implements OnInit {
             if (params && params.special) {
                 this.special = JSON.parse(params.special);
                 this.get_products(this.special);
+            } else {
+                this.get_all_products();
+
             }
         });
     }
@@ -40,6 +43,9 @@ export class ProductsPage implements OnInit {
             if (params && params.special) {
                 this.special = JSON.parse(params.special);
                 this.get_products(this.special);
+            } else {
+                this.get_all_products();
+
             }
         });
 
@@ -50,6 +56,23 @@ export class ProductsPage implements OnInit {
         this.special = {};
     }
 
+    get_all_products() {
+        this.producteService.get_all_products().subscribe(data => {
+                this.showProducts = true;
+                this.products = data;
+
+            }, error => {
+                this.showProducts = false;
+                // try {
+                //     this.utils.presentToast(error.error.error[0]);
+                // } catch (e) {
+                //     this.utils.presentToast('Some Error Occurred');
+                //
+                // }
+            }
+        );
+    }
+
     get_products(params) {
         this.producteService.get_products(params).subscribe(data => {
                 this.showProducts = true;
@@ -57,12 +80,12 @@ export class ProductsPage implements OnInit {
 
             }, error => {
                 this.showProducts = false;
-                try {
-                    this.utils.presentToast(error.error.error[0]);
-                } catch (e) {
-                    this.utils.presentToast('Some Error Occurred');
-
-                }
+                // try {
+                //     this.utils.presentToast(error.error.error[0]);
+                // } catch (e) {
+                //     this.utils.presentToast('Some Error Occurred');
+                //
+                // }
             }
         );
     }

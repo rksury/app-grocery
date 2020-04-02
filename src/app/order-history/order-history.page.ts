@@ -24,4 +24,13 @@ export class OrderHistoryPage implements OnInit {
         );
     }
 
+    doRefresh(event) {
+        this.orderService.getOrders().subscribe(data => {
+                this.orders = data;
+                this.showOrders = true;
+            }
+        );
+        event.target.complete();
+    }
+
 }

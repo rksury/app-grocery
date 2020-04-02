@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {HomeService} from './home.service';
 import {NavigationExtras, Router} from '@angular/router';
 import {UtilsService} from '../utils.service';
@@ -9,7 +9,7 @@ import {TabsPage} from '../tabs/tabs.page';
     templateUrl: 'tab1.page.html',
     styleUrls: ['tab1.page.scss']
 })
-export class Tab1Page {
+export class Tab1Page implements OnInit {
     categories: {};
     params: {};
     HomeOffers: [];
@@ -20,7 +20,13 @@ export class Tab1Page {
                 private tabPage: TabsPage) {
     }
 
-    ionViewWillEnter() {
+    // ionViewWillEnter() {
+    //     this.get_categories();
+    //     this.tabPage.refresh();
+    //     this.getHomeOffers();
+    // }
+
+    ngOnInit() {
         this.get_categories();
         this.tabPage.refresh();
         this.getHomeOffers();

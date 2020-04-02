@@ -21,9 +21,9 @@
 
                                 <div class="col-auto">
                                     <!-- header menu trigger -->
-<!--                                    <button (click)="refresh()" class="header-menu-trigger" id="header-menu-trigger">-->
-<!--                                                                                <img src="assets/img/icons/menu.svg" class="injectable" alt="">-->
-<!--                                    </button>-->
+                                    <!--                                    <button (click)="refresh()" class="header-menu-trigger" id="header-menu-trigger">-->
+                                    <!--                                                                                <img src="assets/img/icons/menu.svg" class="injectable" alt="">-->
+                                    <!--                                    </button>-->
                                 </div>
                             </div>
                         </div>
@@ -36,25 +36,25 @@
                             <div class="profile-card__image ">
                                 <img alt="" class="img-fluid" src="assets/img/icons/user-white.png">
                                 <div class="profile-card__content">
-                                    <p class="name">WelCome <span class="id">Srinivas K/S</span></p>
+                                    <p class="name">WelCome <span class="id"></span></p>
                                 </div>
                             </div>
                         </a>
                     </div>
-<!--                    <div class="profile-card address text-center">-->
-<!--                        <a href="#">-->
-<!--                            <div class="profile-card__image ">-->
-<!--                                <img alt="" class="img-fluid" src="assets/img/icons/map.png">-->
-<!--                                <div class="profile-card__content">-->
-<!--                                    <p class="name">Lorem ipsum, or lipsum as it is sometimes known,</p>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </a>-->
-<!--                    </div>-->
+                    <!--                    <div class="profile-card address text-center">-->
+                    <!--                        <a href="#">-->
+                    <!--                            <div class="profile-card__image ">-->
+                    <!--                                <img alt="" class="img-fluid" src="assets/img/icons/map.png">-->
+                    <!--                                <div class="profile-card__content">-->
+                    <!--                                    <p class="name">Lorem ipsum, or lipsum as it is sometimes known,</p>-->
+                    <!--                                </div>-->
+                    <!--                            </div>-->
+                    <!--                        </a>-->
+                    <!--                    </div>-->
                     <div *ngIf="islogedin" class="profile-card address help text-center">
-                        <div  class="profile-card__image ">
+                        <div class="profile-card__image ">
                             <div class="profile-card__content">
-                                <p class="name">Register Here if You have No</p>
+                                <p class="name">Register Here if You have Not</p>
                                 <a (click)="login()" routerDirection="forward">
                                     <i class="fa fa-phone"></i>
                                     Login</a>
@@ -66,39 +66,35 @@
                     </div>
 
                     <div>
-<!--                        <ion-item class="menu_link">-->
-<!--                            <ion-icon name="albums-outline" class="menu_link" slot="start"></ion-icon>-->
-<!--                            <ion-label>Shop by Category</ion-label>-->
-<!--                            <ion-icon name="chevron-forward-outline"></ion-icon>-->
-<!--                        </ion-item>-->
+                        <!--                        <ion-item class="menu_link">-->
+                        <!--                            <ion-icon name="albums-outline" class="menu_link" slot="start"></ion-icon>-->
+                        <!--                            <ion-label>Shop by Category</ion-label>-->
+                        <!--                            <ion-icon name="chevron-forward-outline"></ion-icon>-->
+                        <!--                        </ion-item>-->
 
-<!--                        <ion-item class="menu_link">-->
-<!--                            <ion-icon name="medkit-outline" class="menu_link" slot="start"></ion-icon>-->
-<!--                            <ion-label>Stores</ion-label>-->
-<!--                            <ion-icon name="chevron-forward-outline"></ion-icon>-->
-<!--                        </ion-item>-->
+                        <!--                        <ion-item class="menu_link">-->
+                        <!--                            <ion-icon name="medkit-outline" class="menu_link" slot="start"></ion-icon>-->
+                        <!--                            <ion-label>Stores</ion-label>-->
+                        <!--                            <ion-icon name="chevron-forward-outline"></ion-icon>-->
+                        <!--                        </ion-item>-->
 
-                        <ion-item class="menu_link" (click)="products()" routerDirection="forward">
-                            <ion-icon name="cube-outline" class="menu_link" slot="start"></ion-icon>
-                            <ion-label>Products</ion-label>
-                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        <ion-item *ngIf="!islogedin" class="menu_link" routerDirection="forward">
                         </ion-item>
 
-                        <ion-item class="menu_link">
+
+                        <ion-item [routerLink]="['/tabs/order-history']" class="menu_link">
                             <ion-icon name="radio-button-on-outline" class="menu_link" slot="start"></ion-icon>
                             <ion-label>Active orders</ion-label>
                             <ion-icon name="chevron-forward-outline"></ion-icon>
                         </ion-item>
-
                         <ion-item class="menu_link">
                             <ion-icon name="receipt-outline" class="menu_link" slot="start"></ion-icon>
                             <ion-label>Terms & Policy</ion-label>
                         </ion-item>
-
-                        <ion-item class="menu_link">
-                            <ion-icon name="share-social-outline" class="menu_link" slot="start"></ion-icon>
-                            <ion-label>Share</ion-label>
-                        </ion-item>
+                        <!--                        <ion-item class="menu_link">-->
+                        <!--                            <ion-icon name="share-social-outline" class="menu_link" slot="start"></ion-icon>-->
+                        <!--                            <ion-label>Share</ion-label>-->
+                        <!--                        </ion-item>-->
                         <ion-item (click)="logout()" *ngIf="!islogedin" class="menu_link">
                             <ion-icon name="exit-outline" class="menu_link" slot="start"></ion-icon>
                             <ion-label>Log out</ion-label>
@@ -123,7 +119,8 @@
             <ion-buttons slot="start">
                 <ion-menu-button color="light"></ion-menu-button>
                 <ion-toolbar class="search" color="tertiary">
-                    <ion-searchbar [(ngModel)]="searchQuery" (change)="search($event)" autocorrect="off"showCancelButton="focus" animated></ion-searchbar>
+                    <ion-searchbar [(ngModel)]="searchQuery" (change)="search($event)" autocorrect="off"
+                                   showCancelButton="focus" animated></ion-searchbar>
                 </ion-toolbar>
 
             </ion-buttons>
@@ -132,30 +129,30 @@
     </ion-header>
 
     <ion-tabs>
-        <ion-tab-bar color="light" slot="bottom" >
-            <ion-tab-button  tab="tab1">
-                <ion-icon name="home" class="footer_icon" ></ion-icon>
-                <ion-label >Home</ion-label>
+        <ion-tab-bar color="light" slot="bottom">
+            <ion-tab-button tab="tab1">
+                <ion-icon name="home" class="footer_icon"></ion-icon>
+                <ion-label>Home</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button class=""(click)="category()" routerDirection="forward">
+            <ion-tab-button class="" (click)="category()" routerDirection="forward">
                 <ion-icon name="library" class="footer_icon"></ion-icon>
-                <ion-label >Category</ion-label>
+                <ion-label>Category</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button class=""(click)="offer()"  routerDirection="forward">
-                <ion-icon name="pricetags" class="footer_icon" ></ion-icon>
-                <ion-label >Offer</ion-label>
+            <ion-tab-button class="" (click)="offer()" routerDirection="forward">
+                <ion-icon name="nutrition" class="footer_icon"></ion-icon>
+                <ion-label>Products</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button class="" (click)="cart()"  routerDirection="forward">
+            <ion-tab-button class="" (click)="cart()" routerDirection="forward">
                 <ion-icon name="cart" class="footer_icon"></ion-icon>
-                <ion-label >Cart</ion-label>
+                <ion-label>Cart</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button  (click)="profile()"  routerDirection="forward">
+            <ion-tab-button (click)="profile()" routerDirection="forward">
                 <ion-icon name="person" class="footer_icon"></ion-icon>
-                <ion-label >Profile</ion-label>
+                <ion-label>Profile</ion-label>
             </ion-tab-button>
 
         </ion-tab-bar>

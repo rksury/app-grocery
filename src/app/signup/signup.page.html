@@ -28,10 +28,12 @@
                                     <input class="form-control" formControlName="name" id="name"
                                            placeholder="Enter Full name"
                                            type="text">
-                                    <div *ngFor="let error of errorMessage.name">
-                                        <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">
-                                            <small class="error-message">{{error.message}}</small>
-                                        </ng-container>
+                                    <div *ngIf="errorMessage">
+                                        <div *ngFor="let error of errorMessage.name">
+                                            <!--                                        <ng-container *ngIf="name.hasError(error.type) && (name.dirty || name.touched)">-->
+                                            <small class="error-message">{{error}}</small>
+                                            <!--                                        </ng-container>-->
+                                        </div>
                                     </div>
                                 </div>
 
@@ -41,11 +43,12 @@
                                     <input class="form-control" formControlName="email" id="emailAddress"
                                            placeholder="Enter Email Address"
                                            type="email">
-                                    <div *ngFor="let error of errorMessage.email">
-                                        <ng-container
-                                                *ngIf="email.hasError(error.type) && (email.dirty || email.touched)">
-                                            <small class="error-message">{{error.message}}</small>
-                                        </ng-container>
+                                    <div *ngIf="errorMessage">
+                                        <div *ngFor="let error of errorMessage.email">
+                                            <ng-container>
+                                                <small class="error-message">{{error}}</small>
+                                            </ng-container>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -54,11 +57,12 @@
                                     <input class="form-control" formControlName="mobile_number" id="Number"
                                            placeholder="Enter Mobile Number"
                                            type="tel">
-                                    <div *ngFor="let error of errorMessage.mobile_number">
-                                        <ng-container
-                                                *ngIf="mobile_number.hasError(error.type) && (mobile_number.dirty || mobile_number.touched)">
-                                            <small class="error-message">{{error.message}}</small>
-                                        </ng-container>
+                                    <div *ngIf="errorMessage">
+                                        <div *ngFor="let error of errorMessage.mobile_number">
+                                            <ng-container>
+                                                <small class="error-message">{{error}}</small>
+                                            </ng-container>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -67,11 +71,12 @@
                                     <input class="form-control" formControlName="password" id="password"
                                            placeholder="Enter Password"
                                            type="password">
-                                    <div *ngFor="let error of errorMessage.password">
-                                        <ng-container
-                                                *ngIf="password.hasError(error.type) && (password.dirty || password.touched)">
-                                            <small class="error-message">{{error.message}}</small>
-                                        </ng-container>
+                                    <div *ngIf="errorMessage">
+                                        <div *ngFor="let error of errorMessage.password">
+                                            <ng-container>
+                                                <small class="error-message">{{error}}</small>
+                                            </ng-container>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -81,13 +86,12 @@
                                     <input class="form-control" formControlName="confirm_password" id="password-con"
                                            placeholder="Enter Confirm Password" type="password">
 
-                                    <div>
-                                        <ng-container
-                                                *ngIf="submitform.errors && submitform.errors.notSame">
-                                            <small class="error-message">confirm password must be same as
-                                                password</small>
-                                            <!--                                            <small class="error-message">{{error.message}}</small>-->
-                                        </ng-container>
+                                    <div *ngIf="errorMessage">
+                                        <div *ngFor="let error of errorMessage.confirm_password">
+                                            <ng-container>
+                                                <small class="error-message">{{error}}</small>
+                                            </ng-container>
+                                        </div>
                                     </div>
                                 </div>
 
@@ -97,7 +101,7 @@
                                 </div>
 
                                 <div class="form-field">
-                                    <button [disabled]="!submitform.valid" class="auth-form__button" type="submit">Sign
+                                    <button  class="auth-form__button" type="submit">Sign
                                         Up
                                     </button>
                                 </div>

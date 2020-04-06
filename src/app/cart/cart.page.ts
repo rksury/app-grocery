@@ -48,7 +48,7 @@ export class CartPage implements OnInit {
                     this.cart = {};
                     this.showcart = false;
                     this.products = {};
-                    this.utils.presentToast('Please add items to cart first');
+                    // this.utils.presentToast('Please add items to cart first');
                 } else if (error.status === 401) {
 
                 } else {

@@ -11,7 +11,8 @@ import {TabsPage} from '../tabs/tabs.page';
     styleUrls: ['./signup.page.scss'],
 })
 export class SignupPage implements OnInit {
-    public errorMessage = {
+    errorMessage;
+    public errorsMessage = {
         name: [
             {type: 'required', message: 'fullname required'},
 
@@ -47,7 +48,7 @@ export class SignupPage implements OnInit {
         mobile_number: ['', [Validators.required, Validators.maxLength(10)]],
         password: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(4)]],
         confirm_password: ['', [Validators.required, Validators.maxLength(50), Validators.minLength(4)]]
-    }, {validators: this.checkPasswords});
+    }, );
 
 
     constructor(private registerService: RegisterService,
@@ -69,14 +70,15 @@ export class SignupPage implements OnInit {
             this.router.navigate(['/tabs/tab1']);
             this.tabPage.refresh();
             this.submitform.reset();
+            this.errorMessage = null;
         }, error => {
-            console.log(error);
-            try {
-                this.utils.presentToast(error.error.error[0]);
-            } catch (e) {
-                this.utils.presentToast('Some Error Occurred');
-
-            }
+            this.errorMessage = error.error;
+            // try {
+            //     this.utils.presentToast(error.error.error[0]);
+            // } catch (e) {
+            //     this.utils.presentToast('Some Error Occurred');
+            //
+            // }
 
         });
     }
@@ -84,7 +86,6 @@ export class SignupPage implements OnInit {
     checkPasswords(group: FormGroup) { // here we have the 'passwords' group
         let pass = group.get('password').value;
         let confirmPass = group.get('confirm_password').value;
-        console.log(group);
         return pass === confirmPass ? null : {notSame: true};
     }
 

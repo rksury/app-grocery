@@ -11,10 +11,10 @@ import {NavigationExtras, Router} from '@angular/router';
 export class TabsPage {
     islogedin = window.localStorage.getItem('token') === null;
     user = window.localStorage.getItem('user');
+
     searchQuery = '';
 
-    constructor(private router: Router,
-    ) {
+    constructor(private router: Router) {
         this.refresh();
     }
 

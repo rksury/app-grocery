@@ -5259,7 +5259,8 @@ header .header-menu-trigger:focus {
 }
 
 header {
-	background: #5205e7;
+	background: #4b21e8;
+	height: 150px;
 }
 
 .store-name-loc {
@@ -5763,7 +5764,8 @@ header {
 }
 
 #offcanvas-menu .profile-card {
-	background: #5205e7;
+	/*background: #5205e7;*/
+	height: 170px;
 	text-align: left!important;
 }
 
@@ -5805,8 +5807,9 @@ header {
 #offcanvas-menu .profile-card.address .profile-card__image img {}
 
 #offcanvas-menu .profile-card.address .profile-card__content p {
-	color: black;
-	line-height: 20px;
+	color: purple;
+	line-height: 50px;
+	margin-top: -50px;
 }
 
 #offcanvas-menu .profile-card.address .profile-card__content p span {}
@@ -5817,13 +5820,14 @@ header {
 
 #offcanvas-menu .profile-card.help a {
 	display: inline-block;
-	background: linear-gradient(90deg, rgba(1, 243, 157, 1) 0%, rgba(1, 254, 207, 1) 100%);
-	color: black;
+	background: linear-gradient(90deg, rgba(1, 300, 200, 1) 0%, rgba(1, 254, 207, 1) 100%);
+	color: white;
 	padding: 7px 16px;
 	margin-right: 10px;
 	font-size: 15px;
 	font-weight: 700;
 	border-radius: 20px;
+	width: 100px;
 }
 
 #offcanvas-menu .profile-card.help a i {}
@@ -6087,16 +6091,16 @@ header {
 .item .offer {
 	color: white;
 	background: #5205e7;
-	width: 55px;
-	height: 55px;
+	width: 60px;
+	height: 60px;
 	border-radius: 100%;
-	padding: 16px 19px;
+	padding: 16px 18px;
 	line-height: 14px;
 	font-weight: 700;
 	position: absolute;
 	top: -10px;
 	left: -8px;
-	font-size: 12px;
+	font-size: 10px;
 }
 
 .costprice {

@@ -43,7 +43,7 @@ export class Tab1Page implements OnInit {
     }
 
     open_category_products(pk) {
-        this.params = {parentcategory: pk}
+        this.params = {parentcategory: pk};
         const navigationExtras: NavigationExtras = {
                 queryParams: {
                     special: JSON.stringify(this.params)

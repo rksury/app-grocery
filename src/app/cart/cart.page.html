@@ -140,10 +140,15 @@
                         </div>
                         <!--                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>-->
 
-                        <h4 class="grand-total-title">Total Price <span>{{cart.total_price}}</span></h4>
-                        <h4 class="grand-total-title">Total
-                            Discount<span>-{{cart.total_price - cart.final_price}}</span></h4>
-                        <h4 class="grand-total-title">Final Price To Pay<span>{{cart.final_price}}</span></h4>
+                        <h4 class="grand-total-title">Total Price
+                            <span>{{cart.total_price}}</span></h4>
+
+                        <h4 class="grand-total-title">Total Discount
+                            <span>-{{cart.total_price - cart.final_price}}</span></h4>
+
+                        <h4 class="grand-total-title">Final Price To Pay
+                            <span>{{cart.final_price}}</span></h4>
+
                         <a (click)="payWithRazor()">Proceed to Checkout</a>
                     </div>
                 </div>

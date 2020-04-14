@@ -7,9 +7,8 @@
                 <header>
                     <div class="header-wrapper header-css">
                         <div class="container space-y--15">
+
                             <div class="row align-items-center">
-
-
                                 <div class="col d-flex justify-content-center">
                                     <!-- header search -->
                                     <div class="store-name-loc">
@@ -18,17 +17,41 @@
                                         </h4>
                                     </div>
                                 </div>
+                                <!--                                <div class="col d-flex justify-content-center selector_city">-->
 
-                                <div class="col-auto">
-                                    <!-- header menu trigger -->
-                                    <!--                                    <button (click)="refresh()" class="header-menu-trigger" id="header-menu-trigger">-->
-                                    <!--                                                                                <img src="assets/img/icons/menu.svg" class="injectable" alt="">-->
-                                    <!--                                    </button>-->
+                                <!--                                </div>-->
+
+                                <!--                                <div class="col-auto">-->
+                                <!-- header menu trigger -->
+                                <!--                                    <button (click)="refresh()" class="header-menu-trigger" id="header-menu-trigger">-->
+                                <!--                                                                                <img src="assets/img/icons/menu.svg" class="injectable" alt="">-->
+                                <!--                                    </button>-->
+                                <!--                                </div>-->
+
+                            </div>
+
+                            <div class="row align-items-center selector_city">
+                                <div class="col d-flex" style="width:100%">
+                                    <ion-row style="width: 100%;">
+                                        <ion-col >
+                                            <ion-item >
+                                                <ion-label>City</ion-label>
+                                                <ion-select interface="popover" value="select option">
+                                                    <ion-select-option value="01">indore</ion-select-option>
+                                                    <ion-select-option value="02">dewas</ion-select-option>
+                                                    <ion-select-option value="03">ujjain</ion-select-option>
+                                                </ion-select>
+                                            </ion-item>
+                                        </ion-col>
+                                    </ion-row>
                                 </div>
                             </div>
+
                         </div>
                     </div>
+
                 </header>
+
 
                 <div id="offcanvas-menu">
                     <div class="profile-card text-center">
@@ -78,17 +101,17 @@
                         <!--                            <ion-icon name="chevron-forward-outline"></ion-icon>-->
                         <!--                        </ion-item>-->
 
-                        <ion-item *ngIf="!islogedin" class="menu_link" routerDirection="forward">
-                        </ion-item>
+<!--                        <ion-item *ngIf="!islogedin" class="menu_link" routerDirection="forward">-->
+<!--                        </ion-item>-->
 
 
                         <ion-item [routerLink]="['/tabs/order-history']" class="menu_link">
-                            <ion-icon name="radio-button-on-outline" class="menu_link" slot="start"></ion-icon>
+                            <ion-icon class="menu_link" name="radio-button-on-outline" slot="start"></ion-icon>
                             <ion-label>Active orders</ion-label>
                             <ion-icon name="chevron-forward-outline"></ion-icon>
                         </ion-item>
                         <ion-item class="menu_link">
-                            <ion-icon name="receipt-outline" class="menu_link" slot="start"></ion-icon>
+                            <ion-icon class="menu_link" name="receipt-outline" slot="start"></ion-icon>
                             <ion-label>Terms & Policy</ion-label>
                         </ion-item>
                         <!--                        <ion-item class="menu_link">-->
@@ -96,7 +119,7 @@
                         <!--                            <ion-label>Share</ion-label>-->
                         <!--                        </ion-item>-->
                         <ion-item (click)="logout()" *ngIf="!islogedin" class="menu_link">
-                            <ion-icon name="exit-outline" class="menu_link" slot="start"></ion-icon>
+                            <ion-icon class="menu_link" name="exit-outline" slot="start"></ion-icon>
                             <ion-label>Log out</ion-label>
                         </ion-item>
                     </div>
@@ -119,8 +142,8 @@
             <ion-buttons slot="start">
                 <ion-menu-button color="light"></ion-menu-button>
                 <ion-toolbar class="search" color="tertiary">
-                    <ion-searchbar [(ngModel)]="searchQuery" (change)="search($event)" autocorrect="off"
-                                   showCancelButton="focus" animated></ion-searchbar>
+                    <ion-searchbar (change)="search($event)" [(ngModel)]="searchQuery" animated
+                                   autocorrect="off" showCancelButton="focus"></ion-searchbar>
                 </ion-toolbar>
 
             </ion-buttons>
@@ -131,27 +154,27 @@
     <ion-tabs>
         <ion-tab-bar color="light" slot="bottom">
             <ion-tab-button tab="tab1">
-                <ion-icon name="home" class="footer_icon"></ion-icon>
+                <ion-icon class="footer_icon" name="home"></ion-icon>
                 <ion-label>Home</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button class="" (click)="category()" routerDirection="forward">
-                <ion-icon name="library" class="footer_icon"></ion-icon>
+            <ion-tab-button (click)="category()" class="" routerDirection="forward">
+                <ion-icon class="footer_icon" name="library"></ion-icon>
                 <ion-label>Category</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button class="" (click)="offer()" routerDirection="forward">
-                <ion-icon name="nutrition" class="footer_icon"></ion-icon>
+            <ion-tab-button (click)="offer()" class="" routerDirection="forward">
+                <ion-icon class="footer_icon" name="nutrition"></ion-icon>
                 <ion-label>Products</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button class="" (click)="cart()" routerDirection="forward">
-                <ion-icon name="cart" class="footer_icon"></ion-icon>
+            <ion-tab-button (click)="cart()" class="" routerDirection="forward">
+                <ion-icon class="footer_icon" name="cart"></ion-icon>
                 <ion-label>Cart</ion-label>
             </ion-tab-button>
 
             <ion-tab-button (click)="profile()" routerDirection="forward">
-                <ion-icon name="person" class="footer_icon"></ion-icon>
+                <ion-icon class="footer_icon" name="person"></ion-icon>
                 <ion-label>Profile</ion-label>
             </ion-tab-button>
 

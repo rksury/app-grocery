@@ -69,7 +69,7 @@ export class CartService {
             )
         };
         const data = {id: pk};
-        return this.httpclient.post(this.base_url + 'cart/add-item', data, httpOptions)
+        return this.httpclient.post(this.base_url + 'cart/add-item', data, httpOptions);
     }
 
     remove_item(pk) {
@@ -80,6 +80,6 @@ export class CartService {
             )
         };
         const data = {id: pk};
-        return this.httpclient.post(this.base_url + 'cart/remove-item', data, httpOptions)
+        return this.httpclient.post(this.base_url + 'cart/remove-item', data, httpOptions);
     }
 }

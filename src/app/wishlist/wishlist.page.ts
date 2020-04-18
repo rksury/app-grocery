@@ -67,7 +67,7 @@ export class WishlistPage implements OnInit {
         );
     }
 
-    onSubmit(pk) {
+    addTocart(pk) {
         this.cartService.add_to_cart(pk).subscribe(data => {
             this.utils.presentToast('Added to cart.');
         }, error => {

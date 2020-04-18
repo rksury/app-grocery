@@ -34,6 +34,12 @@ export class TabsPage {
     }
 
 
+    order_history() {
+        this.router.navigate(['tabs/order-history']);
+    }
+    wish_list() {
+        this.router.navigate(['tabs/wish_list']);
+    }
     category() {
         this.router.navigate(['tabs/category']);
     }

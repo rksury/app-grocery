@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-    <div class="container">
+    <div class="container" >
         <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
             <ion-refresher-content
                     pullingIcon="arrow-dropdown"
@@ -15,10 +15,10 @@
             </ion-refresher-content>
         </ion-refresher>
 
-        <div class="profile-main-div space-pt--10 space-mb--30">
+        <div class="profile-main-div space-pt--10 space-mb--30" >
             <div class="profile-header-area space-pt--10 space-mb--30">
                 <div class="">
-                    <div class="row">
+                    <div class="row" style="margin-top: 50px;">
                         <div class="col-12">
                             <div class="profile-header">
                                 <div class="profile-header__image">
@@ -31,6 +31,8 @@
                 </div>
             </div>
             <!--====================  End of profile header  ====================-->
+
+
             <!--====================  profile body ====================-->
             <div class="profile-body-area">
                 <div class="">
@@ -50,7 +52,7 @@
                                         <div class="profile-info-block__title">Email</div>
                                         <div class="profile-info-block__value">{{user.email}}</div>
                                     </div>
-                                    <div class="profile-info-block">
+                                    <div class="profile-info-block"  style="height: 100px;">
                                         <div class="profile-info-block__title">Shipping Address</div>
                                         <div class="profile-info-block__value">{{user.address}}
                                         </div>

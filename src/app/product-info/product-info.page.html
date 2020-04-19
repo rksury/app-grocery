@@ -8,7 +8,7 @@
 
         <div class=" space-pb--30 ">
             <div class="product-image-single">
-                <img src="{{product.image}}" style="border:1px solid red;">
+                <img src="{{product.image}}">
             </div>
         </div>
 
@@ -23,7 +23,7 @@
                             <div class="product-content-header__main-info" style="width: 100%;">
                                 <h3 class="title">{{product.item_name}}</h3>
                                 <div class="price">
-                                    <span class="main-price"><i class="fa fa-rupee"></i>{{product.selling_price}}</span>
+                                    <i class="fa fa-rupee"></i><span class="main-price">{{product.selling_price}}</span>
                                     <span class="discounted-price">{{product.final_price}}</span>
                                     <div style="float: right;">
                                         <ion-button color="primary"> Add To Wish List</ion-button>

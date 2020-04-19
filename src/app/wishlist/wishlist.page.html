@@ -64,10 +64,12 @@
                 <!-- section title -->
                 <div *ngFor="let product of products" class=" col-6 products-box-right">
                     <div class="item">
-                        <a [routerLink]="['/tabs/product', product.id]">
+                        <a>
                             <div *ngIf="product.discount" class="offer"><a>₹ {{product.discount}} &nbsp; Off</a></div>
+                            <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
                             <div style="text-align: center;">
-                            <div style="height: 80px; margin-top:25px; text-align: center;">
+                            <div [routerLink]="['/tabs/product', product.id]"
+                                 style="height: 80px; margin-top:25px; text-align: center;">
                                 <img alt="" class="injectable" src="{{product.image}}"
                                      style=" margin-top:20px;">
                             </div>

@@ -2700,7 +2700,7 @@ textarea:focus:-ms-input-placeholder {
 }
 
 .space-pb--30 {
-	padding-bottom: 30px;
+	padding-bottom: 20px;
 }
 
 .space-pb--50 {
@@ -5358,7 +5358,6 @@ header {
 }
 
 .categorys .cat-box1 {
-	/*background: #5f8dfd;*/
 }
 
 .categorys .cat-box1 {
@@ -5424,7 +5423,6 @@ header {
 	margin-bottom: 0;
 	padding: 11px 11px 0;
 	box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.39);
-	position: relative;
 }
 
 .categorys a,

@@ -67,20 +67,18 @@
                         <a [routerLink]="['/tabs/product', product.id]">
                             <div *ngIf="product.discount" class="offer"><a>₹ {{product.discount}} &nbsp;Off</a></div>
                              <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
-                            <div style="text-align: center;">
-                            <div style="height: 80px; margin-top:25px; text-align: center;">
+                            <div style=" text-align: center">
                                 <img alt="" class="injectable" src="{{product.image}}"
-                                     style=" margin-top:20px;">
+                                     style=" height: 120px; width: 140px;">
                             </div>
                             <div class="content-div">
                                 <p style="font-size:15px; height: 20px;">₹ <s>{{product.selling_price}}</s><i
                                         style="color: #3a7be0"> {{product.final_price}}</i></p>
-                                <p style=" height: 50px;">{{product.item_name}}  |  {{product.weight}}</p>
+                                <p style=" height: 40px;">{{product.item_name}}  |  {{product.weight}}</p>
                             </div>
-                                </div>
+
                         </a>
                         <div class="content-div">
-
                             <a (click)="onSubmit(product.id)">Add To Cart</a>
 
                             <!--                            <form >-->

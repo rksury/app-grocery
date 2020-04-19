@@ -5487,7 +5487,9 @@ header {
 	overflow: hidden;
 }
 
-.slider3 .content-div {}
+.slider3 .content-div {
+	text-align: center;
+}
 
 .slider3 .content-div h4 {
 	font-size: 12px;

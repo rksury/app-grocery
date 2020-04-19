@@ -5358,10 +5358,13 @@ header {
 }
 
 .categorys .cat-box1 {
+	background: #ffffff;
+	color: black;
 }
 
 .categorys .cat-box1 {
 	box-shadow: rgba(50,50,50,50,.3);
+	color: black;
 }
 
 .categorys .cat-main-box {

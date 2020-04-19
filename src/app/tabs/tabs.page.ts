@@ -13,6 +13,10 @@ export class TabsPage {
     user = window.localStorage.getItem('user');
 
     searchQuery = '';
+    filterOption: any = {
+        header: 'Select Filter',
+        subHeader: 'View Multiple Product'
+    };
 
     constructor(private router: Router) {
         this.refresh();
@@ -33,13 +37,14 @@ export class TabsPage {
 
     }
 
-
     order_history() {
         this.router.navigate(['tabs/order-history']);
     }
+
     wish_list() {
         this.router.navigate(['tabs/wish_list']);
     }
+
     category() {
         this.router.navigate(['tabs/category']);
     }

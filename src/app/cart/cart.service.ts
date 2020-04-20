@@ -82,4 +82,6 @@ export class CartService {
         const data = {id: pk};
         return this.httpclient.post(this.base_url + 'cart/remove-item', data, httpOptions);
     }
+
+
 }

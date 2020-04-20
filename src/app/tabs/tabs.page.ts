@@ -37,6 +37,10 @@ export class TabsPage {
 
     }
 
+    resetCategories() {
+        this.resetCategories = null;
+    }
+
     order_history() {
         this.router.navigate(['tabs/order-history']);
     }

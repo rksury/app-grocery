@@ -4,6 +4,7 @@ import {ProductService} from '../products/product.service';
 import {CartService} from '../cart/cart.service';
 import {UtilsService} from '../utils.service';
 import {FormControl, FormGroup} from '@angular/forms';
+import {WishlistService} from './wishlist.service';
 
 @Component({
     selector: 'app-wishlist',
@@ -24,6 +25,7 @@ export class WishlistPage implements OnInit {
     constructor(private route: ActivatedRoute,
                 private producteService: ProductService,
                 private cartService: CartService,
+                private wishlistService: WishlistService,
                 private utils: UtilsService,
                 private router: Router) {
     }

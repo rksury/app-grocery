@@ -113,21 +113,21 @@
                                         <ion-slide>
                                             <div *ngFor="let featureProduct of FeatureProducts" class="col-3">
                                                 <a [routerLink]="['/tabs/product', featureProduct.id]">
-                                                    <div class="cat-main-box">
-                                                        <div class="featured-product cat-box1 space-mb--15">
-                                                            <a>
-                                                                <div>
-                                                                    <img class="featured-product_img"
-                                                                         src="{{featureProduct.image}}">
-                                                                </div>
-                                                            </a>
-                                                        </div>
-                                                        <div class="featured-product__content">
-                                                            <a>
-                                                                <h4 style="text-align: center;">{{featureProduct.item_name}}</h4>
-                                                            </a>
-                                                        </div>
+                                                <div class="cat-main-box">
+                                                    <div class="featured-product cat-box1 space-mb--15">
+                                                        <a>
+                                                            <div>
+                                                                <img class="featured-product_img"
+                                                                     src="{{featureProduct.image}}">
+                                                            </div>
+                                                        </a>
                                                     </div>
+                                                    <div class="featured-product__content">
+                                                        <a>
+                                                            <h4 style="text-align: center;">{{featureProduct.item_name}}</h4>
+                                                        </a>
+                                                    </div>
+                                                </div>
                                                 </a>
                                             </div>
 
@@ -607,58 +607,58 @@
 
             <div *ngFor="let homeoffer of HomeOffers"
                  class="category-slider-area bg-color--grey offersection space-pb--25 space-mb--25">
-                <!--                <div class="container">-->
-                <!--                    <div class="row">-->
-                <!--                        <div class="col-12">-->
-                <!--                            <div [ngStyle]="{'background-color': homeoffer.color}"-->
-                <!--                                 class="offersection-box img-box col-12">-->
-                <!--                                <div class="header">-->
-                <!--                                    &lt;!&ndash;                                    <img src="assets/img/products/featured/household-section-img-top.png">&ndash;&gt;-->
-                <!--                                    <h4>{{homeoffer.heading}}</h4>-->
-                <!--                                    <p>{{homeoffer.sub_heading}}</p>-->
-                <!--                                </div>-->
-                <!--                                <div class="row boxx">-->
-                <!--                                    <div class="offer-div">-->
-                <!--                                        <h4>UPTO<br><b>{{homeoffer.discount_off}}%</b><br>OFF</h4>-->
-                <!--                                    </div>-->
-                <!--                                    <div class="col-6">-->
-                <!--                                        <a [routerLink]="['/tabs/product', homeoffer.product1.id]">-->
-                <!--                                            <div class="inside-box">-->
-                <!--                                                <img src="{{homeoffer.product1.image}}">-->
-                <!--                                                <h4>{{homeoffer.product1.item_name}}</h4>-->
-                <!--                                            </div>-->
-                <!--                                        </a>-->
-                <!--                                    </div>-->
-                <!--                                    <div class="col-6">-->
-                <!--                                        <a [routerLink]="['/tabs/product', homeoffer.product2.id]">-->
-                <!--                                            <div class="inside-box">-->
-                <!--                                                <img src="{{homeoffer.product2.image}}">-->
-                <!--                                                <h4>{{homeoffer.product2.item_name}}</h4>-->
-                <!--                                            </div>-->
-                <!--                                        </a>-->
-                <!--                                    </div>-->
-                <!--                                    <hr class="hr-offer-box">-->
-                <!--                                    <div class="col-6">-->
-                <!--                                        <a [routerLink]="['/tabs/product', homeoffer.product3.id]">-->
-                <!--                                            <div class="inside-box">-->
-                <!--                                                <img src="{{homeoffer.product3.image}}">-->
-                <!--                                                <h4>{{homeoffer.product3.item_name}}</h4>-->
-                <!--                                            </div>-->
-                <!--                                        </a>-->
-                <!--                                    </div>-->
-                <!--                                    <div class="col-6">-->
-                <!--                                        <a [routerLink]="['/tabs/product', homeoffer.product4.id]">-->
-                <!--                                            <div class="inside-box">-->
-                <!--                                                <img src="{{homeoffer.product4.image}}">-->
-                <!--                                                <h4>{{homeoffer.product4.item_name}}</h4>-->
-                <!--                                            </div>-->
-                <!--                                        </a>-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                            </div>-->
-                <!--                        </div>-->
-                <!--                    </div>-->
-                <!--                </div>-->
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div [ngStyle]="{'background-color': homeoffer.color}"
+                                                 class="offersection-box img-box col-12">
+                                                <div class="header">
+                                                    <!--                                    <img src="assets/img/products/featured/household-section-img-top.png">-->
+                                                    <h4>{{homeoffer.heading}}</h4>
+                                                    <p>{{homeoffer.sub_heading}}</p>
+                                                </div>
+                                                <div class="row boxx">
+                                                    <div class="offer-div">
+                                                        <h4>UPTO<br><b>{{homeoffer.discount_off}}%</b><br>OFF</h4>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <a [routerLink]="['/tabs/product', homeoffer.product1.id]">
+                                                            <div class="inside-box">
+                                                                <img src="{{homeoffer.product1.image}}">
+                                                                <h4>{{homeoffer.product1.item_name}}</h4>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <a [routerLink]="['/tabs/product', homeoffer.product2.id]">
+                                                            <div class="inside-box">
+                                                                <img src="{{homeoffer.product2.image}}">
+                                                                <h4>{{homeoffer.product2.item_name}}</h4>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <hr class="hr-offer-box">
+                                                    <div class="col-6">
+                                                        <a [routerLink]="['/tabs/product', homeoffer.product3.id]">
+                                                            <div class="inside-box">
+                                                                <img src="{{homeoffer.product3.image}}">
+                                                                <h4>{{homeoffer.product3.item_name}}</h4>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-6">
+                                                        <a [routerLink]="['/tabs/product', homeoffer.product4.id]">
+                                                            <div class="inside-box">
+                                                                <img src="{{homeoffer.product4.image}}">
+                                                                <h4>{{homeoffer.product4.item_name}}</h4>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
             </div>
             <!--====================  featured product ====================-->
 

@@ -64,9 +64,10 @@
                 <!-- section title -->
                 <div *ngFor="let product of products" class=" col-6 products-box-right">
                     <div class="item">
-                        <a [routerLink]="['/tabs/product', product.id]">
+
                             <div *ngIf="product.discount" class="offer"><a>₹ {{product.discount}} &nbsp;Off</a></div>
                              <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
+                        <a [routerLink]="['/tabs/product', product.id]">
                             <div style=" text-align: center">
                                 <img alt="" class="injectable" src="{{product.image}}"
                                      style=" height: 100px; width: 140px;">
@@ -80,14 +81,6 @@
                         </a>
                         <div class="content-div">
                             <a (click)="addTocart(product.id)">Add To Cart</a>
-
-                            <!--                            <form >-->
-                            <!--                            <ion-select okText="Add to cart"-->
-                            <!--                                        (ionChange)="onSubmit(product.id, $event)"-->
-                            <!--                                        placeholder="Select" cancelText="Cancel">-->
-                            <!--                                <ion-select-option *ngFor="let sku of product.skus"-->
-                            <!--                                                   value="{{sku.id}}">{{sku.name}} \₹ {{sku.price}}</ion-select-option>-->
-                            <!--                            </ion-select>-->
                         </div>
                     </div>
                 </div>

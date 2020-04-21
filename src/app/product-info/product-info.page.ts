@@ -57,7 +57,18 @@ export class ProductInfoPage implements OnInit {
         });
     }
 
-    AddToCart(id) {
+    get_products(params) {
+        this.productService.getProduct(params).subscribe(data => {
+                this.showProducts = true;
+                this.products = data;
+
+            }, error => {
+                this.showProducts = false;
+            }
+        );
+    }
+
+    addTocart(id) {
         this.cartService.add_to_cart(id).subscribe(data => {
             this.utils.presentToast('Added to cart.');
         }, error => {

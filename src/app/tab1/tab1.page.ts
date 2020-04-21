@@ -3,6 +3,7 @@ import {HomeService} from './home.service';
 import {NavigationExtras, Router} from '@angular/router';
 import {UtilsService} from '../utils.service';
 import {TabsPage} from '../tabs/tabs.page';
+import {CartService} from '../cart/cart.service';
 
 @Component({
     selector: 'app-tab1',
@@ -15,8 +16,10 @@ export class Tab1Page implements OnInit {
     HomeOffers: [];
     FeatureProducts: [];
     NewArrivals: [];
+    showNewarrivals;
 
     constructor(private homeService: HomeService,
+                private cartService: CartService,
                 private router: Router,
                 private utils: UtilsService,
                 private tabPage: TabsPage) {
@@ -70,6 +73,22 @@ export class Tab1Page implements OnInit {
     newArrivals() {
         this.homeService.getNewarrival().subscribe(data => {
             this.NewArrivals = data;
+        });
+    }
+    addTocart(pk) {
+        this.cartService.add_to_cart(pk).subscribe(data => {
+            this.utils.presentToast('Added to cart.');
+        }, error => {
+            try {
+                this.utils.presentToast(error.error.error[0]);
+            } catch (e) {
+                this.utils.presentToast('Some Error Occurred');
+
+            }
+            if (error.status === 401) {
+                this.router.navigate(['tabs/login']);
+
+            }
         });
     }
 }

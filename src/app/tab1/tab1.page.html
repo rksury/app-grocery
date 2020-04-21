@@ -196,34 +196,29 @@
                     <h2 class="section-title space-mt--10 space-mb--20">Featured Products</h2>
 
                     <div class="row">
-                        <ion-slides>
-                            <ion-slide>
-                                <div *ngFor="let featureProduct of FeatureProducts" class=" col-6 products-box-right">
-                                    <div class="item">
+                        <div *ngFor="let featureProduct of FeatureProducts" class=" col-6 products-box-right">
+                             <div class="item">
 
-                                        <div *ngIf="featureProduct.discount" class="offer">
-                                            <a>₹ {{featureProduct.discount}}&nbsp;Off</a></div>
-                                        <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
-                                        <a [routerLink]="['/tabs/product', featureProduct.id]" >
-                                            <div style=" text-align: center;" >
-                                                <img  class="injectable pruduct_image" src="{{featureProduct.image}}">
-                                            </div>
-                                            <div class="content-div">
-                                                <p style="font-size:15px; height: 20px;">₹
-                                                    <s>{{featureProduct.selling_price}}</s>
-                                                    <i style="color: #3a7be0"> {{featureProduct.final_price}}</i></p>
-                                                <p style=" height: 40px;">{{featureProduct.item_name}}
-                                                    |  {{featureProduct.weight}}</p>
-                                            </div>
-
-                                        </a>
-                                        <div class="content-div">
-                                            <a (click)="addTocart(featureProduct.id)">Add To Cart</a>
-                                        </div>
+                                <div *ngIf="featureProduct.discount" class="offer"><a>₹ {{featureProduct.discount}}
+                                    &nbsp;Off</a></div>
+                                <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
+                                <a [routerLink]="['/tabs/product', featureProduct.id]">
+                                    <div style=" text-align: center">
+                                        <img alt="" class="injectable pruduct_image" src="{{featureProduct.image}}">
                                     </div>
+                                    <div class="content-div">
+                                        <p style="font-size:15px; height: 20px;">₹ <s>{{featureProduct.selling_price}}</s>
+                                            <i style="color: #3a7be0"> {{featureProduct.final_price}}</i></p>
+                                        <p style=" height: 40px;">{{featureProduct.item_name}}  |  {{featureProduct.weight}}</p>
+                                    </div>
+
+                                </a>
+                                <div class="content-div">
+                                    <a (click)="addTocart(featureProduct.id)">Add To Cart</a>
                                 </div>
-                            </ion-slide>
-                    </ion-slides>
+                            </div>
+                        </div>
+
                     </div>
 
                 </div>

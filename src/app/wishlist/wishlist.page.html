@@ -40,9 +40,9 @@
                     <div class="col-12 my-order-div">
                         <div class="my-order">
                             <img alt="" class="img-fluid" src="assets/img/category-img/img2.png">
-                            <h5 class="active">No Products Found</h5>
+                            <h3 class="active">No Wish List Found</h3>
                             <a [routerLink]="['/tabs/tab1']">
-                                <button class="btn btn-primary activebtn">Start Shopping</button>
+                                <button class="btn btn-primary activebtn">Add to Wish List</button>
                             </a>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
         <!--====================  End of footer area  ====================-->
     </div>
 
-    <div *ngIf="showProducts" class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
+    <div *ngIf="showWishlist" class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
         <div class="container">
 
             <div class="row">

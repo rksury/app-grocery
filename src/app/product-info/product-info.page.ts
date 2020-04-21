@@ -74,9 +74,9 @@ export class ProductInfoPage implements OnInit {
         });
     }
 
-    addTowishlist(pk) {
-        this.wishlistService.add_To_wishlist(pk).subscribe(data => {
-            this.products = data;
+    addTowishlist(id) {
+        this.wishlistService.add_To_wishlist(id).subscribe(data => {
+            this.utils.presentToast('Added to wish list');
         }, error => {
             try {
                 this.utils.presentToast(error.error.error[0]);
@@ -85,8 +85,8 @@ export class ProductInfoPage implements OnInit {
 
             }
             if (error.status === 401) {
+                 // this.utils.presentToast('you Have to login first');
                 this.router.navigate(['tabs/login']);
-
             }
         });
     }

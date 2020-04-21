@@ -13,6 +13,8 @@ export class Tab1Page implements OnInit {
     categories: {};
     params: {};
     HomeOffers: [];
+    FeatureProducts: [];
+    NewArrivals: [];
 
     constructor(private homeService: HomeService,
                 private router: Router,
@@ -30,6 +32,8 @@ export class Tab1Page implements OnInit {
         this.get_categories();
         this.tabPage.refresh();
         this.getHomeOffers();
+        this.featuredProducts();
+        this.newArrivals();
     }
 
     get_categories() {
@@ -56,6 +60,16 @@ export class Tab1Page implements OnInit {
     getHomeOffers() {
         this.homeService.getHomeOffers().subscribe(data => {
             this.HomeOffers = data;
+        });
+    }
+    featuredProducts() {
+        this.homeService.getFeaturedproducts().subscribe(data => {
+           this.FeatureProducts = data;
+        });
+    }
+    newArrivals() {
+        this.homeService.getNewarrival().subscribe(data => {
+            this.NewArrivals = data;
         });
     }
 }

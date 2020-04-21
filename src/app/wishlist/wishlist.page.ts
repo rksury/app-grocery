@@ -112,21 +112,21 @@ export class WishlistPage implements OnInit {
         });
     }
 
-    removeWishlist(pk) {
-        this.wishlistService.remove_from_Wishlist(pk).subscribe(data => {
-            this.utils.presentToast('Added to wishlist');
-        }, error => {
-            try {
-                this.utils.presentToast(error.error.error[0]);
-            } catch (e) {
-                this.utils.presentToast('Some Error Occured');
-            }
-            if (error.status === 401) {
-                this.router.navigate(['tabs/login']);
-
-            }
-        });
-    }
+    // removeWishlist(pk) {
+    //     this.wishlistService.remove_from_Wishlist(pk).subscribe(data => {
+    //         this.utils.presentToast('Added to wishlist');
+    //     }, error => {
+    //         try {
+    //             this.utils.presentToast(error.error.error[0]);
+    //         } catch (e) {
+    //             this.utils.presentToast('Some Error Occured');
+    //         }
+    //         if (error.status === 401) {
+    //             this.router.navigate(['tabs/login']);
+    //
+    //         }
+    //     });
+    // }
 
 
     doRefresh(event) {

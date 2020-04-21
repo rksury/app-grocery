@@ -32,16 +32,16 @@ export class WishlistService {
         return this.httpClient.post(this.base_url + 'product/wishlist/<int:product_id>', data, httpOptions);
     }
 
-    remove_from_Wishlist(id) {
-        const data = {product: id, Quantity: 1};
-        const httpOptions = {
-            headers: new HttpHeaders({
-                    Authorization: 'Bearer ' + window.localStorage.getItem('token')
-                }
-            )
-        };
-        // @ts-ignore
-        return this.httpClient.delete(this.base_url + 'product/wishlist/<int:product_id>', data, httpOptions);
-    }
+    // remove_from_Wishlist(id) {
+    //     const data = {product: id, Quantity: 1};
+    //     const httpOptions = {
+    //         headers: new HttpHeaders({
+    //                 Authorization: 'Bearer ' + window.localStorage.getItem('token')
+    //             }
+    //         )
+    //     };
+    //     // @ts-ignore
+    //     return this.httpClient.delete(this.base_url + 'product/wishlist/<int:product_id>', data, httpOptions);
+    // }
 
 }

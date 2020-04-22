@@ -26,7 +26,8 @@
                                     <i class="fa fa-rupee"></i><span class="main-price">{{product.selling_price}}</span>
                                     <span class="discounted-price">{{product.final_price}}</span>
                                     <div style="float: right;">
-                                       <ion-icon class="heart_icon" name="heart" (click)="addTowishlist(product.id)"></ion-icon>
+                                       <ion-icon *ngIf="product.in_wish_list" class="heart_icon_red" name="heart" (click)="addTowishlist(product.id)"></ion-icon>
+                                       <ion-icon *ngIf="!product.in_wish_list" name="heart" (click)="addTowishlist(product.id)"></ion-icon>
                                     </div>
                                 </div>
                             </div>

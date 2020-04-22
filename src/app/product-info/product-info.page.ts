@@ -26,7 +26,8 @@ export class ProductInfoPage implements OnInit {
         discount: '',
         cash_back: '',
         final_price: '',
-        category: ''
+        category: '',
+        in_wish_list: false
     };
 
     constructor(private  route: ActivatedRoute,
@@ -87,6 +88,7 @@ export class ProductInfoPage implements OnInit {
 
     addTowishlist(id) {
         this.wishlistService.add_To_wishlist(id).subscribe(data => {
+            this.product = data;
             this.utils.presentToast('Added to wish list');
         }, error => {
             try {
@@ -96,7 +98,7 @@ export class ProductInfoPage implements OnInit {
 
             }
             if (error.status === 401) {
-                 // this.utils.presentToast('you Have to login first');
+                // this.utils.presentToast('you Have to login first');
                 this.router.navigate(['tabs/login']);
             }
         });

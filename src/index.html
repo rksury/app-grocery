@@ -67,6 +67,13 @@
 <script src="styles.js" type="module"></script>
 <script src="vendor.js" type="module"></script>
 <script src="main.js" type="module"></script>
+<script>
+angular.module('ionicApp', ['ionic'])
+
+.controller('MyCtrl', function($scope) {
+  $scope.myTitle = 'Template';
+});
+</script>
 
 </html>
 

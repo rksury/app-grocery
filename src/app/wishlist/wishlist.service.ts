@@ -29,7 +29,7 @@ export class WishlistService {
                 }
             )
         };
-        return this.httpClient.post(this.base_url + 'product/wishlist/<int:product_id>', data, httpOptions);
+        return this.httpClient.post(this.base_url + 'product/wishlist/<int:product_id>' + '1', data, httpOptions);
     }
 
     // remove_from_Wishlist(id) {

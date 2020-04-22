@@ -19,7 +19,7 @@ export class WishlistPage implements OnInit {
     });
     special;
     products;
-    showWishlist = true;
+    showWishlist = false;
     wishlist;
 
     constructor(private route: ActivatedRoute,

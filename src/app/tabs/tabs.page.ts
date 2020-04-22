@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {NavigationExtras, Router} from '@angular/router';
-
 // import {Events} from 'ionic-angular';
 
 @Component({

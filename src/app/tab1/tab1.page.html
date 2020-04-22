@@ -7,10 +7,7 @@
 </ion-header>
 
 <ion-content>
-
     <div class="menu_header">
-
-
         <div class="body-wrapper space-pt--20 space-pb--50">
 
 
@@ -196,29 +193,30 @@
                     <h2 class="section-title space-mt--10 space-mb--20">Featured Products</h2>
 
                     <div class="row">
-                        <div *ngFor="let featureProduct of FeatureProducts" class=" col-6 products-box-right">
-                             <div class="item">
+                        <div *ngFor="let featureproduct of FeatureProducts" class=" col-6 products-box-right">
+                            <div class="item">
 
-                                <div *ngIf="featureProduct.discount" class="offer"><a>₹ {{featureProduct.discount}}
+                                <div *ngIf="featureproduct.discount" class="offer"><a>₹ {{featureproduct.discount}}
                                     &nbsp;Off</a></div>
                                 <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
-                                <a [routerLink]="['/tabs/product', featureProduct.id]">
+                                <a [routerLink]="['/tabs/product', featureproduct.id]">
                                     <div style=" text-align: center">
-                                        <img alt="" class="injectable pruduct_image" src="{{featureProduct.image}}">
+                                        <img alt="" class="injectable pruduct_image" src="{{featureproduct.image}}">
                                     </div>
                                     <div class="content-div">
-                                        <p style="font-size:15px; height: 20px;">₹ <s>{{featureProduct.selling_price}}</s>
-                                            <i style="color: #3a7be0"> {{featureProduct.final_price}}</i></p>
-                                        <p style=" height: 40px;">{{featureProduct.item_name}}  |  {{featureProduct.weight}}</p>
+                                        <p style="font-size:15px; height: 20px;">₹
+                                            <s>{{featureproduct.selling_price}}</s>
+                                            <i style="color: #3a7be0"> {{featureproduct.final_price}}</i></p>
+                                        <p style=" height: 40px;">{{featureproduct.item_name}}
+                                            |  {{featureproduct.weight}}</p>
                                     </div>
 
                                 </a>
                                 <div class="content-div">
-                                    <a (click)="addTocart(featureProduct.id)">Add To Cart</a>
+                                    <a (click)="addTocart(featureproduct.id)">Add To Cart</a>
                                 </div>
                             </div>
                         </div>
-
                     </div>
 
                 </div>
@@ -727,7 +725,7 @@
             <!--                        </div>-->
             <!-- Recommended Products end -->
 
-            <div>
+                         <div>
                 <!-- offersection-3 start -->
                 <!--            <div class="category-slider-area bg-color&#45;&#45;grey offersection offersection-2 offersection-3  space-pb&#45;&#45;25 space-mb&#45;&#45;25">-->
                 <!--                <div class="container">-->
@@ -829,10 +827,8 @@
                 <!-- Featured Products end -->
             </div>
 
+
         </div>
     </div>
-
-
-    <div></div>
 </ion-content>
 

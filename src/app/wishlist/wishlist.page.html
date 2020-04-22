@@ -1,0 +1,100 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>wish list</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <div class="breadcrumb-area bg-color--grey space-y--15">
+
+    </div>
+    <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed">
+        <ion-refresher-content
+                pullingIcon="arrow-dropdown"
+                pullingText="Pull to refresh"
+                refreshingSpinner="circles"
+                refreshingText="Refreshing...">
+        </ion-refresher-content>
+    </ion-refresher>
+    <div *ngIf="!showProducts" class="body-wrapper body-new-wrapper bg-color--gradient space-pt--70 space-pb--120">
+        <!--====================  header area ====================-->
+        <div id="headerr"></div>
+        <!--====================  End of mobile menu overlay  ====================-->
+        <!--====================  profile header ====================-->
+        <!--====================  breadcrumb area ====================-->
+        <div class="breadcrumb-area bg-color--grey space-y--15">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-3">
+                        <!--                        <a href="index.html" class="back-link"> <i class="fa fa-angle-left"></i> Back</a>-->
+                    </div>
+                    <div class="col-6">
+                        <h4 class="page-title text-center"></h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="activeorder category-slider-area all-category categorys bg-color--grey space-pb--25 space-mb--25">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 my-order-div">
+                        <div class="my-order">
+                            <img alt="" class="img-fluid" src="assets/img/category-img/img2.png">
+                            <h3 class="active">No Wish List Found</h3>
+                            <a [routerLink]="['/tabs/tab1']">
+                                <button class="btn btn-primary activebtn">Add to Wish List</button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--====================  End of profile body  ====================-->
+        <!--====================  footer area ====================-->
+        <div id="footerr"></div>
+        <!--====================  End of footer area  ====================-->
+    </div>
+
+    <div *ngIf="showWishlist" class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
+        <div class="container">
+
+            <div class="row">
+
+
+                <!-- section title -->
+                <div *ngFor="let product of products" class=" col-6 products-box-right">
+                    <div class="item">
+                        <a>
+                            <div *ngIf="product.discount" class="offer"><a>₹ {{product.discount}} &nbsp; Off</a></div>
+                            <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
+                            <div style="text-align: center;">
+                            <div [routerLink]="['/tabs/product', product.id]"
+                                 style="height: 80px; margin-top:25px; text-align: center;">
+                                <img alt="" class="injectable" src="{{product.image}}"
+                                     style=" margin-top:20px;">
+                            </div>
+                            <div class="content-div" >
+                                <p style="font-size:15px; height: 20px;">₹ <s>{{product.selling_price}}</s><i
+                                        style="color: #3a7be0"> {{product.final_price}}</i></p>
+                                <p style=" height: 50px;">{{product.item_name}}  |  {{product.weight}}</p>
+                            </div>
+                                </div>
+                        </a>
+                        <div class="content-div">
+
+                            <a (click)="addTocart(product.id)">Add To Cart</a>
+
+                            <!--                            <form >-->
+                            <!--                            <ion-select okText="Add to cart"-->
+                            <!--                                        (ionChange)="onSubmit(product.id, $event)"-->
+                            <!--                                        placeholder="Select" cancelText="Cancel">-->
+                            <!--                                <ion-select-option *ngFor="let sku of product.skus"-->
+                            <!--                                                   value="{{sku.id}}">{{sku.name}} \₹ {{sku.price}}</ion-select-option>-->
+                            <!--                            </ion-select>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</ion-content>

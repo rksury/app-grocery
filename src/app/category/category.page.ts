@@ -10,7 +10,6 @@ import {UtilsService} from '../utils.service';
 })
 export class CategoryPage implements OnInit {
     categories: {};
-
     constructor(private categoryService: CategoryService,
                 private router: Router,
                 private utils: UtilsService) {
@@ -21,6 +20,7 @@ export class CategoryPage implements OnInit {
     }
 
     ngOnInit() {
+
     }
 
     get_categories() {
@@ -35,6 +35,7 @@ export class CategoryPage implements OnInit {
             }
         });
     }
+
 
     get_subcategory(pk) {
         this.categoryService.getSubCategories(pk).subscribe(data => {
@@ -60,10 +61,9 @@ export class CategoryPage implements OnInit {
         this.router.navigate(['/tabs/products'], navigationExtras);
     }
 
+
     doRefresh(event) {
         this.get_categories();
-        event.target.complete()
+        event.target.complete();
     }
-
-
 }

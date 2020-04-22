@@ -22,7 +22,7 @@ import { FCM } from '@ionic-native/fcm/ngx';
         StatusBar,
         SplashScreen,
         FCM,
-        {provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
+        { provide: RouteReuseStrategy, useClass: IonicRouteStrategy}
     ],
     bootstrap: [AppComponent]
 

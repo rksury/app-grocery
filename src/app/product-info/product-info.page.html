@@ -6,96 +6,216 @@
 <ion-content>
     <div class="product-details">
 
-
         <div class=" space-pb--30 ">
             <div class="product-image-single">
-                <img src="{{product.image}}" class="img-fluid" alt="">
+                <img src="{{product.image}}">
             </div>
-
         </div>
-        <!--====================  End of product image slider  ====================-->
+
         <!--====================  product content ====================-->
         <!-- product content header -->
         <div class="product-content-header-area border-bottom--thick">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
+
                         <div class="product-content-header">
-                            <div class="product-content-header__main-info">
+                            <div class="product-content-header__main-info" style="width: 100%;">
                                 <h3 class="title">{{product.item_name}}</h3>
                                 <div class="price">
-                                    <span class="main-price"><i class="fa fa-rupee"></i>{{product.selling_price}}</span>
-                                    <span class="discounted-price"><i
-                                            class="fa fa-rupee"></i>{{product.final_price}}</span>
+                                    <i class="fa fa-rupee"></i><span class="main-price">{{product.selling_price}}</span>
+                                    <span class="discounted-price">{{product.final_price}}</span>
+                                    <div style="float: right;">
+                                        <ion-button color="primary" (click)="addTowishlist(product.id)"> Add To Wish List</ion-button>
+                                    </div>
                                 </div>
-
                             </div>
-
                         </div>
+
                     </div>
                 </div>
             </div>
         </div>
-        <!-- product content description -->
-<!--        <div class="product-content-description border-bottom&#45;&#45;thick space-pt&#45;&#45;25 product-div ">-->
+
+        <div class="shop-product-button">
+            <button (click)="addTocart(product.id)" class="cart">ADD TO CART</button>
+        </div>
+
+
+        <!-- ##########################   related pruduct #########################-->
+
+<!--        <div class="categorys bg-color&#45;&#45;grey space-pb&#45;&#45;25 space-mb&#45;&#45;25 ">-->
 <!--            <div class="container">-->
 <!--                <div class="row">-->
 <!--                    <div class="col-12">-->
-<!--                        <p class="space-mb&#45;&#45;25">There are many variations of passages of Lorem <br> Ipsum available, but-->
-<!--                            the-->
-<!--                            majority have suffered alteration.</p>-->
-<!--                        <h4 class="space-mb&#45;&#45;5">Free Shipping</h4>-->
-<!--                        <p>To Bangladesh from seller via china. Shipping <br> method online.</p>-->
+<!--                        <h2>Related Products</h2>-->
+<!--                        <div class="featured-product-wrapper space-mb-m&#45;&#45;15">-->
+<!--                            <div class="row row-5">-->
+<!--                                <ion-slides>-->
+<!--                                    <ion-slide>-->
+<!--                                        <div class="col-3">-->
+<!--                                            <div class="cat-main-box">-->
+<!--                                                <div class="featured-product cat-box1 space-mb&#45;&#45;15">-->
+<!--                                                    <a>-->
+<!--                                                        <div>-->
+<!--                                                            <img class="featured-product_img"-->
+<!--                                                                 src="../../assets/img/products/featured/personal-product-cat.png">-->
+<!--                                                        </div>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                                <div class="featured-product__content">-->
+<!--                                                    <a><h4 style="text-align: center;">product name</h4></a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-3">-->
+<!--                                            <div class="cat-main-box">-->
+<!--                                                <div class="featured-product cat-box1 space-mb&#45;&#45;15">-->
+<!--                                                    <a>-->
+<!--                                                        <div>-->
+<!--                                                            <img class="featured-product_img"-->
+<!--                                                                 src="../../assets/img/products/featured/product2.png">-->
+<!--                                                        </div>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                                <div class="featured-product__content">-->
+<!--                                                    <a><h4 style="text-align: center;">product name</h4></a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-3">-->
+<!--                                            <div class="cat-main-box">-->
+<!--                                                <div class="featured-product cat-box1 space-mb&#45;&#45;15">-->
+<!--                                                    <a>-->
+<!--                                                        <div>-->
+<!--                                                            <img class="featured-product_img"-->
+<!--                                                                 src="../../assets/img/products/featured/product1.png">-->
+<!--                                                        </div>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                                <div class="featured-product__content">-->
+<!--                                                    <a><h4 style="text-align: center;">product name</h4></a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-3">-->
+<!--                                            <div class="cat-main-box">-->
+<!--                                                <div class="featured-product cat-box1 space-mb&#45;&#45;15">-->
+<!--                                                    <a>-->
+<!--                                                        <div>-->
+<!--                                                            <img class="featured-product_img"-->
+<!--                                                                 src="../../assets/img/products/featured/product3.png">-->
+<!--                                                        </div>-->
+<!--                                                    </a>-->
+<!--                                                </div>-->
+<!--                                                <div class="featured-product__content">-->
+<!--                                                    <a><h4 style="text-align: center;">product name</h4></a>-->
+<!--                                                </div>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </ion-slide>-->
+<!--                                </ion-slides>-->
+<!--                            </div>-->
+<!--                        </div>-->
 <!--                    </div>-->
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
-        <div class="shop-product-button">
-            <button (click)="AddToCart(product.id)" class="cart">ADD TO CART</button>
+        <!-- ##########################  End  related products #########################-->
+    </div>
+    <div class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
+        <div class="container">
+             <h2>Related Product</h2>
 
+            <div class="row">
+
+                <!-- section title -->
+                <div class=" col-6 products-box-right" >
+                    <div class="item">
+                        <a [routerLink]="['/tabs/product', product.id]">
+                            <div *ngIf="product.discount" class="offer"><a>₹ {{product.discount}} &nbsp;Off</a></div>
+                             <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
+                            <div style=" text-align: center">
+                                <img alt="" class="injectable" src="{{product.image}}"
+                                     style=" height: 100px; width: 140px;">
+                            </div>
+                            <div class="content-div">
+                                <p style="font-size:15px; height: 20px;">₹ <s>{{product.selling_price}}</s><i
+                                        style="color: #3a7be0"> {{product.final_price}}</i></p>
+                                <p style=" height: 40px;">{{product.item_name}}  |  {{product.weight}}</p>
+                            </div>
+
+                        </a>
+                        <div class="content-div">
+                            <a (click)="addTocart(product.id)">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class=" col-6 products-box-right">
+                    <div class="item">
+                        <a [routerLink]="['/tabs/product', product.id]">
+                            <div *ngIf="product.discount" class="offer"><a>₹ {{product.discount}} &nbsp;Off</a></div>
+                             <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
+                            <div style=" text-align: center">
+                                <img alt="" class="injectable" src="{{product.image}}"
+                                     style=" height: 100px; width: 140px;">
+                            </div>
+                            <div class="content-div">
+                                <p style="font-size:15px; height: 20px;">₹ <s>{{product.selling_price}}</s><i
+                                        style="color: #3a7be0"> {{product.final_price}}</i></p>
+                                <p style=" height: 40px;">{{product.item_name}}  |  {{product.weight}}</p>
+                            </div>
+
+                        </a>
+                        <div class="content-div">
+                            <a (click)="addTocart(product.id)">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class=" col-6 products-box-right">
+                    <div class="item">
+                        <a [routerLink]="['/tabs/product', product.id]">
+                            <div *ngIf="product.discount" class="offer"><a>₹ {{product.discount}} &nbsp;Off</a></div>
+                             <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
+                            <div style=" text-align: center">
+                                <img alt="" class="injectable" src="{{product.image}}"
+                                     style=" height: 100px; width: 140px;">
+                            </div>
+                            <div class="content-div">
+                                <p style="font-size:15px; height: 20px;">₹ <s>{{product.selling_price}}</s><i
+                                        style="color: #3a7be0"> {{product.final_price}}</i></p>
+                                <p style=" height: 40px;">{{product.item_name}}  |  {{product.weight}}</p>
+                            </div>
+
+                        </a>
+                        <div class="content-div">
+                            <a (click)="addTocart(product.id)">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                 <div class=" col-6 products-box-right">
+                    <div class="item">
+                        <a [routerLink]="['/tabs/product', product.id]">
+                            <div *ngIf="product.discount" class="offer"><a>₹ {{product.discount}} &nbsp;Off</a></div>
+                             <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
+                            <div style=" text-align: center">
+                                <img alt="" class="injectable" src="{{product.image}}"
+                                     style=" height: 100px; width: 140px;">
+                            </div>
+                            <div class="content-div">
+                                <p style="font-size:15px; height: 20px;">₹ <s>{{product.selling_price}}</s><i
+                                        style="color: #3a7be0"> {{product.final_price}}</i></p>
+                                <p style=" height: 40px;">{{product.item_name}}  |  {{product.weight}}</p>
+                            </div>
+
+                        </a>
+                        <div class="content-div">
+                            <a (click)="addTocart(product.id)">Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
     </div>
-<!--    <div class="category-slider-area bg-color&#45;&#45;grey slider3 slider5 space-pt&#45;&#45;25  space-mb&#45;&#45;25">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-<!--                <div class="col-12">-->
-<!--                    <h2 class="section-title space-mb&#45;&#45;20">Similar Products </h2>-->
-<!--                    &lt;!&ndash; section title &ndash;&gt;-->
-<!--                    <div class="owl-carousel owl-theme best-seller">-->
-<!--                        <div class="item">-->
-<!--                            <div class="offer">2% Off</div>-->
-<!--                            <img src="assets/img/products/featured/best-salt-img.png" class="injectable" alt="">-->
-<!--                            <div class="content-div">-->
-<!--                                <h4><img src="assets/img/icons/money.svg" class="icons">25.00</h4>-->
-<!--                                <p>Total Iodised Salt</p>-->
-<!--                                <input type="" name="" value="1 Kg">-->
-<!--                                <a href="#">Add To Cart</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="item liquid">-->
-<!--                            <img src="assets/img/products/featured/best-oli-img.png" class="injectable" alt="">-->
-<!--                            <div class="content-div">-->
-<!--                                <h4><img src="assets/img/icons/money.svg" class="icons">25.00</h4>-->
-<!--                                <p>Oil</p>-->
-<!--                                <div class="input-div">-->
-<!--                                    <i class="fa fa-caret-down"> </i>-->
-<!--                                    <input type="" name="" value="995 gm" readonly="">-->
-<!--                                </div>-->
-<!--                                <a href="#">Add To Cart</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="item">-->
-<!--                            <img src="assets/img/products/featured/best-salt-img.png" class="injectable" alt="">-->
-<!--                            <div class="content-div">-->
-<!--                                <h4><img src="assets/img/icons/money.svg" class="icons">25.00</h4>-->
-<!--                                <p>Total Iodised Salt</p>-->
-<!--                                <input type="" name="" value="1 Kg">-->
-<!--                                <a href="#">Add To Cart</a>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
 </ion-content>

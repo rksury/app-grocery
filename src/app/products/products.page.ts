@@ -74,17 +74,11 @@ export class ProductsPage implements OnInit {
 
             }, error => {
                 this.showProducts = false;
-                // try {
-                //     this.utils.presentToast(error.error.error[0]);
-                // } catch (e) {
-                //     this.utils.presentToast('Some Error Occurred');
-                //
-                // }
             }
         );
     }
 
-    onSubmit(pk) {
+    addTocart(pk) {
         this.cartService.add_to_cart(pk).subscribe(data => {
             this.utils.presentToast('Added to cart.');
         }, error => {

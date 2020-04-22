@@ -1,8 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute, ParamMap} from '@angular/router';
 import {ProductService} from './product.service';
-import {CartService} from "../cart/cart.service";
-import {UtilsService} from "../utils.service";
+import {CartService} from '../cart/cart.service';
+import {UtilsService} from '../utils.service';
+import {WishlistService} from '../wishlist/wishlist.service';
 
 @Component({
     selector: 'app-product-info',
@@ -10,6 +11,9 @@ import {UtilsService} from "../utils.service";
     styleUrls: ['./product-info.page.scss'],
 })
 export class ProductInfoPage implements OnInit {
+    showProducts = true;
+    special;
+    products;
     product = {
         id: '',
         image: '',
@@ -29,6 +33,7 @@ export class ProductInfoPage implements OnInit {
                 private router: Router,
                 private productService: ProductService,
                 private cartService: CartService,
+                private wishlistService: WishlistService,
                 private utils: UtilsService) {
     }
 
@@ -52,7 +57,18 @@ export class ProductInfoPage implements OnInit {
         });
     }
 
-    AddToCart(id) {
+    get_products(params) {
+        this.productService.getProduct(params).subscribe(data => {
+                this.showProducts = true;
+                this.products = data;
+
+            }, error => {
+                this.showProducts = false;
+            }
+        );
+    }
+
+    addTocart(id) {
         this.cartService.add_to_cart(id).subscribe(data => {
             this.utils.presentToast('Added to cart.');
         }, error => {
@@ -65,6 +81,23 @@ export class ProductInfoPage implements OnInit {
             if (error.status === 401) {
                 this.router.navigate(['tabs/login']);
 
+            }
+        });
+    }
+
+    addTowishlist(id) {
+        this.wishlistService.add_To_wishlist(id).subscribe(data => {
+            this.utils.presentToast('Added to wish list');
+        }, error => {
+            try {
+                this.utils.presentToast(error.error.error[0]);
+            } catch (e) {
+                this.utils.presentToast('Some Error Occurred');
+
+            }
+            if (error.status === 401) {
+                 // this.utils.presentToast('you Have to login first');
+                this.router.navigate(['tabs/login']);
             }
         });
     }

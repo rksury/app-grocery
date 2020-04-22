@@ -55,18 +55,19 @@ export class SignupPage implements OnInit {
                 private utils: UtilsService,
                 private formBuilder: FormBuilder,
                 private router: Router,
-                private tabPage: TabsPage,) {
+                private tabPage: TabsPage) {
     }
 
     ngOnInit() {
     }
 
     onSubmit() {
-        this.registerService.Register(this.submitform.value).subscribe(data => {
+        // @ts-ignore
+        this.registerService.Register(this.submitform.value).subscribe<any>(data => {
             this.utils.presentToast('You have registered successfully, please login');
-            window.localStorage.setItem('token', data['token']);
-            window.localStorage.setItem('user', data['user'].name);
-            this.utils.presentToast('Logged in as ' + data['user'].name);
+            window.localStorage.setItem('token', data.token);
+            window.localStorage.setItem('user', data.user.name);
+            this.utils.presentToast('Logged in as ' + data.user.name);
             this.router.navigate(['/tabs/tab1']);
             this.tabPage.refresh();
             this.submitform.reset();

@@ -104,24 +104,18 @@ export class CartPage implements OnInit {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
                 this.utils.presentToast('Some Error Occurred');
-
             }
         });
     }
 
     payWithRazor() {
-        let options = {
+        const options = {
             description: 'Checkout',
             image: 'https://i.imgur.com/3g7nmJC.png',
             currency: 'INR', // your 3 letter currency code
             key: 'rzp_test_2nAiN0h9QN68NR', // your Key Id from Razorpay dashboard
             amount: this.cart.final_price * 100, // Payment amount in smallest denomiation e.g. cents for USD
             name: 'The Saving Bazaar',
-            // prefill: {
-            //     email: 'admin@enappd.com',
-            //     contact: '9621323231',
-            //     name: 'Enappd'
-            // },
             theme: {
                 color: '#F37254'
             },

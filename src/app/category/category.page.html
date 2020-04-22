@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed">
         <ion-refresher-content
                 pullingIcon="arrow-dropdown"
                 pullingText="Pull to refresh"
@@ -21,15 +21,15 @@
                     <ul class="accordion" id="accordion">
                         <li *ngFor="let category of categories">
 
-                            <div *ngIf="!category.parent_category"
-                                 (click)="get_subcategory(category.id)"
-                                 class="cat-link link cat-box1">
+                            <div (click)="get_subcategory(category.id)"
+                                 *ngIf="!category.parent_category"
+                                 class="cat-link link cat-box1" style="background:#2a6df4;">
                                 <img alt="" class="img-fluid" src="{{category.image}}">
                                 {{category.title}}
                             </div>
-                            <div *ngIf="category.parent_category"
-                                 (click)="get_subcategory_products(category.id)"
-                                 class="cat-link link cat-box1">
+                            <div (click)="get_subcategory_products(category.id)"
+                                 *ngIf="category.parent_category" class="cat-link link cat-box1"
+                                style="background:#2a6df4;">
                                 <img alt="" class="img-fluid" src="{{category.image}}">
                                 {{category.title}}
                             </div>
@@ -42,3 +42,5 @@
     </div>
 
 </ion-content>
+
+

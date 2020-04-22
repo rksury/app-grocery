@@ -5,8 +5,23 @@ ion-content ion-toolbar {
 .dropdown_item{
   width: 120px;
   color: #3a7be0;
-  border-radius: 10px;
+  border-radius: 5px;
 }
 
-.section2{
+.sare_icon{
+  float: right;
+  color: #2a6df4;
+  font-size: 20px;
+  //margin-top: -10%;
+}
+
+.pruduct_image{
+  height: 100px;
+  width: 120px;
+  display: flex;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+
+
 }

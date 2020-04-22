@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {NavigationExtras, Router} from '@angular/router';
-
 // import {Events} from 'ionic-angular';
 
 @Component({
@@ -11,10 +10,14 @@ import {NavigationExtras, Router} from '@angular/router';
 export class TabsPage {
     islogedin = window.localStorage.getItem('token') === null;
     user = window.localStorage.getItem('user');
-    searchQuery = '';
 
-    constructor(private router: Router,
-    ) {
+    searchQuery = '';
+    filterOption: any = {
+        header: 'Select Filter',
+        subHeader: 'View Multiple Product'
+    };
+
+    constructor(private router: Router) {
         this.refresh();
     }
 
@@ -33,6 +36,17 @@ export class TabsPage {
 
     }
 
+    resetCategories() {
+        this.resetCategories = null;
+    }
+
+    order_history() {
+        this.router.navigate(['tabs/order-history']);
+    }
+
+    wish_list() {
+        this.router.navigate(['tabs/wish_list']);
+    }
 
     category() {
         this.router.navigate(['tabs/category']);

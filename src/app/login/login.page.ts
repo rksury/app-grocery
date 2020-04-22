@@ -49,7 +49,7 @@ export class LoginPage implements OnInit {
                 }
             },
             error => {
-                this.utils.presentToast(error.error.error[0]);
+                // this.utils.presentToast(error.error.error[0]);
             }
         )
         ;

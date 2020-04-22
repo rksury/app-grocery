@@ -77,7 +77,7 @@
                 <div class="cart-product__content">
                     <h4>{{product.product.item_name}}</h4>
                     <!--                    <h3 class="title"><a href="shop-product.html">{{product.product.weight}}</a></h3>-->
-                    <p class="no-pcs">{{product.total_price}} inr</p>
+                    <p class="no-pcs">{{product.total_price | number: '1.2'}} inr</p>
                 </div>
 
                 <div class="cart-product__counter">
@@ -140,10 +140,10 @@
                         </div>
                         <!--                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>-->
 
-                        <h4 class="grand-total-title">Total Price <span>{{cart.total_price}}</span></h4>
+                        <h4 class="grand-total-title">Total Price <span>{{cart.total_price | number: '1.2'}}</span></h4>
                         <h4 class="grand-total-title">Total
-                            Discount<span>-{{cart.total_price - cart.final_price}}</span></h4>
-                        <h4 class="grand-total-title">Final Price To Pay<span>{{cart.final_price}}</span></h4>
+                            Discount<span>-{{cart.total_price - cart.final_price | number: '1.2'}}</span></h4>
+                        <h4 class="grand-total-title">Final Price To Pay<span>{{cart.final_price | number: '1.2'}}</span></h4>
                         <a (click)="payWithRazor()">Proceed to Checkout</a>
                     </div>
                 </div>

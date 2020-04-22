@@ -38,7 +38,7 @@ export class Tab1Page implements OnInit {
             },
             // tslint:disable-next-line:no-shadowed-variable
             error => {
-                this.utils.presentToast('Some Error Occurred');
+                // this.utils.presentToast('Some Error Occurred');
             });
     }
 

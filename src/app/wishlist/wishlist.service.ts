@@ -22,14 +22,13 @@ export class WishlistService {
     }
 
     add_To_wishlist(id) {
-        const data = {product: id, Quantity: 1};
         const httpOptions = {
             headers: new HttpHeaders({
                     Authorization: 'Bearer ' + window.localStorage.getItem('token')
                 }
             )
         };
-        return this.httpClient.post(this.base_url + 'product/wishlist/<int:product_id>' + '1', data, httpOptions);
+        return this.httpClient.post(this.base_url + 'product/wishlist/' + id, {}, httpOptions);
     }
 
     // remove_from_Wishlist(id) {

@@ -23,48 +23,55 @@
                             <div class="profile-header">
                                 <div class="profile-header__image">
                                     <img alt="" class="img-fluid" src="assets/img/icons/user-white.png">
+                                    <<<<<<< HEAD
                                 </div>
-
+                                =======
                             </div>
+                            >>>>>>> 5650974c9e6740b5ed6bbb72d49db62eb45b3ae5
+
                         </div>
                     </div>
                 </div>
             </div>
-            <!--====================  End of profile header  ====================-->
-            <!--====================  profile body ====================-->
-            <div class="profile-body-area">
-                <div class="">
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="profile-body">
-                                <div class="profile-info-table space-mb--30">
-                                    <div class="profile-info-block">
-                                        <div class="profile-info-block__title">Name</div>
-                                        <div class="profile-info-block__value">{{user.name}}</div>
+        </div>
+        <!--====================  End of profile header  ====================-->
+        <!--====================  profile body ====================-->
+        <div class="profile-body-area">
+            <div class="">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="profile-body">
+                            <div class="profile-info-table space-mb--30">
+                                <div class="profile-info-block">
+                                    <div class="profile-info-block__title">Full Name</div>
+                                    <div class="profile-info-block__value">Admin</div>
+                                </div>
+                                <!--                                    <div class="profile-info-block">-->
+                                <!--                                        <div class="profile-info-block__title">Last Name</div>-->
+                                <!--                                        <div class="profile-info-block__value"></div>-->
+                                <!--                                    </div>-->
+                                <div class="profile-info-block">
+                                    <div class="profile-info-block__title">Phone</div>
+                                    <div class="profile-info-block__value">{{user.mobile_number}}</div>
+                                </div>
+                                <div class="profile-info-block">
+                                    <div class="profile-info-block__title">Email</div>
+                                    <div class="profile-info-block__value">{{user.email}}</div>
+                                </div>
+                                <div class="profile-info-block">
+                                    <div class="profile-info-block__title">Shipping Address</div>
+                                    <div class="profile-info-block__value">{{user.address}}
                                     </div>
-                                    <div class="profile-info-block">
-                                        <div class="profile-info-block__title">Phone</div>
-                                        <div class="profile-info-block__value">{{user.mobile_number}}</div>
-                                    </div>
-                                    <div class="profile-info-block">
-                                        <div class="profile-info-block__title">Email</div>
-                                        <div class="profile-info-block__value">{{user.email}}</div>
-                                    </div>
-                                    <div class="profile-info-block">
-                                        <div class="profile-info-block__title">Shipping Address</div>
-                                        <div class="profile-info-block__value">{{user.address}}
-                                        </div>
-                                    </div>
-                                    <div class="profile-info-block">
-                                        <div class="profile-info-block__title">Edit Profile</div>
-                                        <div class="profile-info-block__value"><a (click)="editprofile()"
-                                                                                  routerDirection="forward"><img
-                                                alt="" class="injectable" src="assets/img/icons/edit.svg"></a></div>
-                                    </div>
-
+                                </div>
+                                <div class="profile-info-block">
+                                    <div class="profile-info-block__title">Edit Profile</div>
+                                    <div class="profile-info-block__value"><a (click)="editprofile()"
+                                                                              routerDirection="forward"><img
+                                            alt="" class="injectable" src="assets/img/icons/edit.svg"></a></div>
                                 </div>
 
                             </div>
+
                         </div>
                     </div>
                 </div>

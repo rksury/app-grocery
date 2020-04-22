@@ -4,7 +4,7 @@ import {TabsPage} from '../tabs/tabs.page';
 import {UtilsService} from '../utils.service';
 import {Router} from '@angular/router';
 import {FormControl, FormGroup} from '@angular/forms';
-import {EditProfileService} from "./edit-profile.service";
+import {EditProfileService} from './edit-profile.service';
 
 @Component({
     selector: 'app-editprofile',
@@ -81,6 +81,5 @@ export class EditprofilePage implements OnInit {
             }
         });
     }
-
-
 }
+

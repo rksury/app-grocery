@@ -20,6 +20,7 @@ export class WishlistPage implements OnInit {
     special;
     products;
     showWishlist = false;
+    isloggedin = window.localStorage.getItem('token') !== null;
     wishlist;
 
     constructor(private route: ActivatedRoute,
@@ -62,7 +63,7 @@ export class WishlistPage implements OnInit {
                     this.wishlist = {};
                     this.showWishlist = false;
                     this.products = {};
-                    this.utils.presentToast('Please add items into wish list');
+                    this.utils.presentToast('Please add item into wish list');
                 } else if (error.status === 401) {
 
                 } else {

@@ -5,9 +5,6 @@
 </ion-header>
 
 <ion-content>
-    <div class="breadcrumb-area bg-color--grey space-y--15">
-
-    </div>
     <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed">
         <ion-refresher-content
                 pullingIcon="arrow-dropdown"
@@ -16,24 +13,22 @@
                 refreshingText="Refreshing...">
         </ion-refresher-content>
     </ion-refresher>
-    <div *ngIf="!showProducts" class="body-wrapper body-new-wrapper bg-color--gradient space-pt--70 space-pb--120">
+    <div *ngIf="!showWishlist" class="body-wrapper body-new-wrapper bg-color--gradient space-pt--70 space-pb--120">
         <!--====================  header area ====================-->
-        <div id="headerr"></div>
         <!--====================  End of mobile menu overlay  ====================-->
         <!--====================  profile header ====================-->
         <!--====================  breadcrumb area ====================-->
-        <div class="breadcrumb-area bg-color--grey space-y--15">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-3">
-                        <!--                        <a href="index.html" class="back-link"> <i class="fa fa-angle-left"></i> Back</a>-->
-                    </div>
-                    <div class="col-6">
-                        <h4 class="page-title text-center"></h4>
-                    </div>
-                </div>
-            </div>
-        </div>
+<!--        <div class="breadcrumb-area bg-color&#45;&#45;grey space-y&#45;&#45;15">-->
+<!--            <div class="container">-->
+<!--                <div class="row align-items-center">-->
+<!--                    <div class="col-3">-->
+<!--                    </div>-->
+<!--                    <div class="col-6">-->
+<!--                        <h4 class="page-title text-center"></h4>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="activeorder category-slider-area all-category categorys bg-color--grey space-pb--25 space-mb--25">
             <div class="container">
                 <div class="row">
@@ -50,13 +45,10 @@
             </div>
         </div>
         <!--====================  End of profile body  ====================-->
-        <!--====================  footer area ====================-->
-        <div id="footerr"></div>
-        <!--====================  End of footer area  ====================-->
     </div>
 
-    <div *ngIf="showWishlist" class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
-        <div class="container">
+    <div *ngIf="isloggedin"  class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
+        <div class="container" *ngIf="showWishlist">
 
             <div class="row">
 
@@ -81,16 +73,7 @@
                                 </div>
                         </a>
                         <div class="content-div">
-
                             <a (click)="addTocart(product.id)">Add To Cart</a>
-
-                            <!--                            <form >-->
-                            <!--                            <ion-select okText="Add to cart"-->
-                            <!--                                        (ionChange)="onSubmit(product.id, $event)"-->
-                            <!--                                        placeholder="Select" cancelText="Cancel">-->
-                            <!--                                <ion-select-option *ngFor="let sku of product.skus"-->
-                            <!--                                                   value="{{sku.id}}">{{sku.name}} \₹ {{sku.price}}</ion-select-option>-->
-                            <!--                            </ion-select>-->
                         </div>
                     </div>
                 </div>

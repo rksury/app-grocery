@@ -6198,15 +6198,13 @@ header {
   color: #989aa2;
   font-size: 25px;
 }
-.heart_icon{
-  float: right;
+.heart_icon:hover{
   color: #da4453;
-  font-size: 25px;
 }
 
 .heart_icon_red {
   float: right;
-  color: #da4453;
+  color: red;
   font-size: 25px;
 }
 

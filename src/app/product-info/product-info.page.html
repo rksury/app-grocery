@@ -25,7 +25,7 @@
                                     <i class="fa fa-rupee"></i><span class="main-price">{{product.selling_price}}</span>
                                     <span class="discounted-price">{{product.final_price}}</span>
                                     <div style="float: right;">
-                                        <ion-icon *ngIf="product.in_wish_list" class="heart_icon_red" name="heart"
+                                        <ion-icon *ngIf="product.in_wish_list" name="heart" class="heart_icon_red"
                                                   (click)="addTowishlist(product.id)"></ion-icon>
                                         <ion-icon *ngIf="!product.in_wish_list" name="heart" class="heart_icon"
                                                   (click)="addTowishlist(product.id)"></ion-icon>
@@ -125,13 +125,14 @@
         <!--        </div>-->
         <!-- ##########################  End  related products #########################-->
     </div>
+
+
     <div class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
         <div class="container">
             <h2>Related Product</h2>
 
             <div class="row">
-
-                <div *ngFor="let product of relatedProducts" class=" col-6 products-box-right">
+                 <div class=" col-6 products-box-right">
                     <div class="item">
                         <a [routerLink]="['/tabs/product', product.id]">
                             <div *ngIf="product.discount" class="offer"><a>₹ {{product.discount}} &nbsp;Off</a></div>
@@ -217,7 +218,6 @@
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>

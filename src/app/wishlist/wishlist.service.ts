@@ -38,8 +38,8 @@ export class WishlistService {
                 }
             )
         };
-        // @ts-ignore
-        return this.httpClient.delete(this.base_url + 'product/wishlist/' + id, {}, httpOptions);
+
+        return this.httpClient.delete(this.base_url + 'product/wishlist/' + id, httpOptions);
     }
 
 }

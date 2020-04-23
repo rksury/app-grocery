@@ -43,6 +43,7 @@ export class ProductInfoPage implements OnInit {
         this.route.paramMap.subscribe(params => {
             this.productService.getProduct(params.get('id')).subscribe(data => {
                 this.product = data;
+
             });
             console.log(params.get('id'));
         });
@@ -90,7 +91,10 @@ export class ProductInfoPage implements OnInit {
 
     addTowishlist(id) {
         this.wishlistService.add_To_wishlist(id).subscribe(data => {
-            this.product = data;
+            this.product = data.products;
+            console.log(this.product.in_wish_list);
+            console.log(this.product.id);
+
         }, error => {
             try {
                 this.utils.presentToast(error.error.error[0]);

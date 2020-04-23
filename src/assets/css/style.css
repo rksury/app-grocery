@@ -5321,7 +5321,7 @@ header {
 
 .store-name-loc b {
     color: white;
-    font-size:25px;
+    font-size: 25px;
 }
 
 .store-name-loc h4 i {
@@ -6193,26 +6193,21 @@ header {
 
 }
 
-.heart_icon{
-  float: right;
-  color: #989aa2;
-  font-size: 25px;
-}
-.heart_icon{
-  float: right;
-  color: #da4453;
-  font-size: 25px;
+.heart_icon {
+    float: right;
+    color: #989aa2;
+    font-size: 25px;
 }
 
 .heart_icon_red {
-  float: right;
-  color: #da4453;
-  font-size: 25px;
+    float: right;
+    color: #da4453;
+    font-size: 25px;
 }
 
 .close_icon {
     float: right;
-    color:red;
+    color: red;
     font-size: 25px;
     margin-top: -10%;
     margin-right: -10%;

@@ -33,17 +33,12 @@
                                 <input id="phoneNo" formControlName="mobile_number" value="{{user.mobile_number}}"
                                        placeholder="Enter Phone Number" type="text">
                             </div>
-                            <!--                            <div class="edit-profile-form__single-field space-mb&#45;&#45;20">-->
-                            <!--                                <label for="emailAddress">Email Address</label>-->
-                            <!--                                <input id="emailAddress" name="emailAddress" placeholder="Enter Email Address"-->
-                            <!--                                       type="text">-->
-                            <!--                            </div>-->
                             <div class="edit-profile-form__single-field space-mb--20">
                                 <label for="shippingAddress">Shipping Address</label>
-                                <textarea cols="30" id="shippingAddress" formControlName="address"
-                                          value="{{user.address}}"
-                                          placeholder="Enter Shipping Address"
-                                          rows="5"></textarea>
+                                <textarea cols="20" id="shippingAddress" formControlName="address"
+                                          value="{{user.address}}" placeholder="Enter Shipping Address" rows="5">
+
+                                </textarea>
                             </div>
 
                         </form>

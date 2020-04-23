@@ -6129,10 +6129,10 @@ header {
 .item .offer {
 	color: white;
 	background: #5205e7;
-	width: 60px;
-	height: 60px;
-	border-radius: 100%;
-	padding: 16px 18px;
+	width: 70px;
+	height: 70px;
+	border-radius:00px 00px 250px 00px;
+	padding: 18px 18px;
 	line-height: 14px;
 	font-weight: 700;
 	position: absolute;
@@ -6145,6 +6145,35 @@ header {
 	opacity: 0.5;
 	text-decoration: line-through;
 	margin-left: 4px;
+}
+
+.sare_icon{
+  float: right;
+  color: #2a6df4;
+  font-size: 20px;
+  margin-top: -10%;
+  margin-right: -10%;
+}
+
+.pruduct_image{
+  height: 100px;
+  width: 120px;
+  display: flex;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+
+}
+
+.heart_icon{
+  float: right;
+  color: #989aa2;
+  font-size: 25px;
+}
+.heart_icon:hover{
+  float: right;
+  color: #da4453;
+  font-size: 25px;
 }
 
 

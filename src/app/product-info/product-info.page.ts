@@ -26,8 +26,10 @@ export class ProductInfoPage implements OnInit {
         discount: '',
         cash_back: '',
         final_price: '',
-        category: ''
+        category: '',
+        in_wish_list: false
     };
+    relatedProducts = [];
 
     constructor(private  route: ActivatedRoute,
                 private router: Router,
@@ -50,9 +52,10 @@ export class ProductInfoPage implements OnInit {
         this.route.paramMap.subscribe(params => {
             if (params && params.get('id')) {
                 this.productService.getProduct(params.get('id')).subscribe(data => {
-                    this.product = data;
+                    this.product = data.products;
+                    this.relatedProducts = data.related_products;
+
                 });
-                console.log(params.get('id'));
             }
         });
     }
@@ -87,7 +90,7 @@ export class ProductInfoPage implements OnInit {
 
     addTowishlist(id) {
         this.wishlistService.add_To_wishlist(id).subscribe(data => {
-            this.utils.presentToast('Added to wish list');
+            this.product = data;
         }, error => {
             try {
                 this.utils.presentToast(error.error.error[0]);
@@ -97,6 +100,7 @@ export class ProductInfoPage implements OnInit {
             }
             if (error.status === 401) {
                 this.utils.presentToast('you Have to login first');
+                // this.utils.presentToast('you Have to login first');
                 this.router.navigate(['tabs/login']);
             }
         });

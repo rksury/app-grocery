@@ -11,9 +11,10 @@
                                 <div class="col d-flex justify-content-center">
                                     <!-- header search -->
                                     <div class="store-name-loc">
-                                        <h4>{{user}} <a>
-                                            <img src="assets/img/icons/edit-white.svg"></a>
-                                        </h4>
+                                        <a><i class="fa fa-user-circle user_icon"></i>&nbsp;
+                                        <b>{{user}}</b>
+
+                                        </a>
                                     </div>
                                 </div>
                                 <!--                                <div class="col d-flex justify-content-center selector_city">-->
@@ -22,6 +23,7 @@
 
                                 <!--                                <div class="col-auto">-->
                                 <!-- header menu trigger -->
+
                                 <!--                                    <button (click)="refresh()" class="header-menu-trigger" id="header-menu-trigger">-->
                                 <!--                                                                                <img src="assets/img/icons/menu.svg" class="injectable" alt="">-->
                                 <!--                                    </button>-->
@@ -29,22 +31,22 @@
 
                             </div>
 
-                            <div class="row align-items-center selector_city">
-                                <div class="col d-flex" style="width:100%">
-                                    <ion-row style="width: 100%;">
-                                        <ion-col>
-                                            <ion-item>
-                                                <ion-label>City</ion-label>
-                                                <ion-select interface="popover" value="select option">
-                                                    <ion-select-option value="01">indore</ion-select-option>
-                                                    <ion-select-option value="02">dewas</ion-select-option>
-                                                    <ion-select-option value="03">ujjain</ion-select-option>
-                                                </ion-select>
-                                            </ion-item>
-                                        </ion-col>
-                                    </ion-row>
-                                </div>
-                            </div>
+                            <!--                            <div class="row align-items-center selector_city">-->
+                            <!--                                <div class="col d-flex" style="width:100%">-->
+                            <!--                                    <ion-row style="width: 100%;">-->
+                            <!--                                        <ion-col>-->
+                            <!--                                            <ion-item>-->
+                            <!--                                                <ion-label>City</ion-label>-->
+                            <!--                                                <ion-select interface="popover" value="select option">-->
+                            <!--                                                    <ion-select-option value="01">indore</ion-select-option>-->
+                            <!--                                                    <ion-select-option value="02">dewas</ion-select-option>-->
+                            <!--                                                    <ion-select-option value="03">ujjain</ion-select-option>-->
+                            <!--                                                </ion-select>-->
+                            <!--                                            </ion-item>-->
+                            <!--                                        </ion-col>-->
+                            <!--                                    </ion-row>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
 
                         </div>
                     </div>
@@ -54,35 +56,22 @@
 
                 <div id="offcanvas-menu">
                     <div class="profile-card text-center">
-                        <a href="#">
+                        <a>
                             <div class="profile-card__image ">
-                                <img alt="" class="img-fluid" src="assets/img/icons/user-white.png">
+                                <img alt="" class="img-fluid" src="../../assets/img/icons/user-white.png">
                                 <div class="profile-card__content">
                                     <p class="name">WelCome <span class="id"></span></p>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <!--                    <div class="profile-card address text-center">-->
-                    <!--                        <a href="#">-->
-                    <!--                            <div class="profile-card__image ">-->
-                    <!--                                <img alt="" class="img-fluid" src="assets/img/icons/map.png">-->
-                    <!--                                <div class="profile-card__content">-->
-                    <!--                                    <p class="name">Lorem ipsum, or lipsum as it is sometimes known,</p>-->
-                    <!--                                </div>-->
-                    <!--                            </div>-->
-                    <!--                        </a>-->
-                    <!--                    </div>-->
+
                     <div *ngIf="islogedin" class="profile-card address help text-center">
                         <div class="profile-card__image ">
                             <div class="profile-card__content">
                                 <p class="name">Register Here if You have Not</p>
-                                <a (click)="login()" routerDirection="forward">
-                                    <i class="fa fa-phone"></i>
-                                    Login</a>
-                                <a (click)="signup()" routerDirection="forward">
-                                    <i class="fa fa-envelope"></i>
-                                    Signup</a>
+                                <a (click)="login()" routerDirection="forward">Login</a>
+                                <a (click)="signup()" routerDirection="forward">Signup</a>
                             </div>
                         </div>
                     </div>
@@ -151,9 +140,9 @@
 
                 <!--                    <ion-icon name="options" color="light"></ion-icon>-->
                 <ion-button style="width: 60px;">
-                    <ion-icon color="light" name="funnel" class="filter_icon"></ion-icon>
+                    <ion-icon class="filter_icon" color="light" name="funnel"></ion-icon>
                     <ion-select [interfaceOptions]="filterOption" cancelText="Close"
-                                multiple="true" okText="Ok" >
+                                multiple="true" okText="Ok">
                         <ion-select-option value="01">a-z</ion-select-option>
                         <ion-select-option value="02">z-a</ion-select-option>
                         <ion-select-option value="03">Featured Product</ion-select-option>

@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {Observable} from 'rxjs';
 
@@ -13,7 +13,12 @@ export class ProductService {
     }
 
     getProduct(id): Observable<any> {
-        console.log(id);
-        return this.httpClient.get(this.baseUrl + 'product/' + id);
+        const httpOptions = {
+            headers: new HttpHeaders({
+                    Authorization: 'Bearer ' + window.localStorage.getItem('token')
+                }
+            )
+        };
+        return this.httpClient.get(this.baseUrl + 'product/' + id, httpOptions);
     }
 }

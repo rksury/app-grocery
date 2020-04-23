@@ -37,7 +37,7 @@
                             <img alt="" class="img-fluid" src="assets/img/category-img/img2.png">
                             <h3 class="active">No Wish List Found</h3>
                             <a [routerLink]="['/tabs/tab1']">
-                                <button class="btn btn-primary activebtn">Add to Wish List</button>
+                                <button class="btn btn-primary activebtn">Continue Shopping</button>
                             </a>
                         </div>
                     </div>
@@ -48,7 +48,7 @@
     </div>
 
     <div *ngIf="isloggedin"  class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
-        <div class="container" *ngIf="showWishlist">
+        <div class="container" *ngIf="showWishlist" style="margin-top: 10%;">
 
             <div class="row">
 
@@ -56,21 +56,20 @@
                 <!-- section title -->
                 <div *ngFor="let product of products" class=" col-6 products-box-right">
                     <div class="item">
-                        <a>
-                            <div *ngIf="product.discount" class="offer"><a>₹ {{product.discount}} &nbsp; Off</a></div>
-                            <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
+                            <div *ngIf="product.discount" class="offer">
+                                <b>₹ &nbsp;{{product.discount}}</b> <br>Off
+                            </div>
+                            <ion-icon  (click)="removeWishlist(product.id)" class="close_icon" name="close"></ion-icon>
+                        <a [routerLink]="['/tabs/product', product.id]">
                             <div style="text-align: center;">
-                            <div [routerLink]="['/tabs/product', product.id]"
-                                 style="height: 80px; margin-top:25px; text-align: center;">
-                                <img alt="" class="injectable" src="{{product.image}}"
-                                     style=" margin-top:20px;">
+                                <img alt="" class="injectable pruduct_image" src="{{product.image}}">
                             </div>
                             <div class="content-div" >
                                 <p style="font-size:15px; height: 20px;">₹ <s>{{product.selling_price}}</s><i
                                         style="color: #3a7be0"> {{product.final_price}}</i></p>
-                                <p style=" height: 50px;">{{product.item_name}}  |  {{product.weight}}</p>
+                                <p style=" height: 40px;">{{product.item_name}}  |  {{product.weight}}</p>
                             </div>
-                                </div>
+
                         </a>
                         <div class="content-div">
                             <a (click)="addTocart(product.id)">Add To Cart</a>

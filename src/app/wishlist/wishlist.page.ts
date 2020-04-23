@@ -31,29 +31,21 @@ export class WishlistPage implements OnInit {
     }
 
     ngOnInit() {
-       this.get_wish_list();
+        this.get_wish_list();
     }
 
     ionViewWillLeave() {
         this.products = [];
         this.special = {};
+        this.get_wish_list();
+
     }
 
-    // get_all_wish_list() {
-    //     this.wishlistService.get_wishlist().subscribe(data => {
-    //             this.showWishlist = true;
-    //             this.products = data;
-    //
-    //         }, error => {
-    //             this.showWishlist = false;
-    //         }
-    //     );
-    // }
 
     get_wish_list() {
         this.wishlistService.get_wishlist().subscribe(data => {
                 this.wishlist = data;
-                this.products = this.wishlist.products;
+                this.products = this.wishlist;
                 this.showWishlist = true;
             }, error => {
                 this.wishlist = {};
@@ -63,7 +55,6 @@ export class WishlistPage implements OnInit {
                     this.wishlist = {};
                     this.showWishlist = false;
                     this.products = {};
-                    this.utils.presentToast('Please add item into wish list');
                 } else if (error.status === 401) {
 
                 } else {
@@ -113,21 +104,20 @@ export class WishlistPage implements OnInit {
         });
     }
 
-    // removeWishlist(pk) {
-    //     this.wishlistService.remove_from_Wishlist(pk).subscribe(data => {
-    //         this.utils.presentToast('Added to wishlist');
-    //     }, error => {
-    //         try {
-    //             this.utils.presentToast(error.error.error[0]);
-    //         } catch (e) {
-    //             this.utils.presentToast('Some Error Occured');
-    //         }
-    //         if (error.status === 401) {
-    //             this.router.navigate(['tabs/login']);
-    //
-    //         }
-    //     });
-    // }
+    removeWishlist(pk) {
+        this.wishlistService.remove_from_Wishlist(pk).subscribe(data => {
+            this.utils.presentToast('Remove from wish list');
+        }, error => {
+            try {
+                this.utils.presentToast(error.error.error[0]);
+            } catch (e) {
+                this.utils.presentToast('Some Error Occured');
+            }
+            if (error.status === 401) {
+
+            }
+        });
+    }
 
 
     doRefresh(event) {

@@ -85,8 +85,7 @@
 
                         <span class="input-group-btn">
                           <button (click)="remove_product(product.id)"
-                                  class="btn btn-default btn-number"
-                                  data-field="quant[1]"
+                                  class="btn btn-default btn-number" data-field="quant[1]"
                                   data-type="minus" type="button">
                               <span class=" fa fa-minus"></span>
                           </button>
@@ -140,11 +139,13 @@
                         </div>
                         <!--                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>-->
 
-                        <h4 class="grand-total-title">Total Price <span>{{cart.total_price | number: '1.2'}}</span></h4>
-                        <h4 class="grand-total-title">Total
+                        <h4 class="grand-total-title" style="margin-top: 20px;">Total Price
+                            <span>{{cart.total_price | number: '1.2'}}</span></h4>
+                        <h4 class="grand-total-title" >Total
                             Discount<span>-{{cart.total_price - cart.final_price | number: '1.2'}}</span></h4>
                         <h4 class="grand-total-title">Final Price To Pay<span>{{cart.final_price | number: '1.2'}}</span></h4>
-                        <a (click)="payWithRazor()">Proceed to Checkout</a>
+                        <a (click)="payWithRazor()"
+                           style=" background: linear-gradient(90deg, rgb(128, 0, 128) 00%, rgba(200, 0, 249, 0.68) 100%); border-radius: 50px;">Proceed to Checkout</a>
                     </div>
                 </div>
             </div>

@@ -4954,7 +4954,7 @@ header .header-menu-trigger:focus {
     text-transform: uppercase;
     color: #FFFFFF;
     border: medium none;
-    background: linear-gradient(90deg, rgba(1, 243, 157, 1) 0%, rgba(1, 254, 207, 1) 100%);
+    background: linear-gradient(90deg, rgb(128, 0, 128) 00%, rgba(200, 0, 249, 0.68) 100%);
     font-weight: 700;
     border-radius: 5px;
     width: 47%;
@@ -5307,12 +5307,22 @@ header .header-menu-trigger:focus {
 }
 
 header {
-    background: #800080;
+     background: linear-gradient(90deg, rgb(128, 0, 128) 00%, rgba(200, 0, 249, 0.68) 100%);
+    /*background: #800080;*/
     height: 100px;
 }
 
 .header{
 background: #800080;
+     height: 60px;
+}
+
+.search_bar{
+    margin-top: 20px;
+    /*border-radius: 20px!important;*/
+    /*height: 25px;*/
+
+
 }
 
 .store-name-loc {
@@ -5564,7 +5574,7 @@ background: #800080;
     border-top-left-radius: 0;
     border-top-right-radius: 0;
     /*background: linear-gradient(90deg, rgba(1, 243, 157, 1) 0%, rgba(1, 350, 300, 1) 100%);*/
-    background:linear-gradient(90deg, rgb(59, 10, 78) 00%, rgba(181, 1, 249, 0.68) 100%);
+    background: linear-gradient(90deg, rgb(128, 0, 128) 00%, rgba(200, 0, 249, 0.68) 100%);
     font-weight: 700;
 }
 
@@ -5872,7 +5882,7 @@ background: #800080;
 }
 
 #offcanvas-menu .profile-card.address .profile-card__content p {
-    color: purple;
+    color: #95999c;
     line-height: 50px;
     margin-top: -50px;
 }
@@ -5886,7 +5896,7 @@ background: #800080;
 
 #offcanvas-menu .profile-card.help a {
     display: inline-block;
-    background: linear-gradient(90deg, rgba(1, 300, 200, 1) 0%, rgba(1, 254, 207, 1) 100%);
+    background: #800080;
     color: white;
     padding: 7px 16px;
     margin-right: 10px;
@@ -6161,7 +6171,7 @@ background: #800080;
 
 .item .offer {
     color: white;
-   background: linear-gradient(90deg, rgb(59, 10, 78) 00%, rgba(181, 1, 249, 0.68) 100%);
+   background: linear-gradient(90deg, rgb(128, 0, 128) 00%, rgba(200, 0, 249, 0.68) 100%);
     width: 70px;
     height: 70px;
     border-radius: 00px 00px 250px 00px;
@@ -6210,7 +6220,7 @@ background: #800080;
 
 .heart_icon_red {
     float: right;
-    color: red;
+    color: #da4453;
     font-size: 25px;
 }
 

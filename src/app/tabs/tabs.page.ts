@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {NavigationExtras, Router} from '@angular/router';
+
 // import {Events} from 'ionic-angular';
 
 @Component({
@@ -52,7 +53,7 @@ export class TabsPage {
         this.router.navigate(['tabs/category']);
     }
 
-    offer() {
+    products() {
         this.router.navigate(['tabs/products']);
     }
 
@@ -60,9 +61,10 @@ export class TabsPage {
         this.router.navigate(['tabs/cart']);
     }
 
-    profile() {
-        this.router.navigate(['tabs/profile']);
+    offers() {
+        this.router.navigate(['tabs/offer']);
     }
+
 
     login() {
         this.router.navigate(['tabs/login']);
@@ -70,10 +72,6 @@ export class TabsPage {
 
     signup() {
         this.router.navigate(['tabs/signup']);
-    }
-
-    products() {
-        this.router.navigate(['tabs/products']);
     }
 
     logout() {

@@ -1,6 +1,6 @@
 <ion-header>
     <ion-toolbar>
-        <ion-title>offer</ion-title>
+        <ion-title>offer zone</ion-title>
     </ion-toolbar>
 </ion-header>
 
@@ -9,102 +9,44 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-12">
-                    <h4 class="page-title">Offer Zone</h4>
+                    <h3 class="page-title">Offer Zone</h3>
                 </div>
             </div>
         </div>
     </div>
 
+
     <div class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
-        <div class="container ">
-            <div class="row ">
+        <div class="container">
+            <div class="row">
 
-                        <div class=" col-6  products-box-left ">
-                            <div class="item">
-                                <div class="offer">2% Off</div>
-                                <img alt="" class="injectable"
-                                     src="../../assets/img/products/featured/best-salt-img.png">
-                                <div class="content-div">
-                                    <h4><img class="icons" src="../../assets/img/icons/money.svg">25.00 <span
-                                            class="costprice"><img
-                                            class="icons" src="../../assets/img/icons/money.svg">25.00</span>
-                                    </h4>
-                                    <p>Total Iodised Salt</p>
-                                    <select class="dropdown_item" name="items">
-                                        <option value="1kg">1 kg</option>
-                                        <option value="500gm">500 gm</option>
-                                        <option value="250gm">250 gm</option>
-                                    </select>
-                                    <a >Add To Cart</a>
-                                </div>
+                <div *ngFor="let homeoffer of HomeOffers" class=" col-6 products-box-right">
+                    <div class="item">
+
+                        <div *ngIf="homeoffer.product2.discount" class="offer"><a>₹ {{homeoffer.product2.discount}}
+                            &nbsp;Off</a></div>
+                        <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
+                        <a [routerLink]="['/tabs/product', homeoffer.product2.id]">
+                            <div style=" text-align: center">
+                                <img alt="" class="injectable pruduct_image" src="{{homeoffer.product2.image}}">
                             </div>
-                        </div>
-
-
-                        <div class=" col-6  products-box-left ">
-                            <div class="item">
-                                <div class="offer">2% Off</div>
-                                <img alt="" class="injectable"
-                                     src="../../assets/img/products/featured/best-salt-img.png">
-                                <div class="content-div">
-                                    <h4><img class="icons" src="../../assets/img/icons/money.svg">25.00 <span
-                                            class="costprice"><img
-                                            class="icons" src="../../assets/img/icons/money.svg">25.00</span></h4>
-                                    <p>Total Iodised Salt</p>
-                                    <select class="dropdown_item" name="items">
-                                        <option value="1kg">1 kg</option>
-                                        <option value="500gm">500 gm</option>
-                                        <option value="250gm">250 gm</option>
-                                    </select>
-                                    <a href="#">Add To Cart</a>
-                                </div>
+                            <div class="content-div">
+                                <p style="font-size:15px; height: 20px;">₹ <s>{{homeoffer.product2.selling_price}}</s>
+                                    <i style="color: #3a7be0"> {{homeoffer.product2.final_price}}</i></p>
+                                <p style=" height: 40px;">{{homeoffer.product2.item_name}}
+                                    |  {{homeoffer.product2.weight}}</p>
                             </div>
+
+                        </a>
+                        <div class="content-div">
+                            <a (click)="addTocart(homeoffer.product2.id)">Add To Cart</a>
                         </div>
-
-
-                        <div class=" col-6  products-box-left ">
-                            <div class="item">
-                                <div class="offer">2% Off</div>
-                                <img alt="" class="injectable"
-                                     src="../../assets/img/products/featured/best-salt-img.png">
-                                <div class="content-div">
-                                    <h4><img class="icons" src="../../assets/img/icons/money.svg">25.00 <span
-                                            class="costprice"><img
-                                            class="icons" src="../../assets/img/icons/money.svg">25.00</span></h4>
-                                    <p>Total Iodised Salt</p>
-                                    <select class="dropdown_item" name="items">
-                                        <option value="1kg">1 kg</option>
-                                        <option value="500gm">500 gm</option>
-                                        <option value="250gm">250 gm</option>
-                                    </select>
-                                    <a href="#">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class=" col-6  products-box-left ">
-                            <div class="item">
-                                <div class="offer">2% Off</div>
-                                <img alt="" class="injectable"
-                                     src="../../assets/img/products/featured/best-salt-img.png">
-                                <div class="content-div">
-                                    <h4><img class="icons" src="../../assets/img/icons/money.svg">25.00 <span
-                                            class="costprice"><img
-                                            class="icons" src="../../assets/img/icons/money.svg">25.00</span></h4>
-                                    <p>Total Iodised Salt</p>
-                                    <select class="dropdown_item" name="items">
-                                        <option value="1kg">1 kg</option>
-                                        <option value="500gm">500 gm</option>
-                                        <option value="250gm">250 gm</option>
-                                    </select>
-                                    <a href="#">Add To Cart</a>
-                                </div>
-                            </div>
-                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>
     </div>
+
 
 </ion-content>

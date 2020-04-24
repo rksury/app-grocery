@@ -23,15 +23,16 @@
 
                             <div (click)="get_subcategory(category.id)"
                                  *ngIf="!category.parent_category"
-                                 class="cat-link link cat-box1" style="background:#2a6df4;">
+                                 class="cat-link link cat-box1"
+                                 style="background: linear-gradient(90deg, rgb(128, 0, 128) 00%, rgba(200, 0, 249, 0.68) 100%);">
                                 <img alt="" class="img-fluid" src="{{category.image}}">
                                 {{category.title}}
                             </div>
                             <div (click)="get_subcategory_products(category.id)"
                                  *ngIf="category.parent_category" class="cat-link link cat-box1"
-                                style="background:#2a6df4;">
+                                style="background: linear-gradient(270deg, rgba(131, 0, 131, 0.96) 0%, rgb(209, 0, 255) 100%);">
                                 <img alt="" class="img-fluid" src="{{category.image}}">
-                                {{category.title}}
+                                <a style="float: right;">{{category.title}}</a>
                             </div>
 
                         </li>

@@ -3386,12 +3386,71 @@ header .header-menu-trigger:focus {
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.39);
 
 }
-
 .new-arrival_img {
     text-align: center;
     width: 120px;
     height: 140px;
 
+}
+
+.offer {
+    color: white;
+    width: 50px;
+    height: 50px;
+    border-radius:0px 30px 0px 10px;
+    padding: 18px 18px;
+    line-height: 14px;
+    /*font-weight: 700;*/
+    position: absolute;
+    top: -10px;
+    left: 290px;
+    font-size: 10px;
+    float: right;
+}
+
+.status_icon{
+    color: white;
+    font-size: 25px;
+    margin-left: -10px;
+
+}
+
+.transaction{
+    padding: 5px;
+    border-radius: 5px 30px 30px 5px;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.39);
+    width: 100%;
+    height: 100px;
+}
+
+.transation_img{
+    display: flex;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    /*margin-left: -250px;*/
+}
+.transaction_heading{
+    color: #95999c;
+    /*font-size: 15px;*/
+}
+.transaction_table{
+    color: #1d2124;
+}
+
+.brand_name{
+    font-size: 20px;
+    font-weight: bold;
+    color: #800080;
+}
+
+.hr_row{
+    width: 100%;
+    height: 5px;
+    color: white;
 }
 
 .featured-product__content {
@@ -6256,6 +6315,8 @@ background: #800080;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
+    /*border-radius: 5px 5px 50px 50px;"*/
+
 }
 
 .all-category .accordion .link {
@@ -6273,6 +6334,7 @@ background: #800080;
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.39);
     position: relative;
     border-radius: 10px;
+    /*border-radius: 5px 5px 50px 50px;"*/
 }
 
 .all-category .accordion li:last-child .link {

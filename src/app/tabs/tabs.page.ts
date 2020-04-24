@@ -41,8 +41,11 @@ export class TabsPage {
         this.resetCategories = null;
     }
 
-    order_history() {
+    my_orders() {
         this.router.navigate(['tabs/order-history']);
+    }
+    transactions() {
+        this.router.navigate(['tabs/transaction']);
     }
 
     wish_list() {

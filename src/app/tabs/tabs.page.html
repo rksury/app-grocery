@@ -91,9 +91,15 @@
                         <!--                        </ion-item>-->
 
 
-                        <ion-item (click)="order_history()" class="menu_link">
+                        <ion-item (click)="my_orders()" class="menu_link">
                             <ion-icon class="menu_link" name="radio-button-on-outline" slot="start"></ion-icon>
                             <ion-label>My Orders</ion-label>
+                            <ion-icon class=" arrow_ikn" name="chevron-forward-outline"></ion-icon>
+                        </ion-item>
+
+                        <ion-item (click)="transactions()" class="menu_link">
+                            <ion-icon class="menu_link" name="wallet-outline" slot="start"></ion-icon>
+                            <ion-label>My Transaction</ion-label>
                             <ion-icon class=" arrow_ikn" name="chevron-forward-outline"></ion-icon>
                         </ion-item>
 
@@ -112,6 +118,7 @@
                             <ion-icon class="menu_link" name="power-outline" slot="start"></ion-icon>
                             <ion-label>Log out</ion-label>
                         </ion-item>
+
                     </div>
 
                 </div>

@@ -16,14 +16,13 @@
     <ion-grid></ion-grid>
     <div class="category-slider-area all-category categorys bg-color--grey slider3 space-pb--25 space-mb--25">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
+            <div class="row" >
+                <div class="col-12" >
                     <ul class="accordion" id="accordion">
                         <li *ngFor="let category of categories">
 
                             <div (click)="get_subcategory(category.id)"
-                                 *ngIf="!category.parent_category"
-                                 class="cat-link link cat-box1"
+                                 *ngIf="!category.parent_category" class="cat-link link cat-box1"
                                  style="background: linear-gradient(90deg, rgb(128, 0, 128) 00%, rgba(200, 0, 249, 0.68) 100%);">
                                 <img alt="" class="img-fluid" src="{{category.image}}">
                                 {{category.title}}

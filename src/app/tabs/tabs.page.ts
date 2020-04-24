@@ -40,6 +40,9 @@ export class TabsPage {
     resetCategories() {
         this.resetCategories = null;
     }
+    profile() {
+        this.router.navigate(['tabs/profile']);
+    }
 
     my_orders() {
         this.router.navigate(['tabs/order-history']);

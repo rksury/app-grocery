@@ -5375,6 +5375,10 @@ header {
 background: #800080;
      height: 60px;
 }
+.header_2{
+    height: 50px;
+    background: white;
+}
 
 .search_bar{
     margin-top: 20px;

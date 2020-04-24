@@ -23,23 +23,23 @@
                 <div *ngFor="let homeoffer of HomeOffers" class=" col-6 products-box-right">
                     <div class="item">
 
-                        <div *ngIf="homeoffer.product2.discount" class="offer"><a>₹ {{homeoffer.product2.discount}}
+                        <div *ngIf="homeoffer.product4.discount" class="offer"><a>₹ {{homeoffer.product4.discount}}
                             &nbsp;Off</a></div>
                         <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
-                        <a [routerLink]="['/tabs/product', homeoffer.product2.id]">
+                        <a [routerLink]="['/tabs/product', homeoffer.product4.id]">
                             <div style=" text-align: center">
-                                <img alt="" class="injectable pruduct_image" src="{{homeoffer.product2.image}}">
+                                <img alt="" class="injectable pruduct_image" src="{{homeoffer.product4.image}}">
                             </div>
                             <div class="content-div">
-                                <p style="font-size:15px; height: 20px;">₹ <s>{{homeoffer.product2.selling_price}}</s>
-                                    <i style="color: #3a7be0"> {{homeoffer.product2.final_price}}</i></p>
-                                <p style=" height: 40px;">{{homeoffer.product2.item_name}}
-                                    |  {{homeoffer.product2.weight}}</p>
+                                <p style="font-size:15px; height: 20px;">₹ <s>{{homeoffer.product4.selling_price}}</s>
+                                    <i style="color: #3a7be0"> {{homeoffer.product4.final_price}}</i></p>
+                                <p style=" height: 40px;">{{homeoffer.product4.item_name}}
+                                    |  {{homeoffer.product4.weight}}</p>
                             </div>
 
                         </a>
                         <div class="content-div">
-                            <a (click)="addTocart(homeoffer.product2.id)">Add To Cart</a>
+                            <a (click)="addTocart(homeoffer.product4.id)">Add To Cart</a>
                         </div>
                     </div>
                 </div>

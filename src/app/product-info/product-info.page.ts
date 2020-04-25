@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router, ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from './product.service';
 import {CartService} from '../cart/cart.service';
 import {UtilsService} from '../utils.service';
@@ -55,7 +55,7 @@ export class ProductInfoPage implements OnInit {
                 this.productService.getProduct(params.get('id')).subscribe(data => {
                     this.product = data.products;
                     this.relatedProducts = data.related_products;
-
+                    console.log(this.relatedProducts);
                 });
             }
         });

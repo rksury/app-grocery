@@ -67,7 +67,7 @@ export class WishlistPage implements OnInit {
                     try {
                         this.utils.presentToast(error.error.error[0]);
                     } catch (e) {
-                        this.utils.presentToast('Some Error Occurred');
+                        //this.utils.presentToast('Some Error Occurred');
 
                     }
 
@@ -84,7 +84,7 @@ export class WishlistPage implements OnInit {
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                this.utils.presentToast('Some Error Occurred');
+                //this.utils.presentToast('Some Error Occurred');
 
             }
             if (error.status === 401) {

@@ -79,7 +79,7 @@ export class ProductInfoPage implements OnInit {
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                // this.utils.presentToast('Some Error Occurred');
+                // //this.utils.presentToast('Some Error Occurred');
 
             }
             if (error.status === 401) {
@@ -90,16 +90,15 @@ export class ProductInfoPage implements OnInit {
     }
 
     addTowishlist(id) {
+        this.product.in_wish_list = !this.product.in_wish_list;
         this.wishlistService.add_To_wishlist(id).subscribe(data => {
             this.product = data.products;
-            console.log(this.product.in_wish_list);
-            console.log(this.product.id);
-
         }, error => {
+            this.product.in_wish_list = !this.product.in_wish_list;
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                // this.utils.presentToast('Some Error Occurred');
+                // //this.utils.presentToast('Some Error Occurred');
 
             }
             if (error.status === 401) {

@@ -19,7 +19,7 @@ export class WishlistPage implements OnInit {
     });
     special;
     products;
-    showWishlist = false;
+    showWishlist = true;
     isloggedin = window.localStorage.getItem('token') !== null;
     wishlist;
 
@@ -37,8 +37,13 @@ export class WishlistPage implements OnInit {
     ionViewWillLeave() {
         this.products = [];
         this.special = {};
-        this.get_wish_list();
 
+    }
+
+    ionViewWillEnter() {
+        this.products = [];
+        this.special = {};
+        this.get_wish_list();
     }
 
 
@@ -106,7 +111,8 @@ export class WishlistPage implements OnInit {
 
     removeWishlist(pk) {
         this.wishlistService.remove_from_Wishlist(pk).subscribe(data => {
-            this.utils.presentToast('Remove from wish list');
+            this.get_wish_list();
+
         }, error => {
             try {
                 this.utils.presentToast(error.error.error[0]);

@@ -31,6 +31,7 @@ export class WishlistService {
         };
         return this.httpClient.post(this.base_url + 'product/wishlist/' + id, {}, httpOptions);
     }
+
     remove_from_Wishlist(id): Observable<any> {
         const httpOptions = {
             headers: new HttpHeaders({
@@ -38,8 +39,7 @@ export class WishlistService {
                 }
             )
         };
-        // @ts-ignore
-        return this.httpClient.delete(this.base_url + 'product/wishlist/' + id, {}, httpOptions);
+        return this.httpClient.delete(this.base_url + 'product/wishlist/' + id, httpOptions);
     }
 
 }

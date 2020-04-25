@@ -32,6 +32,7 @@ export class WishlistPage implements OnInit {
 
     ngOnInit() {
         this.get_wish_list();
+
     }
 
     ionViewWillLeave() {
@@ -109,19 +110,17 @@ export class WishlistPage implements OnInit {
         });
     }
 
-    removeWishlist(pk) {
-        this.wishlistService.remove_from_Wishlist(pk).subscribe(data => {
-            this.get_wish_list();
-
+    removeWishlist(id) {
+        this.wishlistService.remove_from_Wishlist(id).subscribe(data => {
+            // this.products();
+            this.products = data;
         }, error => {
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
                 this.utils.presentToast('Some Error Occured');
             }
-            if (error.status === 401) {
 
-            }
         });
     }
 

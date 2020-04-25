@@ -8,14 +8,12 @@
                         <div class="container space-y--15">
 
                             <div class="row align-items-center">
-                                <div class="col d-flex justify-content-center">
-                                    <!-- header search -->
+                                <div class="col d-flex justify-content-center" (click)="profile()" routerDirection="forward">
                                     <div class="store-name-loc">
                                         <a><i class="fa fa-user-circle user_icon"></i>&nbsp;
-                                        <b>{{user}}</b>
-
-                                        </a>
+                                        <b>{{user}}</b></a>
                                     </div>
+                                    <a> <i class="fa fa-angle-right arrow_icon"></i></a>
                                 </div>
                                 <!--                                <div class="col d-flex justify-content-center selector_city">-->
 
@@ -93,16 +91,22 @@
                         <!--                        </ion-item>-->
 
 
-                        <ion-item (click)="order_history()" class="menu_link">
+                        <ion-item (click)="my_orders()" class="menu_link">
                             <ion-icon class="menu_link" name="radio-button-on-outline" slot="start"></ion-icon>
                             <ion-label>My Orders</ion-label>
-                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <ion-icon class=" arrow_ikn" name="chevron-forward-outline"></ion-icon>
+                        </ion-item>
+
+                        <ion-item (click)="transactions()" class="menu_link">
+                            <ion-icon class="menu_link" name="wallet-outline" slot="start"></ion-icon>
+                            <ion-label>My Transaction</ion-label>
+                            <ion-icon class=" arrow_ikn" name="chevron-forward-outline"></ion-icon>
                         </ion-item>
 
                         <ion-item (click)="wish_list()" class="menu_link">
                             <ion-icon class="menu_link" name="heart-outline" slot="start"></ion-icon>
                             <ion-label>Wish List</ion-label>
-                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <ion-icon  class=" arrow_ikn" name="chevron-forward-outline"></ion-icon>
                         </ion-item>
 
                         <ion-item class="menu_link">
@@ -114,6 +118,7 @@
                             <ion-icon class="menu_link" name="power-outline" slot="start"></ion-icon>
                             <ion-label>Log out</ion-label>
                         </ion-item>
+
                     </div>
 
                 </div>
@@ -129,12 +134,11 @@
 <div class="ion-page" id="main-content">
 
     <ion-header>
-        <ion-toolbar color="tertiary">
-
+        <ion-toolbar  color="#800080;" class="header">
             <ion-buttons slot="start">
                 <ion-menu-button color="light"></ion-menu-button>
-                <ion-toolbar class="search" color="tertiary">
-                    <ion-searchbar (change)="search($event)" [(ngModel)]="searchQuery" animated
+                <ion-toolbar class="search header" color="#800080;">
+                    <ion-searchbar  class="search_bar" (change)="search($event)" [(ngModel)]="searchQuery" animated
                                    autocorrect="off" showCancelButton="focus"></ion-searchbar>
                 </ion-toolbar>
 
@@ -150,8 +154,9 @@
                         <ion-select-option value="05">New Arrival</ion-select-option>
                     </ion-select>
                 </ion-button>
-
             </ion-buttons>
+
+
 
         </ion-toolbar>
     </ion-header>
@@ -168,9 +173,14 @@
                 <ion-label>Category</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button (click)="offer()" class="" routerDirection="forward">
+            <ion-tab-button (click)="products()" class="" routerDirection="forward">
                 <ion-icon class="footer_icon" name="nutrition"></ion-icon>
                 <ion-label>Products</ion-label>
+            </ion-tab-button>
+
+            <ion-tab-button (click)="offers()" routerDirection="forward">
+                <ion-icon class="footer_icon" name="medal"></ion-icon>
+                <ion-label>Offers</ion-label>
             </ion-tab-button>
 
             <ion-tab-button (click)="cart()" class="" routerDirection="forward">
@@ -178,10 +188,7 @@
                 <ion-label>Cart</ion-label>
             </ion-tab-button>
 
-            <ion-tab-button (click)="profile()" routerDirection="forward">
-                <ion-icon class="footer_icon" name="person"></ion-icon>
-                <ion-label>Profile</ion-label>
-            </ion-tab-button>
+
 
         </ion-tab-bar>
     </ion-tabs>

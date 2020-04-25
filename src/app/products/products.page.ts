@@ -20,7 +20,7 @@ export class ProductsPage implements OnInit {
     products;
 
     constructor(private route: ActivatedRoute,
-                private producteService: ProductService,
+                private productService: ProductService,
                 private cartService: CartService,
                 private utils: UtilsService,
                 private router: Router) {
@@ -57,7 +57,7 @@ export class ProductsPage implements OnInit {
     }
 
     get_all_products() {
-        this.producteService.get_all_products().subscribe(data => {
+        this.productService.get_all_products().subscribe(data => {
                 this.showProducts = true;
                 this.products = data;
 
@@ -68,7 +68,7 @@ export class ProductsPage implements OnInit {
     }
 
     get_products(params) {
-        this.producteService.get_products(params).subscribe(data => {
+        this.productService.get_products(params).subscribe(data => {
                 this.showProducts = true;
                 this.products = data;
 

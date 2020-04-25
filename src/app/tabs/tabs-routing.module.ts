@@ -80,6 +80,10 @@ const routes: Routes = [
                 loadChildren: () => import('../wishlist/wishlist.module').then(m => m.WishlistPageModule)
             },
             {
+                path: 'transaction',
+                loadChildren: () => import('../transaction/transaction.module').then(m => m.TransactionPageModule)
+            },
+            {
                 path: '',
                 redirectTo: '/tabs/tab1',
                 pathMatch: 'full'

@@ -23,7 +23,7 @@
 
 .filter_icon{
   font-size: 80px;
-  margin-top: 20px;
+  margin-top: 5px;
 }
 
 .user_icon{
@@ -33,5 +33,13 @@
 .arrow_icon{
   color: white;
   font-size: 50px;
+}
+
+.filter_botton{
+  color: #989aa2;
+}
+
+.filter_botton:hover{
+  color: #800080;
 }
 

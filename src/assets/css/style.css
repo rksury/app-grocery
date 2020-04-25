@@ -3377,8 +3377,8 @@ header .header-menu-trigger:focus {
 }
 
 .new-arrival {
-    padding: 10px;
-    border-radius: 5px;
+    /*padding: 10px;*/
+    border-radius: 10px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -3386,9 +3386,42 @@ header .header-menu-trigger:focus {
     box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.39);
 
 }
+.new-centre {
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+    box-shadow: 1px 1px 5px 0px rgba(0, 0, 0, 0.39);
+
+
+}
+
+.benner_card_img{
+    text-align: center;
+    width: 100%;
+    height: 120px;
+    border-radius: 10px;
+}
+.benner2_card_img{
+    text-align: center;
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+}
+
+.benner_card2_img{
+
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    border-radius: 10px;
+
+}
 .new-arrival_img {
     text-align: center;
-    width: 120px;
+    width: 100%;
     height: 140px;
 
 }
@@ -5376,12 +5409,17 @@ background: #800080;
      height: 60px;
 }
 .header_2{
-    height: 50px;
+    height: 40px;
     background: white;
 }
 
+.header2_icon{
+    font-size: 20px;
+
+}
+
 .search_bar{
-    margin-top: 20px;
+    margin-top: 5px;
     /*border-radius: 20px!important;*/
     /*height: 25px;*/
 
@@ -5690,9 +5728,9 @@ background: #800080;
     width: 68px;
 }
 
-.offersection .header h4 {
+.offersection .heading h4 {
     font-size: 18px;
-    padding: 20px 0 5px;
+    padding: 20px 0 10px;
     font-weight: 700;
 }
 
@@ -5709,7 +5747,7 @@ background: #800080;
     padding: 0;
     max-width: 100%;
     margin-bottom: 15px;
-    max-width: 70px;
+
 }
 
 .offersection .inside-box h4 {
@@ -5723,14 +5761,14 @@ background: #800080;
     position: absolute;
     left: 0;
     right: 0;
-    top: 41px;
+    top: 2px;
     height: 60px;
     z-index: 1;
     bottom: 0;
     width: 60px;
     margin: auto;
     border-radius: 6px;
-    padding: 5px 0;
+    /*padding: 5px 0;*/
     background: linear-gradient(180deg, rgba(23, 112, 237, 1) 0%, rgba(23, 81, 203, 1) 54%, rgba(24, 48, 167, 1) 100%);
 }
 
@@ -5738,12 +5776,12 @@ background: #800080;
     color: white;
     font-size: 10px;
     font-weight: 100;
-    line-height: 17px;
+    line-height: 13px;
     letter-spacing: .5px;
 }
 
 .offersection .offer-div h4 b {
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .offersection .offer-div h4:before {
@@ -5754,18 +5792,7 @@ background: #800080;
     position: relative;
 }
 
-.offersection .hr-offer-box {
-    position: absolute;
-    border-color: #ffffff69;
-    background: radial-gradient(white, transparent);
-    width: 100%;
-    top: 38px;
-    bottom: 0;
-    margin: auto;
-}
 
-
-/*silder4*/
 
 .slider4 {
     padding-bottom: 5px;

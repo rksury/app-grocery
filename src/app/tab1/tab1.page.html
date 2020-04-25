@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content>
-    <div class="menu_header">
+    <div class="menu_header" style="margin-top: 10%;">
         <div class="body-wrapper space-pt--20 space-pb--50">
 
             <!--====================  banner area ====================-->
@@ -372,40 +372,129 @@
             </div>
             <!-- ##########################  End  Best Selling #########################-->
 
+            <!-- ##########################   benner card  #########################-->
+            <div class="container" style="margin-top: -30px;">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="featured-product-wrapper space-mb-m--15">
+                            <div class="row row-5">
+
+                                <div class="col-6">
+                                    <a [routerLink]="['/tabs/products']">
+                                        <div class="cat-main-box">
+                                            <div class="new-arrival cat-box1 space-mb--15">
+                                                <a>
+                                                    <div>
+                                                        <img class="benner_card_img"
+                                                             src="../../assets/img/products/featured/slider4-img1.png">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a [routerLink]="['/tabs/products']">
+                                        <div class="cat-main-box">
+                                            <div class="new-arrival cat-box1 space-mb--15">
+                                                <a>
+                                                    <div>
+                                                        <img class="benner_card_img"
+                                                             src="../../assets/img/products/featured/slider4-img2.png">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-12" style="margin-top: 5px; margin-bottom: 5px;">
+                                    <a [routerLink]="['/tabs/products']">
+                                        <div class="cat-main-box">
+                                            <div class="new-centre cat-box1 space-mb--15">
+                                                <a>
+                                                    <div>
+                                                        <img class="benner_card2_img"
+                                                             src="../../assets/img/slider%20image/single-banner-img.png">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                                <div class="col-6">
+                                    <a [routerLink]="['/tabs/product']">
+                                        <div class="cat-main-box">
+                                            <div class="new-arrival cat-box1 space-mb--15">
+                                                <a>
+                                                    <div>
+                                                        <img class="benner_card_img"
+                                                             src="../../assets/img/products/featured/slider4-img2.png">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-6">
+                                    <a [routerLink]="['/tabs/product']">
+                                        <div class="cat-main-box">
+                                            <div class="new-arrival cat-box1 space-mb--15">
+                                                <a>
+                                                    <div>
+                                                        <img class="benner_card_img"
+                                                             src="../../assets/img/products/featured/slider4-img1.png">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ##########################  benner card  #########################-->
+
 
             <!-- ##########################   New Arrival #########################-->
             <div class="categorys bg-color--grey space-pb--25 space-mb--25 ">
-                <!--                                <div class="container">-->
-                <!--                                    <div class="row">-->
-                <!--                                        <div class="col-12">-->
+                <!--                                                <div class="container">-->
+                <!--                                                    <div class="row">-->
+                <!--                                                        <div class="col-12">-->
 
-                <!--                                            <h2 class="section-title space-mt&#45;&#45;10 space-mb&#45;&#45;20">New Arrivals</h2>-->
+                <!--                                                            <h2 class="section-title space-mt&#45;&#45;10 space-mb&#45;&#45;20">New Arrivals</h2>-->
 
-                <!--                                            <div class="featured-product-wrapper space-mb-m&#45;&#45;15">-->
-                <!--                                                <div class="row row-5">-->
-                <!--                                                    <div *ngFor="let newArrival of NewArrivals" class="col-6">-->
-                <!--                                                        <a [routerLink]="['/tabs/product', newArrival.id]">-->
-                <!--                                                            <div class="cat-main-box">-->
-                <!--                                                                <div class="new-arrival cat-box1 space-mb&#45;&#45;15">-->
-                <!--                                                                    <a>-->
-                <!--                                                                        <div>-->
-                <!--                                                                            <img class="new-arrival_img"-->
-                <!--                                                                                 src="{{newArrival.image}}">-->
-                <!--                                                                        </div>-->
-                <!--                                                                    </a>-->
-                <!--                                                                </div>-->
-                <!--                                                                <div class="featured-product__content">-->
-                <!--                                                                    <a><h4 style="text-align: center;">{{newArrival.item_name}}</h4></a>-->
+                <!--                                                            <div class="featured-product-wrapper space-mb-m&#45;&#45;15">-->
+                <!--                                                                <div class="row row-5">-->
+                <!--                                                                    <div  class="col-6">-->
+                <!--                                                                        <a [routerLink]="['/tabs/product', newArrival.id]">-->
+                <!--                                                                            <div class="cat-main-box">-->
+                <!--                                                                                <div class="new-arrival cat-box1 space-mb&#45;&#45;15">-->
+                <!--                                                                                    <a>-->
+                <!--                                                                                        <div>-->
+                <!--                                                                                            <img class="new-arrival_img"-->
+                <!--                                                                                                 src="{{newArrival.image}}">-->
+                <!--                                                                                        </div>-->
+                <!--                                                                                    </a>-->
+                <!--                                                                                </div>-->
+                <!--                                                                                <div class="featured-product__content">-->
+                <!--                                                                                    <a><h4 style="text-align: center;">{{newArrival.item_name}}</h4></a>-->
+                <!--                                                                                </div>-->
+                <!--                                                                            </div>-->
+                <!--                                                                        </a>-->
+                <!--                                                                    </div>-->
+
                 <!--                                                                </div>-->
                 <!--                                                            </div>-->
-                <!--                                                        </a>-->
+                <!--                                                        </div>-->
                 <!--                                                    </div>-->
-
                 <!--                                                </div>-->
-                <!--                                            </div>-->
-                <!--                                        </div>-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
             </div>
 
             <div class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
@@ -440,6 +529,76 @@
                 </div>
             </div>
             <!-- ##########################  End  New Arrivals #########################-->
+
+            <!-- ##########################   benner card  #########################-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="featured-product-wrapper space-mb-m--15">
+                            <div class="row row-5">
+                                <div class="col-5">
+                                    <div style="text-align: center;">
+                                        <h1 style="color: #a804b2;">20%</h1>
+                                        <h5 style="color: #cf3c4f; margin-top: -8px;">Off</h5>
+                                    </div>
+                                </div>
+                                <div class="col-7">
+                                    <a [routerLink]="['/tabs/products']">
+                                        <div class="cat-main-box">
+                                            <div class="new-arrival cat-box1 space-mb--15">
+                                                <a>
+                                                    <div>
+                                                        <img class="benner2_card_img"
+                                                             src="../../assets/img/slider%20image/slider2-gor1-img.jpg">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-12" style="margin-top: 5px; margin-bottom: 5px;">
+                                    <a [routerLink]="['/tabs/products']">
+                                        <div class="cat-main-box">
+                                            <div class="new-centre cat-box1 space-mb--15">
+                                                <a>
+                                                    <div>
+                                                        <img class="benner_card2_img"
+                                                             src="../../assets/img/slider%20image/single-banner-img.png">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-7">
+                                    <a [routerLink]="['/tabs/product']">
+                                        <div class="cat-main-box">
+                                            <div class="new-arrival cat-box1 space-mb--15">
+                                                <a>
+                                                    <div>
+                                                        <img class="benner2_card_img"
+                                                             src="../../assets/img/slider%20image/slider2-gor1-img.jpg">
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-5">
+                                   <div style="text-align: center;">
+                                        <h1 style="color: #a804b2;">20%</h1>
+                                        <h5 style="color: #cf3c4f; margin-top: -8px;">Off</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- ##########################  benner card  #########################-->
+
 
             <!--====================  category slider-1  ====================-->
             <div class="category-slider-area bg-color--grey slider2 space-pb--25 space-mb--25">
@@ -481,199 +640,117 @@
 
             <!--====================  End of category slider-1 ====================-->
 
-            <!--====================  category slider-2  ====================-->
-            <div class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
-                <!--                            <div class="container">-->
-                <!--                                <div class="row">-->
-                <!--                                    <div class=" col-6 products-box-right">-->
-                <!--                                        <div class="item">-->
-                <!--                                            <img alt="" class="injectable section2" src="../../assets/img/products/featured/best-salt-img.png">-->
-                <!--                                            <div class="content-div">-->
-                <!--                                                <p style="font-size:15px;">₹ <s>30.00</s><i style="color: #3a7be0"> 20.00</i></p>-->
-                <!--                                                <p>Total Iodised Salt</p>-->
-                <!--                                                <div>-->
-                <!--                                                    <select class="dropdown_item" name="items">-->
-                <!--                                                        <option value="1">1 kg</option>-->
-                <!--                                                        <option value="2">500 gm</option>-->
-                <!--                                                        <option value="3">250 gm</option>-->
-                <!--                                                    </select>-->
-                <!--                                                </div>-->
-                <!--                                                <a>Add To Cart</a>-->
-                <!--                                            </div>-->
-                <!--                                        </div>-->
-                <!--                                    </div>-->
 
-                <!--                                    <div class=" col-6 products-box-left">-->
-                <!--                                        <div class="item liquid ">-->
-                <!--                                            <img alt="" class="injectable" src="../../assets/img/products/featured/best-oli-img.png">-->
-                <!--                                            <div class="content-div">-->
-                <!--                                                <p style="font-size:15px;">₹ <s>30.00</s><i style="color: #3a7be0"> 20.00</i></p>-->
-                <!--                                                <p>Oil</p>-->
-                <!--                                                <div>-->
-                <!--                                                    <select class="dropdown_item" name="items">-->
-                <!--                                                        <option value="1kg">1 Ltr</option>-->
-                <!--                                                        <option value="500gm">500 ML</option>-->
-                <!--                                                        <option value="250gm">250 ML</option>-->
-                <!--                                                    </select>-->
-                <!--                                                </div>-->
-                <!--                                                <a>Add To Cart</a>-->
-                <!--                                            </div>-->
-                <!--                                        </div>-->
-                <!--                                    </div>-->
+            <!--######################### Home Offer  ##########################-->
+                <div *ngFor="let homeoffer of HomeOffers" class="category-slider-area bg-color--grey offersection space-pb--25 space-mb--25">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12">
 
-                <!--                                    <div class=" col-6 products-box-left">-->
-                <!--                                        <div class="item liquid ">-->
-                <!--                                            <img alt="" class="injectable" src="../../assets/img/products/featured/best-oli-img.png">-->
-                <!--                                            <div class="content-div">-->
-                <!--                                                <p style="font-size:15px;">₹ <s>30.00</s><i style="color: #3a7be0"> 20.00</i></p>-->
-                <!--                                                <p>Oil</p>-->
-                <!--                                                <div>-->
-                <!--                                                    <select class="dropdown_item" name="items">-->
-                <!--                                                        <option value="1kg">1 Ltr</option>-->
-                <!--                                                        <option value="500gm">500 ML</option>-->
-                <!--                                                        <option value="250gm">250 ML</option>-->
-                <!--                                                    </select>-->
-                <!--                                                </div>-->
-                <!--                                                <a>Add To Cart</a>-->
-                <!--                                            </div>-->
-                <!--                                        </div>-->
-                <!--                                    </div>-->
+                                <div [ngStyle]="{'background-color': homeoffer.color}" class="offersection-box img-box col-12">
+                                    <div class="heading">
+                                        <!--                                    <img src="assets/img/products/featured/household-section-img-top.png">-->
+                                        <h4>{{homeoffer.heading}}</h4>
+                                        <p>{{homeoffer.sub_heading}}</p>
+                                    </div>
 
-                <!--                                    <div class="col-6 products-box-left">-->
-                <!--                                        <div class="item ">-->
-                <!--                                            <img alt="" class="injectable" src="../../assets/img/products/featured/best-salt-img.png">-->
-                <!--                                            <div class="content-div">-->
-                <!--                                                <p style="font-size:15px;">₹ <s>30.00</s><i style="color: #3a7be0"> 20.00</i></p>-->
-                <!--                                                <p>Total Iodised Salt</p>-->
-                <!--                                                <select class="dropdown_item" name="items">-->
-                <!--                                                    <option value="1kg">1 kg</option>-->
-                <!--                                                    <option value="500gm">500 gm</option>-->
-                <!--                                                    <option value="250gm">250 gm</option>-->
-                <!--                                                </select>-->
-                <!--                                                <a href="#">Add To Cart</a>-->
-                <!--                                            </div>-->
-                <!--                                        </div>-->
-                <!--                                    </div>-->
+                                    <div class="row boxx">
+                                        <div class="offer-div">
+                                            <h4>UPTO<br><b>{{homeoffer.discount_off}}%</b><br>OFF</h4>
+                                        </div>
+                                        <div class="col-6">
+                                            <a [routerLink]="['/tabs/product', homeoffer.product1.id]">
+                                                <div class="inside-box">
+                                                    <img src="{{homeoffer.product1.image}}">
+                                                    <h4>{{homeoffer.product1.item_name}}</h4>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-6">
+                                            <a [routerLink]="['/tabs/product', homeoffer.product2.id]">
+                                                <div class="inside-box">
+                                                    <img src="{{homeoffer.product2.image}}">
+                                                    <h4>{{homeoffer.product2.item_name}}</h4>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-6">
+                                            <a [routerLink]="['/tabs/product', homeoffer.product3.id]">
+                                                <div class="inside-box">
+                                                    <img src="{{homeoffer.product3.image}}">
+                                                    <h4>{{homeoffer.product3.item_name}}</h4>
+                                                </div>
+                                            </a>
+                                        </div>
+                                        <div class="col-6">
+                                            <a [routerLink]="['/tabs/product', homeoffer.product4.id]">
+                                                <div class="inside-box">
+                                                    <img src="{{homeoffer.product4.image}}">
+                                                    <h4>{{homeoffer.product4.item_name}}</h4>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
 
-                <!--                                </div>-->
-                <!--                            </div>-->
-            </div>
-
-            <!--====================  End of category slider-2  ====================-->
-
-
-            <!--====================  Home Offer  ====================-->
-                                     <div>
-                <!------------------ <div *ngFor="let homeoffer of HomeOffers"-->
-                <!--                 class="category-slider-area bg-color&#45;&#45;grey offersection space-pb&#45;&#45;25 space-mb&#45;&#45;25">-->
-                <!--                                <div class="container">-->
-                <!--                                    <div class="row">-->
-                <!--                                        <div class="col-12">-->
-                <!--                                            <div [ngStyle]="{'background-color': homeoffer.color}"-->
-                <!--                                                 class="offersection-box img-box col-12">-->
-                <!--                                                <div class="header">-->
-                <!--                                                    &lt;!&ndash;                                    <img src="assets/img/products/featured/household-section-img-top.png">&ndash;&gt;-->
-                <!--                                                    <h4>{{homeoffer.heading}}</h4>-->
-                <!--                                                    <p>{{homeoffer.sub_heading}}</p>-->
-                <!--                                                </div>-->
-                <!--                                                <div class="row boxx">-->
-                <!--                                                    <div class="offer-div">-->
-                <!--                                                        <h4>UPTO<br><b>{{homeoffer.discount_off}}%</b><br>OFF</h4>-->
-                <!--                                                    </div>-->
-                <!--                                                    <div class="col-6">-->
-                <!--                                                        <a [routerLink]="['/tabs/product', homeoffer.product1.id]">-->
-                <!--                                                            <div class="inside-box">-->
-                <!--                                                                <img src="{{homeoffer.product1.image}}">-->
-                <!--                                                                <h4>{{homeoffer.product1.item_name}}</h4>-->
-                <!--                                                            </div>-->
-                <!--                                                        </a>-->
-                <!--                                                    </div>-->
-                <!--                                                    <div class="col-6">-->
-                <!--                                                        <a [routerLink]="['/tabs/product', homeoffer.product2.id]">-->
-                <!--                                                            <div class="inside-box">-->
-                <!--                                                                <img src="{{homeoffer.product2.image}}">-->
-                <!--                                                                <h4>{{homeoffer.product2.item_name}}</h4>-->
-                <!--                                                            </div>-->
-                <!--                                                        </a>-->
-                <!--                                                    </div>-->
-                <!--                                                    <hr class="hr-offer-box">-->
-                <!--                                                    <div class="col-6">-->
-                <!--                                                        <a [routerLink]="['/tabs/product', homeoffer.product3.id]">-->
-                <!--                                                            <div class="inside-box">-->
-                <!--                                                                <img src="{{homeoffer.product3.image}}">-->
-                <!--                                                                <h4>{{homeoffer.product3.item_name}}</h4>-->
-                <!--                                                            </div>-->
-                <!--                                                        </a>-->
-                <!--                                                    </div>-->
-                <!--                                                    <div class="col-6">-->
-                <!--                                                        <a [routerLink]="['/tabs/product', homeoffer.product4.id]">-->
-                <!--                                                            <div class="inside-box">-->
-                <!--                                                                <img src="{{homeoffer.product4.image}}">-->
-                <!--                                                                <h4>{{homeoffer.product4.item_name}}</h4>-->
-                <!--                                                            </div>-->
-                <!--                                                        </a>-->
-                <!--                                                    </div>-->
-                <!--                                                </div>-->
-                <!--                                            </div>-->
-                <!--                                        </div>-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--            </div>-------------------->
-            </div>
-            <!--====================  End  Home offer ====================-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <!--#########################  End  Home offer #########################-->
 
 
             <!-- offersection-2  start-->
             <div class="category-slider-area bg-color--grey offersection offersection-2  space-pb--25 space-mb--25">
-                <!--                            <div class="container">-->
-                <!--                                <div class="row">-->
-                <!--                                    <div class="col-12">-->
-                <!--                                        <div class="offersection-box img-box col-12">-->
-                <!--                                            <div class="header">-->
-                <!--                                                <img src="../../assets/img/products/featured/offersection-2-top-img.png">-->
+                <!--                                            <div class="container">-->
+                <!--                                                <div class="row">-->
+                <!--                                                    <div class="col-12">-->
+                <!--                                                        <div class="offersection-box img-box col-12">-->
+                <!--                                                            <div class="header">-->
+                <!--                                                                <img src="../../assets/img/products/featured/offersection-2-top-img.png">-->
+                <!--                                                            </div>-->
+                <!--                                                            <div class="row boxx">-->
+                <!--                                                                <div class="offer-div">-->
+                <!--                                                                    <h4>UPTO<br><b>20%</b><br>OFF</h4>-->
+                <!--                                                                </div>-->
+                <!--                                                                <div class="col-6">-->
+                <!--                                                                    <a href="#">-->
+                <!--                                                                        <div class="inside-box">-->
+                <!--                                                                            <img src="../../assets/img/products/featured/offersection3-product-img1.png">-->
+                <!--                                                                            <h4>India Gate Rice </h4>-->
+                <!--                                                                        </div>-->
+                <!--                                                                    </a>-->
+                <!--                                                                </div>-->
+                <!--                                                                <div class="col-6">-->
+                <!--                                                                    <a href="#">-->
+                <!--                                                                        <div class="inside-box">-->
+                <!--                                                                            <img src="../../assets/img/products/featured/offersection2-product-img1.png">-->
+                <!--                                                                            <h4>India Gate Rice</h4>-->
+                <!--                                                                        </div>-->
+                <!--                                                                    </a>-->
+                <!--                                                                </div>-->
+                <!--                                                                <hr class="hr-offer-box">-->
+                <!--                                                                <div class="col-6">-->
+                <!--                                                                    <a href="#">-->
+                <!--                                                                        <div class="inside-box">-->
+                <!--                                                                            <img src="../../assets/img/products/featured/offersection2-product-img1.png">-->
+                <!--                                                                            <h4>India Gate Rice</h4>-->
+                <!--                                                                        </div>-->
+                <!--                                                                    </a>-->
+                <!--                                                                </div>-->
+                <!--                                                                <div class="col-6">-->
+                <!--                                                                    <a href="#">-->
+                <!--                                                                        <div class="inside-box">-->
+                <!--                                                                            <img src="../../assets/img/products/featured/offersection3-product-img1.png">-->
+                <!--                                                                            <h4>India Gate Rice</h4>-->
+                <!--                                                                        </div>-->
+                <!--                                                                    </a>-->
+                <!--                                                                </div>-->
+                <!--                                                            </div>-->
+                <!--                                                        </div>-->
+                <!--                                                    </div>-->
+                <!--                                                </div>-->
                 <!--                                            </div>-->
-                <!--                                            <div class="row boxx">-->
-                <!--                                                <div class="offer-div">-->
-                <!--                                                    <h4>UPTO<br><b>20%</b><br>OFF</h4>-->
-                <!--                                                </div>-->
-                <!--                                                <div class="col-6">-->
-                <!--                                                    <a href="#">-->
-                <!--                                                        <div class="inside-box">-->
-                <!--                                                            <img src="../../assets/img/products/featured/offersection3-product-img1.png">-->
-                <!--                                                            <h4>India Gate Rice </h4>-->
-                <!--                                                        </div>-->
-                <!--                                                    </a>-->
-                <!--                                                </div>-->
-                <!--                                                <div class="col-6">-->
-                <!--                                                    <a href="#">-->
-                <!--                                                        <div class="inside-box">-->
-                <!--                                                            <img src="../../assets/img/products/featured/offersection2-product-img1.png">-->
-                <!--                                                            <h4>India Gate Rice</h4>-->
-                <!--                                                        </div>-->
-                <!--                                                    </a>-->
-                <!--                                                </div>-->
-                <!--                                                <hr class="hr-offer-box">-->
-                <!--                                                <div class="col-6">-->
-                <!--                                                    <a href="#">-->
-                <!--                                                        <div class="inside-box">-->
-                <!--                                                            <img src="../../assets/img/products/featured/offersection2-product-img1.png">-->
-                <!--                                                            <h4>India Gate Rice</h4>-->
-                <!--                                                        </div>-->
-                <!--                                                    </a>-->
-                <!--                                                </div>-->
-                <!--                                                <div class="col-6">-->
-                <!--                                                    <a href="#">-->
-                <!--                                                        <div class="inside-box">-->
-                <!--                                                            <img src="../../assets/img/products/featured/offersection3-product-img1.png">-->
-                <!--                                                            <h4>India Gate Rice</h4>-->
-                <!--                                                        </div>-->
-                <!--                                                    </a>-->
-                <!--                                                </div>-->
-                <!--                                            </div>-->
-                <!--                                        </div>-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
-                <!--                            </div>-->
             </div>
             <!-- offersection-2  end-->
 
@@ -730,55 +807,55 @@
 
             <!-- offersection-3 start -->
             <div class="category-slider-area bg-color--grey offersection offersection-2 offersection-3  space-pb--25 space-mb--25">
-                <!--                                <div class="container">-->
-                <!--                                    <div class="row">-->
-                <!--                                        <div class="col-12">-->
-                <!--                                            <div class="offersection-box img-box col-12">-->
-                <!--                                                <div class="header">-->
-                <!--                                                    <img src="assets/img/products/featured/offersection-3-top-img.png">-->
+                <!--                                                <div class="container">-->
+                <!--                                                    <div class="row">-->
+                <!--                                                        <div class="col-12">-->
+                <!--                                                            <div class="offersection-box img-box col-12">-->
+                <!--                                                                <div class="header">-->
+                <!--                                                                    <img src="assets/img/products/featured/offersection-3-top-img.png">-->
+                <!--                                                                </div>-->
+                <!--                                                                <div class="row boxx">-->
+                <!--                                                                    <div class="offer-div">-->
+                <!--                                                                        <h4>UPTO<br><b>20%</b><br>OFF</h4>-->
+                <!--                                                                    </div>-->
+                <!--                                                                    <div class="col-6">-->
+                <!--                                                                        <a href="#">-->
+                <!--                                                                            <div class="inside-box">-->
+                <!--                                                                                <img src="assets/img/products/featured/offersection3-product-img1.png">-->
+                <!--                                                                                <h4>Fair and Lovely</h4>-->
+                <!--                                                                            </div>-->
+                <!--                                                                        </a>-->
+                <!--                                                                    </div>-->
+                <!--                                                                    <div class="col-6">-->
+                <!--                                                                        <a href="#">-->
+                <!--                                                                            <div class="inside-box">-->
+                <!--                                                                                <img src="assets/img/products/featured/offersection3-product-img1.png">-->
+                <!--                                                                                <h4>Fair and Lovely</h4>-->
+                <!--                                                                            </div>-->
+                <!--                                                                        </a>-->
+                <!--                                                                    </div>-->
+                <!--                                                                    <hr class="hr-offer-box">-->
+                <!--                                                                    <div class="col-6">-->
+                <!--                                                                        <a href="#">-->
+                <!--                                                                            <div class="inside-box">-->
+                <!--                                                                                <img src="assets/img/products/featured/offersection3-product-img1.png">-->
+                <!--                                                                                <h4>Fair and Lovely</h4>-->
+                <!--                                                                            </div>-->
+                <!--                                                                        </a>-->
+                <!--                                                                    </div>-->
+                <!--                                                                    <div class="col-6">-->
+                <!--                                                                        <a href="#">-->
+                <!--                                                                            <div class="inside-box">-->
+                <!--                                                                                <img src="assets/img/products/featured/offersection3-product-img1.png">-->
+                <!--                                                                                <h4>Fair and Lovely</h4>-->
+                <!--                                                                            </div>-->
+                <!--                                                                        </a>-->
+                <!--                                                                    </div>-->
+                <!--                                                                </div>-->
+                <!--                                                            </div>-->
+                <!--                                                        </div>-->
+                <!--                                                    </div>-->
                 <!--                                                </div>-->
-                <!--                                                <div class="row boxx">-->
-                <!--                                                    <div class="offer-div">-->
-                <!--                                                        <h4>UPTO<br><b>20%</b><br>OFF</h4>-->
-                <!--                                                    </div>-->
-                <!--                                                    <div class="col-6">-->
-                <!--                                                        <a href="#">-->
-                <!--                                                            <div class="inside-box">-->
-                <!--                                                                <img src="assets/img/products/featured/offersection3-product-img1.png">-->
-                <!--                                                                <h4>Fair and Lovely</h4>-->
-                <!--                                                            </div>-->
-                <!--                                                        </a>-->
-                <!--                                                    </div>-->
-                <!--                                                    <div class="col-6">-->
-                <!--                                                        <a href="#">-->
-                <!--                                                            <div class="inside-box">-->
-                <!--                                                                <img src="assets/img/products/featured/offersection3-product-img1.png">-->
-                <!--                                                                <h4>Fair and Lovely</h4>-->
-                <!--                                                            </div>-->
-                <!--                                                        </a>-->
-                <!--                                                    </div>-->
-                <!--                                                    <hr class="hr-offer-box">-->
-                <!--                                                    <div class="col-6">-->
-                <!--                                                        <a href="#">-->
-                <!--                                                            <div class="inside-box">-->
-                <!--                                                                <img src="assets/img/products/featured/offersection3-product-img1.png">-->
-                <!--                                                                <h4>Fair and Lovely</h4>-->
-                <!--                                                            </div>-->
-                <!--                                                        </a>-->
-                <!--                                                    </div>-->
-                <!--                                                    <div class="col-6">-->
-                <!--                                                        <a href="#">-->
-                <!--                                                            <div class="inside-box">-->
-                <!--                                                                <img src="assets/img/products/featured/offersection3-product-img1.png">-->
-                <!--                                                                <h4>Fair and Lovely</h4>-->
-                <!--                                                            </div>-->
-                <!--                                                        </a>-->
-                <!--                                                    </div>-->
-                <!--                                                </div>-->
-                <!--                                            </div>-->
-                <!--                                        </div>-->
-                <!--                                    </div>-->
-                <!--                                </div>-->
             </div>
             <!-- offersection-3 end -->
 
@@ -786,16 +863,6 @@
         </div>
     </div>
 
-    <!--    <div class="horizontal-scroll-wrapper squares">-->
-    <!--        <div>item 1</div>-->
-    <!--        <div>item 2</div>-->
-    <!--        <div>item 3</div>-->
-    <!--        <div>item 4</div>-->
-    <!--        <div>item 5</div>-->
-    <!--        <div>item 6</div>-->
-    <!--        <div>item 7</div>-->
-    <!--        <div>item 8</div>-->
-    <!--    </div>-->
 
 </ion-content>
 

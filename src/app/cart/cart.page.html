@@ -5,83 +5,85 @@
 </ion-header>
 
 <ion-content>
+    <div style="margin-top: 50px;">
 
-    <!--    <div class="body-wrapper bg-color&#45;&#45;gradient space-pt&#45;&#45;20 space-pb&#45;&#45;50">-->
-    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content
-                pullingIcon="arrow-dropdown"
-                pullingText="Pull to refresh"
-                refreshingSpinner="circles"
-                refreshingText="Refreshing...">
-        </ion-refresher-content>
-    </ion-refresher>
-    <!--====================  breadcrumb area ====================-->
-    <div *ngIf="!showcart" class="body-wrapper body-new-wrapper bg-color--gradient space-pt--70 space-pb--120">
-        <!--====================  header area ====================-->
-        <div id="headerr"></div>
-        <!--====================  End of mobile menu overlay  ====================-->
-        <!--====================  profile header ====================-->
+        <!--    <div class="body-wrapper bg-color&#45;&#45;gradient space-pt&#45;&#45;20 space-pb&#45;&#45;50">-->
+        <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed">
+            <ion-refresher-content
+                    pullingIcon="arrow-dropdown"
+                    pullingText="Pull to refresh"
+                    refreshingSpinner="circles"
+                    refreshingText="Refreshing...">
+            </ion-refresher-content>
+        </ion-refresher>
         <!--====================  breadcrumb area ====================-->
-        <div class="breadcrumb-area bg-color--grey space-y--15">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-3">
-<!--                        <a href="index.html" class="back-link"> <i class="fa fa-angle-left"></i> Back</a>-->
-                    </div>
-                    <div class="col-6">
-                        <h4 class="page-title text-center"> Cart</h4>
+        <div *ngIf="!showcart"
+             class="body-wrapper body-new-wrapper bg-color--gradient space-pt--70 space-pb--120">
+            <!--====================  header area ====================-->
+            <div id="headerr"></div>
+            <!--====================  End of mobile menu overlay  ====================-->
+            <!--====================  profile header ====================-->
+            <!--====================  breadcrumb area ====================-->
+            <div class="breadcrumb-area bg-color--grey space-y--15">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-3">
+                            <!--                        <a href="index.html" class="back-link"> <i class="fa fa-angle-left"></i> Back</a>-->
+                        </div>
+                        <div class="col-6">
+                            <h4 class="page-title text-center"> Cart</h4>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="activeorder category-slider-area all-category categorys bg-color--grey space-pb--25 space-mb--25">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 my-order-div">
+                            <div class="my-order">
+                                <img alt="" class="img-fluid" src="assets/img/category-img/img2.png">
+                                <h5 class="active">No Items In Cart</h5>
+                                <a [routerLink]="['/tabs/tab1']">
+                                    <button class="btn btn-primary activebtn">Start Shopping</button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--====================  End of profile body  ====================-->
+            <!--====================  footer area ====================-->
+            <div id="footerr"></div>
+            <!--====================  End of footer area  ====================-->
         </div>
-        <div class="activeorder category-slider-area all-category categorys bg-color--grey space-pb--25 space-mb--25">
+        <div *ngIf="!isloggedin" class="discount-code-wrapper space-mt--20">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 my-order-div">
-                        <div class="my-order">
-                            <img src="assets/img/category-img/img2.png" class="img-fluid" alt="">
-                            <h5 class="active">No Items In Cart</h5>
-                            <a [routerLink]="['/tabs/tab1']">
-                                <button class="btn btn-primary activebtn">Start Shopping</button>
-                            </a>
+                    <div class="col-12">
+                        <div class="title-wrap">
+                            <h1 class="cart-bottom-title">Please Login!</h1>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--====================  End of profile body  ====================-->
-        <!--====================  footer area ====================-->
-        <div id="footerr"></div>
-        <!--====================  End of footer area  ====================-->
-    </div>
-    <div *ngIf="!isloggedin" class="discount-code-wrapper space-mt--20">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="title-wrap">
-                        <h1 class="cart-bottom-title">Please Login!</h1>
+        <div *ngIf="isloggedin" class="container" class="product_div">
+            <div *ngIf="showcart" class="cart-product-area">
+                <div *ngFor="let product of products" class="cart-product border-bottom--medium">
+                    <div class="cart-product__image">
+                        <a>
+                            <img alt="" class="img-fluid" src="{{product.product.image}}">
+                        </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div *ngIf="isloggedin" class="container" class="product_div">
-        <div *ngIf="showcart" class="cart-product-area">
-            <div *ngFor="let product of products" class="cart-product border-bottom--medium">
-                <div class="cart-product__image">
-                    <a>
-                        <img alt="" class="img-fluid" src="{{product.product.image}}">
-                    </a>
-                </div>
 
-                <div class="cart-product__content">
-                    <h4>{{product.product.item_name}}</h4>
-                    <!--                    <h3 class="title"><a href="shop-product.html">{{product.product.weight}}</a></h3>-->
-                    <p class="no-pcs">{{product.total_price | number: '1.2'}} inr</p>
-                </div>
+                    <div class="cart-product__content">
+                        <h4>{{product.product.item_name}}</h4>
+                        <!--                    <h3 class="title"><a href="shop-product.html">{{product.product.weight}}</a></h3>-->
+                        <p class="no-pcs">{{product.total_price | number: '1.2'}} inr</p>
+                    </div>
 
-                <div class="cart-product__counter">
-                    <div class="input-group">
+                    <div class="cart-product__counter">
+                        <div class="input-group">
 
                         <span class="input-group-btn">
                           <button (click)="remove_product(product.id)"
@@ -91,10 +93,10 @@
                           </button>
                         </span>
 
-                        <input readonly class="form-control input-number" max="99" min="1"
-                               name="quant[1]" type="text" value="{{product.quantity}}">
+                            <input class="form-control input-number" max="99" min="1" name="quant[1]"
+                                   readonly type="text" value="{{product.quantity}}">
 
-                        <span class="input-group-btn">
+                            <span class="input-group-btn">
                         <button (click)="add_product(product.id)"
                                 class="btn btn-default right btn-number"
                                 data-field="quant[1]" data-type="plus" type="button">
@@ -103,54 +105,56 @@
                         </span>
 
 
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-    <!--====================  End of cart product area  ====================-->
-    <div *ngIf="showcart">
-        <!--        <div *ngIf="isloggedin" class="discount-code-wrapper space-mt&#45;&#45;20">-->
-        <!--            <div class="container">-->
-        <!--                <div class="row">-->
-        <!--                    <div class="col-12">-->
-        <!--                        <div class="title-wrap">-->
-        <!--                            <h4 class="cart-bottom-title">Use Coupon Code</h4>-->
-        <!--                        </div>-->
-        <!--                        <div class="discount-code">-->
-        <!--                            <p>Enter your coupon code if you have one.</p>-->
-        <!--                            <form>-->
-        <!--                                <input name="name" required="" type="text">-->
-        <!--                                <button class="cart-btn-2" type="submit">Apply Coupon</button>-->
-        <!--                            </form>-->
-        <!--                        </div>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-        <!--            </div>-->
-        <!--        </div>-->
-        <div *ngIf="isloggedin" class="grand-total space-mt--20">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="title-wrap">
-                            <h4 class="cart-bottom-title">Summary</h4>
                         </div>
-                        <!--                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>-->
+                    </div>
+                </div>
 
-                        <h4 class="grand-total-title" style="margin-top: 20px;">Total Price
-                            <span>{{cart.total_price | number: '1.2'}}</span></h4>
-                        <h4 class="grand-total-title" >Total
-                            Discount<span>-{{cart.total_price - cart.final_price | number: '1.2'}}</span></h4>
-                        <h4 class="grand-total-title">Final Price To Pay<span>{{cart.final_price | number: '1.2'}}</span></h4>
-                        <a (click)="payWithRazor()"
-                           style=" background: linear-gradient(90deg, rgb(128, 0, 128) 00%, rgba(200, 0, 249, 0.68) 100%); border-radius: 50px;">Proceed to Checkout</a>
+
+            </div>
+        </div>
+        <!--====================  End of cart product area  ====================-->
+        <div *ngIf="showcart">
+            <!--        <div *ngIf="isloggedin" class="discount-code-wrapper space-mt&#45;&#45;20">-->
+            <!--            <div class="container">-->
+            <!--                <div class="row">-->
+            <!--                    <div class="col-12">-->
+            <!--                        <div class="title-wrap">-->
+            <!--                            <h4 class="cart-bottom-title">Use Coupon Code</h4>-->
+            <!--                        </div>-->
+            <!--                        <div class="discount-code">-->
+            <!--                            <p>Enter your coupon code if you have one.</p>-->
+            <!--                            <form>-->
+            <!--                                <input name="name" required="" type="text">-->
+            <!--                                <button class="cart-btn-2" type="submit">Apply Coupon</button>-->
+            <!--                            </form>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--        </div>-->
+            <div *ngIf="isloggedin" class="grand-total space-mt--20">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="title-wrap">
+                                <h4 class="cart-bottom-title">Summary</h4>
+                            </div>
+                            <!--                        <h5>Sub Total <span>₹ {{cart.discounted_price}}</span></h5>-->
+
+                            <h4 class="grand-total-title" style="margin-top: 20px;">Total Price
+                                <span>{{cart.total_price | number: '1.2'}}</span></h4>
+                            <h4 class="grand-total-title">Total
+                                Discount<span>-{{cart.total_price - cart.final_price | number: '1.2'}}</span></h4>
+                            <h4 class="grand-total-title">Final Price To
+                                Pay<span>{{cart.final_price | number: '1.2'}}</span></h4>
+                            <a (click)="payWithRazor()"
+                               style=" background: linear-gradient(90deg, rgb(128, 0, 128) 00%, rgba(200, 0, 249, 0.68) 100%); border-radius: 50px;">Proceed
+                                to Checkout</a>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--    </div>-->
 </ion-content>
 

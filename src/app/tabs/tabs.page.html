@@ -8,10 +8,11 @@
                         <div class="container space-y--15">
 
                             <div class="row align-items-center">
-                                <div class="col d-flex justify-content-center" (click)="profile()" routerDirection="forward">
+                                <div (click)="profile()" class="col d-flex justify-content-center"
+                                     routerDirection="forward">
                                     <div class="store-name-loc">
                                         <a><i class="fa fa-user-circle user_icon"></i>&nbsp;
-                                        <b>{{user}}</b></a>
+                                            <b>{{user}}</b></a>
                                     </div>
                                     <a> <i class="fa fa-angle-right arrow_icon"></i></a>
                                 </div>
@@ -106,7 +107,7 @@
                         <ion-item (click)="wish_list()" class="menu_link">
                             <ion-icon class="menu_link" name="heart-outline" slot="start"></ion-icon>
                             <ion-label>Wish List</ion-label>
-                            <ion-icon  class=" arrow_ikn" name="chevron-forward-outline"></ion-icon>
+                            <ion-icon class=" arrow_ikn" name="chevron-forward-outline"></ion-icon>
                         </ion-item>
 
                         <ion-item class="menu_link">
@@ -134,12 +135,12 @@
 <div class="ion-page" id="main-content">
 
     <ion-header>
-        <ion-toolbar  color="#800080;" class="header">
-            <ion-buttons slot="start">
+        <ion-toolbar class="header" color="#800080;">
+            <ion-buttons>
                 <ion-menu-button color="light"></ion-menu-button>
                 <ion-toolbar class="search header" color="#800080;">
-                    <ion-searchbar  class="search_bar" (change)="search($event)" [(ngModel)]="searchQuery" animated
-                                   autocorrect="off" showCancelButton="focus"></ion-searchbar>
+                    <ion-searchbar (change)="search($event)" [(ngModel)]="searchQuery" animated autocorrect="off"
+                                   class="search_bar" showCancelButton="focus"></ion-searchbar>
                 </ion-toolbar>
 
                 <!--                    <ion-icon name="options" color="light"></ion-icon>-->
@@ -155,8 +156,22 @@
                     </ion-select>
                 </ion-button>
             </ion-buttons>
-
-
+        </ion-toolbar>
+        <ion-toolbar class="header_2" color="#800080;">
+            <ion-buttons>
+                <section>
+                    <ion-slides>
+                        <ion-slide>
+                            <ion-button class="filter_botton" size="small">oils</ion-button>
+                            <ion-button class="filter_botton" size="small">daal</ion-button>
+                            <ion-button class="filter_botton" size="small">Rise</ion-button>
+                            <ion-button class="filter_botton" size="small">daal</ion-button>
+                            <ion-button class="filter_botton" size="small">Rise</ion-button>
+                            <ion-button class="filter_botton" size="small">Fruits</ion-button>
+                        </ion-slide>
+                    </ion-slides>
+                </section>
+            </ion-buttons>
 
         </ion-toolbar>
     </ion-header>
@@ -187,7 +202,6 @@
                 <ion-icon class="footer_icon" name="cart"></ion-icon>
                 <ion-label>Cart</ion-label>
             </ion-tab-button>
-
 
 
         </ion-tab-bar>

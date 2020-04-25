@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-    <div class="breadcrumb-area bg-color--grey space-y--15">
+    <div class="breadcrumb-area bg-color--grey space-y--15" >
 
     </div>
     <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed">
@@ -16,7 +16,8 @@
                 refreshingText="Refreshing...">
         </ion-refresher-content>
     </ion-refresher>
-    <div *ngIf="!showProducts" class="body-wrapper body-new-wrapper bg-color--gradient space-pt--70 space-pb--120">
+    <div *ngIf="!showProducts"
+         class="body-wrapper body-new-wrapper bg-color--gradient space-pt--70 space-pb--120">
         <!--====================  header area ====================-->
         <div id="headerr"></div>
         <!--====================  End of mobile menu overlay  ====================-->
@@ -55,14 +56,15 @@
         <!--====================  End of footer area  ====================-->
     </div>
 
-    <div *ngIf="showProducts" class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
+    <div *ngIf="showProducts" style="margin-top: 40px;"
+         class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
         <div class="container">
 
             <div class="row">
 
 
                 <!-- section title -->
-                <div *ngFor="let product of products" class=" col-6 products-box-right">
+                <div *ngFor="let product of products" class=" col-6 products-box-right" >
                     <div class="item">
 
                             <div *ngIf="product.discount" class="offer"><a>₹ {{product.discount}} &nbsp;Off</a></div>

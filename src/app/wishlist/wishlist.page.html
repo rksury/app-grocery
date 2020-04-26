@@ -47,28 +47,30 @@
         <!--====================  End of profile body  ====================-->
     </div>
 
-    <div *ngIf="isloggedin"   style="margin-top: 60px;"
-         class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
-        <div class="container" *ngIf="showWishlist" style="margin-top: 10%;">
+
+    <div *ngIf="isloggedin" style="margin-top: 60px;"
+         class="category-slider-area bg-color--grey products space-pb--25 space-mb--25">
+        <div class="container" *ngIf="showWishlist">
 
             <div class="row">
 
-
                 <!-- section title -->
-                <div *ngFor="let product of products" class=" col-6 products-box-right">
+                <div *ngFor="let product of products" class=" col-12 products-box-right" >
                     <div class="item">
-                            <div *ngIf="product.discount" class="offer">
-                                <b>₹ &nbsp;{{product.discount}}</b> <br>Off
+                            <div *ngIf="product.discount" class="products_offer">
+                                 <b>₹ &nbsp;{{product.discount}}</b> <br>Off
                             </div>
-                            <ion-icon  (click)="removeWishlist(product.id)" class="close_icon" name="close"></ion-icon>
+<!--                             <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>-->
                         <a [routerLink]="['/tabs/product', product.id]">
-                            <div style="text-align: center;">
-                                <img alt="" class="injectable pruduct_image" src="{{product.image}}">
+                            <div>
+                                <img alt="" class="injectable pruducts_img" src="{{product.image}}">
                             </div>
-                            <div class="content-div" >
-                                <p style="font-size:15px; height: 20px;">₹ <s>{{product.selling_price}}</s><i
-                                        style="color: #3a7be0"> {{product.final_price}}</i></p>
-                                <p style=" height: 40px;">{{product.item_name}}  |  {{product.weight}}</p>
+                            <div class="content-div">
+                                <p style=" height: 25px;"> <b style="color: #800080; font-size: 15px;">{{product.item_name}}</b> &nbsp; |  &nbsp;
+                                    <b style="color: #95999c">{{product.weight}}</b></p>
+                                <p style="color: #383d41 ">{{product.brand_name}}</p>
+                                <p style="font-size:15px; height: 20px;">₹ <s style="color: #95999c">{{product.selling_price}}</s>
+                                    <b> {{product.final_price}}</b></p>
                             </div>
 
                         </a>

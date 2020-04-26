@@ -10,9 +10,7 @@
     <div class="menu_header" style="margin-top: 10%;">
         <div class="body-wrapper space-pt--20 space-pb--50">
 
-            <!--====================  banner area ====================-->
-
-            <!--                    <script src="assets/js/main.js"></script>-->
+            <!--##########################  banner area ##########################-->
             <div class="hero-slider bg-color--grey space-y--10 main-content-top-padding">
                 <div class="container">
                     <div class="row row-10">
@@ -53,11 +51,10 @@
 
                 </div>
             </div>
-            <!--====================  End banner slider  ====================-->
+            <!--##########################  End banner slider ##########################-->
 
 
             <!--====================  category  ====================-->
-
             <div class="categorys bg-color--grey space-pb--25 space-mb--25 ">
                 <div class="container">
                     <div class="row">
@@ -205,9 +202,9 @@
                                         <img alt="" class="injectable pruduct_image" src="{{featureproduct.image}}">
                                     </div>
                                     <div class="content-div">
-                                        <p style="font-size:15px; height: 20px;">₹
-                                            <s>{{featureproduct.selling_price}}</s>
-                                            <i style="color: #3a7be0"> {{featureproduct.final_price}}</i></p>
+                                        <p style="font-size:15px; height: 20px; color: #383d41">
+                                            ₹<s>{{featureproduct.selling_price}}</s>
+                                            <b style="color: #800080"> {{featureproduct.final_price}}</b></p>
                                         <p style=" height: 40px;">{{featureproduct.item_name}}
                                             |  {{featureproduct.weight}}</p>
                                     </div>
@@ -373,92 +370,94 @@
             <!-- ##########################  End  Best Selling #########################-->
 
             <!-- ##########################   benner card  #########################-->
-            <div class="container" style="margin-top: -30px;">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="featured-product-wrapper space-mb-m--15">
-                            <div class="row row-5">
+            <div class="category-slider-area bg-color--grey space-pb--25 space-mb--25">
+                <div class="container" style="margin-top: -30px;">
 
-                                <div class="col-6">
-                                    <a [routerLink]="['/tabs/products']">
-                                        <div class="cat-main-box">
-                                            <div class="new-arrival cat-box1 space-mb--15">
-                                                <a>
-                                                    <div>
-                                                        <img class="benner_card_img"
-                                                             src="../../assets/img/products/featured/slider4-img1.png">
-                                                    </div>
-                                                </a>
-                                            </div>
+                    <div class="featured-product-wrapper space-mb-m--15">
+                        <div class="row row-5">
+                            <div class="col-6">
+                                <a [routerLink]="['/tabs/products']">
+                                    <div class="cat-main-box">
+                                        <div class="new-arrival cat-box1 space-mb--15">
+                                            <a>
+                                                <div>
+                                                    <img class="benner_card_img"
+                                                         src="../../assets/img/slider%20image/slider4-img1.png">
+                                                </div>
+                                            </a>
                                         </div>
-                                    </a>
-                                </div>
-                                <div class="col-6">
-                                    <a [routerLink]="['/tabs/products']">
-                                        <div class="cat-main-box">
-                                            <div class="new-arrival cat-box1 space-mb--15">
-                                                <a>
-                                                    <div>
-                                                        <img class="benner_card_img"
-                                                             src="../../assets/img/products/featured/slider4-img2.png">
-                                                    </div>
-                                                </a>
-                                            </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a [routerLink]="['/tabs/products']">
+                                    <div class="cat-main-box">
+                                        <div class="new-arrival cat-box1 space-mb--15">
+                                            <a>
+                                                <div>
+                                                    <img class="benner_card_img"
+                                                         src="../../assets/img/slider%20image/slider4-img2.png">
+                                                </div>
+                                            </a>
                                         </div>
-                                    </a>
-                                </div>
-
-                                <div class="col-12" style="margin-top: 5px; margin-bottom: 5px;">
-                                    <a [routerLink]="['/tabs/products']">
-                                        <div class="cat-main-box">
-                                            <div class="new-centre cat-box1 space-mb--15">
-                                                <a>
-                                                    <div>
-                                                        <img class="benner_card2_img"
-                                                             src="../../assets/img/slider%20image/single-banner-img.png">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-
-
-                                <div class="col-6">
-                                    <a [routerLink]="['/tabs/product']">
-                                        <div class="cat-main-box">
-                                            <div class="new-arrival cat-box1 space-mb--15">
-                                                <a>
-                                                    <div>
-                                                        <img class="benner_card_img"
-                                                             src="../../assets/img/products/featured/slider4-img2.png">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-6">
-                                    <a [routerLink]="['/tabs/product']">
-                                        <div class="cat-main-box">
-                                            <div class="new-arrival cat-box1 space-mb--15">
-                                                <a>
-                                                    <div>
-                                                        <img class="benner_card_img"
-                                                             src="../../assets/img/products/featured/slider4-img1.png">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-
-
+                                    </div>
+                                </a>
                             </div>
                         </div>
+
+                        <div class="row row-5">
+                            <div class="col-12" style="margin-top: 5px; margin-bottom: 5px;">
+                                <a [routerLink]="['/tabs/products']">
+                                    <div class="cat-main-box">
+                                        <div class="new-arrival cat-box1 space-mb--15">
+                                            <a>
+                                                <div>
+                                                    <img class="benner_card_img"
+                                                         src="../../assets/img/slider%20image/single-banner-img.png">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="row row-5">
+                            <div class="col-6">
+                                <a [routerLink]="['/tabs/product']">
+                                    <div class="cat-main-box">
+                                        <div class="new-arrival cat-box1 space-mb--15">
+                                            <a>
+                                                <div>
+                                                    <img class="benner_card_img"
+                                                         src="../../assets/img/slider%20image/slider4-img2.png">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-6">
+                                <a [routerLink]="['/tabs/product']">
+                                    <div class="cat-main-box">
+                                        <div class="new-arrival cat-box1 space-mb--15">
+                                            <a>
+                                                <div>
+                                                    <img class="benner_card_img"
+                                                         src="../../assets/img/slider%20image/slider4-img1.png">
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
+
+
             <!-- ##########################  benner card  #########################-->
 
 
@@ -510,12 +509,12 @@
                                     &nbsp;Off</a></div>
                                 <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
                                 <a [routerLink]="['/tabs/product', newArrival.id]">
-                                    <div style=" text-align: center">
-                                        <img alt="" class="injectable pruduct_image" src="{{newArrival.image}}">
+                                    <div >
+                                        <img  class="injectable pruduct_image" src="{{newArrival.image}}">
                                     </div>
                                     <div class="content-div">
-                                        <p style="font-size:15px; height: 20px;">₹ <s>{{newArrival.selling_price}}</s>
-                                            <i style="color: #3a7be0"> {{newArrival.final_price}}</i></p>
+                                        <p style="font-size:15px; height: 20px; color: #383d41">₹ <s>{{newArrival.selling_price}}</s>
+                                            <b style="color: #800080"> {{newArrival.final_price}}</b></p>
                                         <p style=" height: 40px;">{{newArrival.item_name}}  |  {{newArrival.weight}}</p>
                                     </div>
 
@@ -531,65 +530,72 @@
             <!-- ##########################  End  New Arrivals #########################-->
 
             <!-- ##########################   benner card  #########################-->
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <div class="featured-product-wrapper space-mb-m--15">
-                            <div class="row row-5">
-                                <div class="col-5">
-                                    <div style="text-align: center;">
-                                        <h1 style="color: #a804b2;">20%</h1>
-                                        <h5 style="color: #cf3c4f; margin-top: -8px;">Off</h5>
+            <div class="category-slider-area bg-color--grey space-pb--25 space-mb--25">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="featured-product-wrapper space-mb-m--15">
+
+                                <div class="row row-5">
+                                    <div class="col-5">
+                                        <div style="text-align: center;">
+                                            <h1 style="color: #a804b2;">20%</h1>
+                                            <h5 style="color: #cf3c4f; margin-top: -8px;">Off</h5>
+                                        </div>
+                                    </div>
+                                    <div class="col-7">
+                                        <a [routerLink]="['/tabs/products']">
+                                            <div class="cat-main-box">
+                                                <div class="new-arrival cat-box1 space-mb--15">
+                                                    <a>
+                                                        <div>
+                                                            <img class="benner_card_img"
+                                                                 src="../../assets/img/slider%20image/slider2-gor1-img.jpg">
+                                                        </div>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </a>
                                     </div>
                                 </div>
-                                <div class="col-7">
-                                    <a [routerLink]="['/tabs/products']">
-                                        <div class="cat-main-box">
-                                            <div class="new-arrival cat-box1 space-mb--15">
-                                                <a>
-                                                    <div>
-                                                        <img class="benner2_card_img"
-                                                             src="../../assets/img/slider%20image/slider2-gor1-img.jpg">
-                                                    </div>
-                                                </a>
+
+                                <div class="row row-5">
+                                    <div class="col-12" style="margin-top: 5px; margin-bottom: 5px;">
+                                        <a [routerLink]="['/tabs/products']">
+                                            <div class="cat-main-box">
+                                                <div class="new-arrival cat-box1 space-mb--15">
+                                                    <a>
+                                                        <div>
+                                                            <img class="benner_card_img"
+                                                                 src="../../assets/img/slider%20image/single-banner-img.png">
+                                                        </div>
+                                                    </a>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </a>
+                                        </a>
+                                    </div>
                                 </div>
 
-                                <div class="col-12" style="margin-top: 5px; margin-bottom: 5px;">
-                                    <a [routerLink]="['/tabs/products']">
-                                        <div class="cat-main-box">
-                                            <div class="new-centre cat-box1 space-mb--15">
-                                                <a>
-                                                    <div>
-                                                        <img class="benner_card2_img"
-                                                             src="../../assets/img/slider%20image/single-banner-img.png">
-                                                    </div>
-                                                </a>
+                                <div class="row row-5">
+                                    <div class="col-7">
+                                        <a [routerLink]="['/tabs/product']">
+                                            <div class="cat-main-box">
+                                                <div class="new-arrival cat-box1 space-mb--15">
+                                                    <a>
+                                                        <div>
+                                                            <img class="benner_card_img"
+                                                                 src="../../assets/img/slider%20image/slider2-gor1-img.jpg">
+                                                        </div>
+                                                    </a>
+                                                </div>
                                             </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-5">
+                                        <div style="text-align: center;">
+                                            <h1 style="color: #a804b2;">20%</h1>
+                                            <h5 style="color: #cf3c4f; margin-top: -8px;">Off</h5>
                                         </div>
-                                    </a>
-                                </div>
-
-                                <div class="col-7">
-                                    <a [routerLink]="['/tabs/product']">
-                                        <div class="cat-main-box">
-                                            <div class="new-arrival cat-box1 space-mb--15">
-                                                <a>
-                                                    <div>
-                                                        <img class="benner2_card_img"
-                                                             src="../../assets/img/slider%20image/slider2-gor1-img.jpg">
-                                                    </div>
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="col-5">
-                                   <div style="text-align: center;">
-                                        <h1 style="color: #a804b2;">20%</h1>
-                                        <h5 style="color: #cf3c4f; margin-top: -8px;">Off</h5>
                                     </div>
                                 </div>
                             </div>
@@ -642,61 +648,63 @@
 
 
             <!--######################### Home Offer  ##########################-->
-                <div *ngFor="let homeoffer of HomeOffers" class="category-slider-area bg-color--grey offersection space-pb--25 space-mb--25">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-12">
+            <div *ngFor="let homeoffer of HomeOffers"
+                 class="category-slider-area bg-color--grey offersection space-pb--25 space-mb--25">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
 
-                                <div [ngStyle]="{'background-color': homeoffer.color}" class="offersection-box img-box col-12">
-                                    <div class="heading">
-                                        <!--                                    <img src="assets/img/products/featured/household-section-img-top.png">-->
-                                        <h4>{{homeoffer.heading}}</h4>
-                                        <p>{{homeoffer.sub_heading}}</p>
-                                    </div>
-
-                                    <div class="row boxx">
-                                        <div class="offer-div">
-                                            <h4>UPTO<br><b>{{homeoffer.discount_off}}%</b><br>OFF</h4>
-                                        </div>
-                                        <div class="col-6">
-                                            <a [routerLink]="['/tabs/product', homeoffer.product1.id]">
-                                                <div class="inside-box">
-                                                    <img src="{{homeoffer.product1.image}}">
-                                                    <h4>{{homeoffer.product1.item_name}}</h4>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-6">
-                                            <a [routerLink]="['/tabs/product', homeoffer.product2.id]">
-                                                <div class="inside-box">
-                                                    <img src="{{homeoffer.product2.image}}">
-                                                    <h4>{{homeoffer.product2.item_name}}</h4>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-6">
-                                            <a [routerLink]="['/tabs/product', homeoffer.product3.id]">
-                                                <div class="inside-box">
-                                                    <img src="{{homeoffer.product3.image}}">
-                                                    <h4>{{homeoffer.product3.item_name}}</h4>
-                                                </div>
-                                            </a>
-                                        </div>
-                                        <div class="col-6">
-                                            <a [routerLink]="['/tabs/product', homeoffer.product4.id]">
-                                                <div class="inside-box">
-                                                    <img src="{{homeoffer.product4.image}}">
-                                                    <h4>{{homeoffer.product4.item_name}}</h4>
-                                                </div>
-                                            </a>
-                                        </div>
-                                    </div>
-
+                            <div [ngStyle]="{'background-color': homeoffer.color}"
+                                 class="offersection-box img-box col-12">
+                                <div class="heading">
+                                    <!--                                    <img src="assets/img/products/featured/household-section-img-top.png">-->
+                                    <h4>{{homeoffer.heading}}</h4>
+                                    <!--                                        <p>{{homeoffer.sub_heading}}</p>-->
                                 </div>
+
+                                <div class="row boxx">
+                                    <div class="offer-div">
+                                        <h4>UPTO<br><b>{{homeoffer.discount_off}}%</b><br>OFF</h4>
+                                    </div>
+                                    <div class="col-6">
+                                        <a [routerLink]="['/tabs/product', homeoffer.product1.id]">
+                                            <div class="inside-box">
+                                                <img src="{{homeoffer.product1.image}}">
+                                                <h4>{{homeoffer.product1.item_name}}</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a [routerLink]="['/tabs/product', homeoffer.product2.id]">
+                                            <div class="inside-box">
+                                                <img src="{{homeoffer.product2.image}}">
+                                                <h4>{{homeoffer.product2.item_name}}</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a [routerLink]="['/tabs/product', homeoffer.product3.id]">
+                                            <div class="inside-box">
+                                                <img src="{{homeoffer.product3.image}}">
+                                                <h4>{{homeoffer.product3.item_name}}</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div class="col-6">
+                                        <a [routerLink]="['/tabs/product', homeoffer.product4.id]">
+                                            <div class="inside-box">
+                                                <img src="{{homeoffer.product4.image}}">
+                                                <h4>{{homeoffer.product4.item_name}}</h4>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
             <!--#########################  End  Home offer #########################-->
 
 
@@ -861,8 +869,8 @@
 
 
         </div>
-    </div>
 
+    </div>
 
 </ion-content>
 

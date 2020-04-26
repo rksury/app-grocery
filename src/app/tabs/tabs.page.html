@@ -8,25 +8,24 @@
                         <div class="container space-y--15">
 
                             <div class="row align-items-center">
-                                <div (click)="profile()" class="col d-flex justify-content-center"
-                                     routerDirection="forward">
+                                <div (click)="profile()" routerDirection="forward"
+                                     class="col d-flex justify-content-center">
                                     <div class="store-name-loc">
                                         <a><i class="fa fa-user-circle user_icon"></i>&nbsp;
                                             <b>{{user}}</b></a>
                                     </div>
                                     <a> <i class="fa fa-angle-right arrow_icon"></i></a>
                                 </div>
-                                <!--                                <div class="col d-flex justify-content-center selector_city">-->
+                                <div class="col d-flex justify-content-center selector_city">
 
-                                <!--                                </div>-->
+                                </div>
 
-                                <!--                                <div class="col-auto">-->
-                                <!-- header menu trigger -->
+                                <div class="col-auto">
 
-                                <!--                                    <button (click)="refresh()" class="header-menu-trigger" id="header-menu-trigger">-->
-                                <!--                                                                                <img src="assets/img/icons/menu.svg" class="injectable" alt="">-->
-                                <!--                                    </button>-->
-                                <!--                                </div>-->
+                                    <button (click)="refresh()" class="header-menu-trigger" id="header-menu-trigger">
+                                        <img alt="" class="injectable" src="../../assets/img/icons/menu.svg">
+                                    </button>
+                                </div>
 
                             </div>
 
@@ -54,6 +53,7 @@
 
 
                 <div id="offcanvas-menu">
+
                     <div class="profile-card text-center">
                         <a>
                             <div class="profile-card__image ">
@@ -76,21 +76,6 @@
                     </div>
 
                     <div>
-                        <!--                        <ion-item class="menu_link">-->
-                        <!--                            <ion-icon name="albums-outline" class="menu_link" slot="start"></ion-icon>-->
-                        <!--                            <ion-label>Shop by Category</ion-label>-->
-                        <!--                            <ion-icon name="chevron-forward-outline"></ion-icon>-->
-                        <!--                        </ion-item>-->
-
-                        <!--                        <ion-item class="menu_link">-->
-                        <!--                            <ion-icon name="medkit-outline" class="menu_link" slot="start"></ion-icon>-->
-                        <!--                            <ion-label>Stores</ion-label>-->
-                        <!--                            <ion-icon name="chevron-forward-outline"></ion-icon>-->
-                        <!--                        </ion-item>-->
-
-                        <!--                        <ion-item *ngIf="!islogedin" class="menu_link" routerDirection="forward">-->
-                        <!--                        </ion-item>-->
-
 
                         <ion-item (click)="my_orders()" class="menu_link">
                             <ion-icon class="menu_link" name="radio-button-on-outline" slot="start"></ion-icon>
@@ -157,6 +142,7 @@
                 </ion-button>
             </ion-buttons>
         </ion-toolbar>
+
         <ion-toolbar class="header_2" color="#800080;">
             <ion-buttons>
                 <section>

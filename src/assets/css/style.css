@@ -3427,7 +3427,6 @@ header .header-menu-trigger:focus {
     border-radius: 10px;
 
 }
-
 .new-arrival_img {
     text-align: center;
     width: 100%;
@@ -4100,7 +4099,7 @@ header .header-menu-trigger:focus {
     top: 0;
     left: -12px;
     visibility: hidden;
-    content: url("../img/icons/check.svg");
+    /*content: url("../img/icons/check.svg");*/
     opacity: 0;
 }
 
@@ -5417,7 +5416,8 @@ header {
 
 .header {
     background: #800080;
-    height: 60px;
+    /*height: 60px;*/
+
 }
 
 .header_2 {
@@ -5432,8 +5432,7 @@ header {
 }
 
 .search_bar {
-    margin-top: 5px;
-    /*border-radius: 20px!important;*/
+    /*margin-top: 20px;*/
     /*height: 25px;*/
 
 

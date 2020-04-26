@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import {HttpHeaders} from '@angular/common/http';
+import {Observable} from "rxjs";
 
 @Injectable({
     providedIn: 'root'
@@ -24,7 +25,7 @@ export class CartService {
 
     }
 
-    getCart() {
+    getCart(): Observable<any> {
         const httpOptions = {
             headers: new HttpHeaders({
                     Authorization: 'Bearer ' + window.localStorage.getItem('token')
@@ -61,7 +62,7 @@ export class CartService {
 
     }
 
-    add_item(pk) {
+    add_item(pk): Observable<any> {
         const httpOptions = {
             headers: new HttpHeaders({
                     Authorization: 'Bearer ' + window.localStorage.getItem('token')
@@ -72,7 +73,7 @@ export class CartService {
         return this.httpclient.post(this.base_url + 'cart/add-item', data, httpOptions);
     }
 
-    remove_item(pk) {
+    remove_item(pk): Observable<any> {
         const httpOptions = {
             headers: new HttpHeaders({
                     Authorization: 'Bearer ' + window.localStorage.getItem('token')

@@ -38,8 +38,6 @@ export class LoginPage implements OnInit {
                     window.localStorage.setItem('token', data['token']);
                     window.localStorage.setItem('user', data['user'].name);
                     this.utils.presentToast('Logged in as ' + data['user'].name);
-                    // window.localStorage.setItem('user', data.user);
-                    // this.utils.presentToast('Logged in as ' + data.user.name);
                     this.router.navigate(['/tabs/tab1']);
                     this.tabPage.refresh();
                     this.submitform.reset();
@@ -49,7 +47,7 @@ export class LoginPage implements OnInit {
                 }
             },
             error => {
-                // this.utils.presentToast(error.error.error[0]);
+                this.utils.presentToast(error.error.error[0]);
             }
         )
         ;

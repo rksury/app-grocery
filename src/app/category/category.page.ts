@@ -10,6 +10,7 @@ import {UtilsService} from '../utils.service';
 })
 export class CategoryPage implements OnInit {
     categories: {};
+
     constructor(private categoryService: CategoryService,
                 private router: Router,
                 private utils: UtilsService) {
@@ -30,7 +31,7 @@ export class CategoryPage implements OnInit {
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                this.utils.presentToast('Some Error Occurred');
+                // //this.utils.presentToast('Some Error Occurred');
 
             }
         });
@@ -42,9 +43,13 @@ export class CategoryPage implements OnInit {
             this.categories = data;
         }, error => {
             try {
-                this.utils.presentToast(error.error.error[0]);
+                if (error.status === 404) {
+                    this.utils.presentToast('No Subcategory found.');
+                } else {
+                    this.utils.presentToast(error.error.error[0]);
+                }
             } catch (e) {
-                this.utils.presentToast('Some Error Occurred');
+                //this.utils.presentToast('Some Error Occurred');
 
             }
         });
@@ -53,11 +58,10 @@ export class CategoryPage implements OnInit {
     get_subcategory_products(pk) {
         const params = {category: pk};
         const navigationExtras: NavigationExtras = {
-                queryParams: {
-                    special: JSON.stringify(params)
-                }
+            queryParams: {
+                special: JSON.stringify(params)
             }
-        ;
+        };
         this.router.navigate(['/tabs/products'], navigationExtras);
     }
 

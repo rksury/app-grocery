@@ -71,8 +71,7 @@ export class ProductsPage implements OnInit {
         this.productService.get_products(params).subscribe(data => {
                 this.showProducts = true;
                 this.products = data;
-
-            }, error => {
+                }, error => {
                 this.showProducts = false;
             }
         );
@@ -85,7 +84,7 @@ export class ProductsPage implements OnInit {
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                this.utils.presentToast('Some Error Occurred');
+                //this.utils.presentToast('Some Error Occurred');
 
             }
             if (error.status === 401) {

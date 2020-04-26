@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Router, ActivatedRoute, ParamMap} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {ProductService} from './product.service';
 import {CartService} from '../cart/cart.service';
 import {UtilsService} from '../utils.service';
@@ -43,6 +43,7 @@ export class ProductInfoPage implements OnInit {
         this.route.paramMap.subscribe(params => {
             this.productService.getProduct(params.get('id')).subscribe(data => {
                 this.product = data;
+
             });
             console.log(params.get('id'));
         });
@@ -54,7 +55,7 @@ export class ProductInfoPage implements OnInit {
                 this.productService.getProduct(params.get('id')).subscribe(data => {
                     this.product = data.products;
                     this.relatedProducts = data.related_products;
-
+                    console.log(this.relatedProducts);
                 });
             }
         });
@@ -78,7 +79,7 @@ export class ProductInfoPage implements OnInit {
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                // this.utils.presentToast('Some Error Occurred');
+                // //this.utils.presentToast('Some Error Occurred');
 
             }
             if (error.status === 401) {
@@ -89,13 +90,15 @@ export class ProductInfoPage implements OnInit {
     }
 
     addTowishlist(id) {
+        this.product.in_wish_list = !this.product.in_wish_list;
         this.wishlistService.add_To_wishlist(id).subscribe(data => {
-            this.product = data;
+            this.product = data.products;
         }, error => {
+            this.product.in_wish_list = !this.product.in_wish_list;
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                // this.utils.presentToast('Some Error Occurred');
+                // //this.utils.presentToast('Some Error Occurred');
 
             }
             if (error.status === 401) {

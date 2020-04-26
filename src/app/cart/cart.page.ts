@@ -11,10 +11,40 @@ declare var RazorpayCheckout: any;
     styleUrls: ['./cart.page.scss'],
 })
 export class CartPage implements OnInit {
-    cart;
+    cart = {
+        id: 0,
+        products: [{
+            id: null,
+            product: {
+                id: null,
+                image: null,
+                item_name: null,
+                brand_name: null,
+                weight: null,
+                item_cp: null,
+                unit: null,
+                selling_price: null,
+                discount: null,
+                cash_back: null,
+                final_price: null,
+                is_featured: false,
+                new_arrival: false,
+                last_updated: null,
+                category: 1
+            },
+            total_price: null,
+            quantity: 1
+        }],
+        total_price: 0,
+        final_price: 0,
+        cash_back: 0,
+        is_checked_out: false,
+        user: 0,
+        coupon: null
+    };
     products;
     isloggedin = window.localStorage.getItem('token') !== null;
-    showcart = false;
+    showcart = true;
 
 
     constructor(private cartService: CartService, private utils: UtilsService,
@@ -41,21 +71,49 @@ export class CartPage implements OnInit {
                 this.products = this.cart.products;
                 this.showcart = true;
             }, error => {
-                this.cart = {};
+                this.cart = {
+                    id: 0,
+                    products: [{
+                        id: null,
+                        product: {
+                            id: null,
+                            image: null,
+                            item_name: null,
+                            brand_name: null,
+                            weight: null,
+                            item_cp: null,
+                            unit: null,
+                            selling_price: null,
+                            discount: null,
+                            cash_back: null,
+                            final_price: null,
+                            is_featured: false,
+                            new_arrival: false,
+                            last_updated: null,
+                            category: 1
+                        },
+                        total_price: null,
+                        quantity: 1
+                    }],
+                    total_price: 0,
+                    final_price: 0,
+                    cash_back: 0,
+                    is_checked_out: false,
+                    user: 0,
+                    coupon: null
+                };
                 this.showcart = false;
                 this.products = {};
                 if (error.status === 404) {
-                    this.cart = {};
                     this.showcart = false;
                     this.products = {};
-                    // this.utils.presentToast('Please add items to cart first');
                 } else if (error.status === 401) {
 
                 } else {
                     try {
                         this.utils.presentToast(error.error.error[0]);
                     } catch (e) {
-                        // this.utils.presentToast('Some Error Occurred');
+                        // //this.utils.presentToast('Some Error Occurred');
 
                     }
 
@@ -74,7 +132,7 @@ export class CartPage implements OnInit {
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                // this.utils.presentToast('Some Error Occurred');
+                // //this.utils.presentToast('Some Error Occurred');
 
             }
         });
@@ -88,7 +146,7 @@ export class CartPage implements OnInit {
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                this.utils.presentToast('Some Error Occurred');
+                // //this.utils.presentToast('Some Error Occurred');
 
             }
         });
@@ -103,7 +161,7 @@ export class CartPage implements OnInit {
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                this.utils.presentToast('Some Error Occurred');
+                // //this.utils.presentToast('Some Error Occurred');
             }
         });
     }
@@ -132,7 +190,7 @@ export class CartPage implements OnInit {
                 try {
                     this.utils.presentToast(error.error.error[0]);
                 } catch (e) {
-                    this.utils.presentToast('Some Error Occurred');
+                    // //this.utils.presentToast('Some Error Occurred');
 
                 }
 

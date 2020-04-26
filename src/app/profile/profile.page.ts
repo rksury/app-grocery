@@ -50,7 +50,7 @@ export class ProfilePage implements OnInit {
                     try {
                         this.utils.presentToast(error.error.error[0]);
                     } catch (e) {
-                        this.utils.presentToast('Some Error Occurred');
+                        //this.utils.presentToast('Some Error Occurred');
 
                     }
                 }

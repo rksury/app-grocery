@@ -19,7 +19,7 @@ export class WishlistPage implements OnInit {
     });
     special;
     products;
-    showWishlist = false;
+    showWishlist = true;
     isloggedin = window.localStorage.getItem('token') !== null;
     wishlist;
 
@@ -38,8 +38,13 @@ export class WishlistPage implements OnInit {
     ionViewWillLeave() {
         this.products = [];
         this.special = {};
-        this.get_wish_list();
 
+    }
+
+    ionViewWillEnter() {
+        this.products = [];
+        this.special = {};
+        this.get_wish_list();
     }
 
 
@@ -62,7 +67,7 @@ export class WishlistPage implements OnInit {
                     try {
                         this.utils.presentToast(error.error.error[0]);
                     } catch (e) {
-                        this.utils.presentToast('Some Error Occurred');
+                        //this.utils.presentToast('Some Error Occurred');
 
                     }
 
@@ -79,7 +84,7 @@ export class WishlistPage implements OnInit {
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                this.utils.presentToast('Some Error Occurred');
+                //this.utils.presentToast('Some Error Occurred');
 
             }
             if (error.status === 401) {
@@ -104,21 +109,6 @@ export class WishlistPage implements OnInit {
             }
         });
     }
-
-    removeWishlist(id) {
-        this.wishlistService.remove_from_Wishlist(id).subscribe(data => {
-            // this.products();
-            this.products = data;
-        }, error => {
-            try {
-                this.utils.presentToast(error.error.error[0]);
-            } catch (e) {
-                this.utils.presentToast('Some Error Occured');
-            }
-
-        });
-    }
-
 
     doRefresh(event) {
         this.route.queryParams.subscribe(params => {

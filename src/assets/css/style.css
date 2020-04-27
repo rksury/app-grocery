@@ -5416,25 +5416,6 @@ header {
 
 .header {
     background: #800080;
-    /*height: 60px;*/
-
-}
-
-.header_2 {
-    height: 40px;
-    background: white;
-    text-align: center;
-}
-
-.header2_icon {
-    font-size: 20px;
-
-}
-
-.search_bar {
-    /*margin-top: 20px;*/
-    /*height: 25px;*/
-
 
 }
 
@@ -5872,7 +5853,16 @@ header {
 
 /*End product page*/
 
+.horizontal{
+    overflow:hidden;
+    display:block;
+}
 
+
+
+.scroll{
+ width: 1000px;
+}
 /*offersection*/
 
 .offersection {

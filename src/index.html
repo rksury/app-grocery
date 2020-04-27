@@ -41,6 +41,8 @@
     <!-- Main Style CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll.js"></script>
+
 </head>
 
 <body>
@@ -69,11 +71,33 @@
 <script src="main.js" type="module"></script>
 <script>
 angular.module('ionicApp', ['ionic'])
-
 .controller('MyCtrl', function($scope) {
   $scope.myTitle = 'Template';
 });
 </script>
+
+
+<!--Scrolling-->
+<script>
+    var myScroll;
+function loaded () {
+myScroll = new IScroll('#wrapper', { scrollX: true, scrollY: false, mouseWheel: true });
+}
+
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+
+window.onload = function(){
+  loaded();
+}
+
+</script>
+<!--End Scrolling-->
+
+<!--Active Nav Link-->
+<script>
+
+</script>
+<!--End Active Nav Link-->
 
 </html>
 

@@ -2,8 +2,7 @@
 
     <ion-content>
         <ion-list>
-            <ion-menu-toggle auto-hide="true">
-                <header>
+            <ion-menu-toggle auto-hide="true"><header>
                     <div class="header-wrapper header-css">
                         <div class="container space-y--15">
 
@@ -112,9 +111,9 @@
         <ion-toolbar class="header" color="#800080;">
             <ion-buttons>
                 <ion-menu-button color="light"></ion-menu-button>
-                <ion-toolbar class="search header" color="#800080;">
+                <ion-toolbar class=" header" color="#800080;">
                     <ion-searchbar (change)="search($event)" [(ngModel)]="searchQuery" animated autocorrect="off"
-                                   class="search_bar" showCancelButton="focus"></ion-searchbar>
+                                    showCancelButton="focus"></ion-searchbar>
                 </ion-toolbar>
 
                 <!--                    <ion-icon name="options" color="light"></ion-icon>-->
@@ -132,23 +131,19 @@
             </ion-buttons>
         </ion-toolbar>
 
-        <ion-toolbar class="header_2" color="#800080;">
-            <ion-buttons>
-                <section>
-                    <ion-slides>
-                        <ion-slide>
-                            <ion-button class="filter_botton" size="small">oils</ion-button>
-                            <ion-button class="filter_botton" size="small">daal</ion-button>
-                            <ion-button class="filter_botton" size="small">Rise</ion-button>
-                            <ion-button class="filter_botton" size="small">daal</ion-button>
-                            <ion-button class="filter_botton" size="small">Rise</ion-button>
-                            <ion-button class="filter_botton" size="small">Fruits</ion-button>
-                        </ion-slide>
-                    </ion-slides>
-                </section>
-            </ion-buttons>
+<!--        <ion-toolbar class="header_2" color="#800080;">-->
+<!--            <ion-buttons>-->
+<!--                <section>-->
+<!--                            <ion-button class="filter_botton" size="small">oils</ion-button>-->
+<!--                            <ion-button class="filter_botton" size="small">daal</ion-button>-->
+<!--                            <ion-button class="filter_botton" size="small">Rise</ion-button>-->
+<!--                            <ion-button class="filter_botton" size="small">daal</ion-button>-->
+<!--                            <ion-button class="filter_botton" size="small">Rise</ion-button>-->
+<!--                            <ion-button class="filter_botton" size="small">Fruits</ion-button>-->
 
-        </ion-toolbar>
+<!--                </section>-->
+<!--            </ion-buttons>-->
+<!--        </ion-toolbar>-->
     </ion-header>
 
     <ion-tabs>

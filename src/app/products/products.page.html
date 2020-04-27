@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content>
-    <div class="breadcrumb-area bg-color--grey space-y--15" >
+    <div class="breadcrumb-area bg-color--grey space-y--15">
 
     </div>
     <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed">
@@ -18,11 +18,7 @@
     </ion-refresher>
     <div *ngIf="!showProducts"
          class="body-wrapper body-new-wrapper bg-color--gradient space-pt--70 space-pb--120">
-        <!--====================  header area ====================-->
-        <div id="headerr"></div>
-        <!--====================  End of mobile menu overlay  ====================-->
-        <!--====================  profile header ====================-->
-        <!--====================  breadcrumb area ====================-->
+
         <div class="breadcrumb-area bg-color--grey space-y--15">
             <div class="container">
                 <div class="row align-items-center">
@@ -35,6 +31,7 @@
                 </div>
             </div>
         </div>
+
         <div class="activeorder category-slider-area all-category categorys bg-color--grey space-pb--25 space-mb--25">
             <div class="container">
                 <div class="row">
@@ -50,34 +47,37 @@
                 </div>
             </div>
         </div>
-        <!--====================  End of profile body  ====================-->
-        <!--====================  footer area ====================-->
-        <div id="footerr"></div>
-        <!--====================  End of footer area  ====================-->
-    </div>
 
-    <div *ngIf="showProducts" style="margin-top: 40px;"
-         class="category-slider-area bg-color--grey products space-pb--25 space-mb--25">
+    </div>
+        <div class="container">
+            <div *ngIf="showProducts" class="row Filter_row">
+                <div class="col-3 Filter_text">Oil</div>
+                <div class="col-3 Filter_text">Daal</div>
+                <div class="col-3 Filter_text">Rise</div>
+                <div class="col-3 Filter_text">Vagetables</div>
+            </div>
+        </div>
+    <div class="category-slider-area bg-color--grey products space-pb--25 space-mb--25">
         <div class="container">
 
             <div class="row">
-
-                <!-- section title -->
-                <div *ngFor="let product of products" class=" col-12 products-box-right" >
+                <div *ngFor="let product of products" class=" col-12 products-box-right">
                     <div class="item">
-                            <div *ngIf="product.discount" class="products_offer">
-                                 <b>₹ &nbsp;{{product.discount}}</b> <br>Off
-                            </div>
-<!--                             <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>-->
+                        <div *ngIf="product.discount" class="products_offer">
+                            <b>₹ &nbsp;{{product.discount}}</b> <br>Off
+                        </div>
                         <a [routerLink]="['/tabs/product', product.id]">
                             <div>
                                 <img alt="" class="injectable pruducts_img" src="{{product.image}}">
                             </div>
                             <div class="content-div">
-                                <p style=" height: 25px;"> <b style="color: #800080; font-size: 15px;">{{product.item_name}}</b> &nbsp; |  &nbsp;
+                                <p style=" height: 25px;"><b
+                                        style="color: #800080; font-size: 15px;">{{product.item_name}}</b> &nbsp; |
+                                    &nbsp;
                                     <b style="color: #95999c">{{product.weight}}</b></p>
                                 <p style="color: #383d41 ">{{product.brand_name}}</p>
-                                <p style="font-size:15px; height: 20px;">₹ <s style="color: #95999c">{{product.selling_price}}</s>
+                                <p style="font-size:15px; height: 20px;">₹ <s
+                                        style="color: #95999c">{{product.selling_price}}</s>
                                     <b> {{product.final_price}}</b></p>
                             </div>
 
@@ -88,6 +88,7 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 </ion-content>

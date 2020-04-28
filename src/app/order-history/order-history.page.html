@@ -7,7 +7,7 @@
 <ion-content>
 
     <!--    <div class="body-wrapper bg-color&#45;&#45;gradient space-pt&#45;&#45;20 space-pb&#45;&#45;50">-->
-    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher (ionRefresh)="doRefresh($event)" slot="fixed">
         <ion-refresher-content
                 pullingIcon="arrow-dropdown"
                 pullingText="Pull to refresh"
@@ -16,41 +16,25 @@
         </ion-refresher-content>
     </ion-refresher>
     <!--====================  breadcrumb area ====================-->
-    <div *ngIf="!showOrders" class="body-wrapper body-new-wrapper bg-color--gradient space-pt--70 space-pb--120">
-        <!--====================  header area ====================-->
-        <div id="headerr"></div>
-        <!--====================  End of mobile menu overlay  ====================-->
-        <!--====================  profile header ====================-->
-        <!--====================  breadcrumb area ====================-->
-        <div class="breadcrumb-area bg-color--grey space-y--15">
-            <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-3">
-                        <!--                        <a href="index.html" class="back-link"> <i class="fa fa-angle-left"></i> Back</a>-->
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="activeorder category-slider-area all-category categorys bg-color--grey space-pb--25 space-mb--25">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12 my-order-div">
-                        <div class="my-order">
-                            <img src="assets/img/category-img/img2.png" class="img-fluid" alt="">
-                            <h5 class="active">No Orders</h5>
-                            <a [routerLink]="['/tabs/tab1']">
-                                <button class="btn btn-primary activebtn">Start Shopping</button>
-                            </a>
+        <div *ngIf="!showOrders" class="body-wrapper body-new-wrapper bg-color--gradient space-pt--70 space-pb--120">
+            <div class="activeorder category-slider-area all-category categorys bg-color--grey space-pb--25 space-mb--25">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 my-order-div">
+                            <div class="my-order">
+                                <img src="../../assets/img/category-img/img2.png" class="img-fluid" alt="">
+                                <h5 class="active">No Orders</h5>
+                                <a [routerLink]="['/tabs/products']">
+                                    <button class="btn btn-primary activebtn">Start Shopping</button>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!--====================  End of profile body  ====================-->
-        <!--====================  footer area ====================-->
-        <div id="footerr"></div>
-        <!--====================  End of footer area  ====================-->
-    </div>
+
+
     <!--    <div *ngIf="!isloggedin" class="discount-code-wrapper space-mt&#45;&#45;20">-->
     <!--        <div class="container">-->
     <!--            <div class="row">-->
@@ -62,7 +46,7 @@
     <!--            </div>-->
     <!--        </div>-->
     <!--    </div>-->
-    <div *ngIf="showOrders" class="container" class="product_div">
+    <div *ngIf="showOrders" class="container product_div">
         <div class="cart-product-area">
             <a *ngFor="let order of orders" [routerLink]="['/tabs/oder-details', order.id]"
                class="cart-product border-bottom--medium">
@@ -73,17 +57,24 @@
                 </div>
 
                 <div class="cart-product__content">
-                    <h4>{{order.creation_date}}</h4>
+                    <h4>{{order.creation_date</h4>
                     <!--                    <h3 class="title"><a href="shop-product.html">{{product.product.weight}}</a></h3>-->
                     <p class="no-pcs">{{order.cart.final_price}} inr</p>
+                    <div>
+                        <button class="rating_button" type="submit"><span class="fa fa-star"></span></button>&nbsp;
+                        <button class="rating_button" type="submit"><span class="fa fa-star"></span></button>&nbsp;
+                        <button class="rating_button" type="submit"><span class="fa fa-star"></span></button>&nbsp;
+                        <button class="rating_button" type="submit"><span class="fa fa-star"></span></button>&nbsp;
+                        <button class="rating_button" type="submit"><span class="fa fa-star"></span></button>
+                    </div>
+
+
                 </div>
 
                 <div class="cart-product__counter">
                     <div class="input-group">
-
-
-                        <h4 *ngIf="order.status === 'Pending'" style="color: grey">{{order.status}}</h4>
-                        <h4 *ngIf="order.status === 'Delivered'" style="color: green">{{order.status}}</h4>
+                        <!--                        <h4 *ngIf="order.status === 'Pending'" style="color: grey">{{order.status}}</h4>-->
+                        <!--                        <h4 *ngIf="order.status === 'Delivered'" style="color: green">{{order.status}}</h4>-->
 
                     </div>
                 </div>

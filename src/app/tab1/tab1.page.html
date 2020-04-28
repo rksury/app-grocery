@@ -184,7 +184,6 @@
                 <!--                    </div>-->
                 <!--                </div>-->
             </div>
-
             <div class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
                 <div class="container">
                     <h2 class="section-title space-mt--10 space-mb--20">Featured Products</h2>
@@ -194,7 +193,8 @@
                             <div class="item">
 
                                 <div *ngIf="featureproduct.discount" class="offer">
-                                    <b>₹ &nbsp; {{featureproduct.discount}}</b><br>Off
+                                    <b>₹ &nbsp; {{featureproduct.discount}}</b><br>
+                                   <a style="letter-spacing: 1px; font-size: 14px; padding-top: 5px;">Off</a>
                                 </div>
                                 <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
                                 <!--                                <ion-icon class="heart_icon" name="heart"></ion-icon>-->
@@ -457,8 +457,6 @@
                     </div>
                 </div>
             </div>
-
-
             <!-- ##########################  benner card  #########################-->
 
 
@@ -496,28 +494,30 @@
                 <!--                                                    </div>-->
                 <!--                                                </div>-->
             </div>
-
             <div class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
                 <div class="container">
-
                     <h2 class="section-title space-mt--10 space-mb--20">New Arrivals</h2>
 
                     <div class="row">
-                        <div *ngFor="let newArrival of NewArrivals" class=" col-6 products-box-right ">
-                            <div class="item ">
+                        <div *ngFor="let newArrival of NewArrivals" class=" col-6 products-box-right">
+                            <div class="item">
 
-                                <div *ngIf="newArrival.discount" class="offer"><a>₹ {{newArrival.discount}}
-                                    &nbsp;Off</a></div>
+                                <div *ngIf="newArrival.discount" class="offer">
+                                    <b>₹ &nbsp; {{newArrival.discount}}</b><br>
+                                    <a style="letter-spacing: 1px; font-size: 14px; padding-top: 5px;">Off</a>
+                                </div>
                                 <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
+                                <!--                                <ion-icon class="heart_icon" name="heart"></ion-icon>-->
                                 <a [routerLink]="['/tabs/product', newArrival.id]">
-                                    <div>
-                                        <img class="injectable pruduct_image" src="{{newArrival.image}}">
+                                    <div style=" text-align: center">
+                                        <img alt="" class="injectable pruduct_image" src="{{newArrival.image}}">
                                     </div>
                                     <div class="content-div">
-                                        <p style="font-size:15px; height: 20px; color: #383d41">₹
-                                            <s>{{newArrival.selling_price}}</s>
+                                        <p style="font-size:15px; height: 20px; color: #383d41">
+                                            ₹<s>{{newArrival.selling_price}}</s>
                                             <b style="color: #800080"> {{newArrival.final_price}}</b></p>
-                                        <p style=" height: 40px;">{{newArrival.item_name}}  |  {{newArrival.weight}}</p>
+                                        <p style=" height: 40px;">{{newArrival.item_name}}
+                                            |  {{newArrival.weight}}</p>
                                     </div>
 
                                 </a>
@@ -531,6 +531,7 @@
             </div>
             <!-- ##########################  End  New Arrivals #########################-->
 
+
             <!-- ##########################   benner card  #########################-->
             <div class="category-slider-area bg-color--grey space-pb--25 space-mb--25">
                 <div class="container">
@@ -540,9 +541,9 @@
 
                                 <div class="row row-5">
                                     <div class="col-5">
-                                        <div style="text-align: center;">
-                                            <h1 style="color: #a804b2;">20%</h1>
-                                            <h5 style="color: #cf3c4f; margin-top: -8px;">Off</h5>
+                                        <div style="text-align: center; padding: 15px;">
+                                            <h3 style="color: #a804b2;">20%</h3>
+                                            <h1 style="color: #cf3c4f; margin-top: -8px; letter-spacing: 2px;">Off</h1>
                                         </div>
                                     </div>
                                     <div class="col-7">
@@ -594,9 +595,9 @@
                                         </a>
                                     </div>
                                     <div class="col-5">
-                                        <div style="text-align: center;">
-                                            <h1 style="color: #a804b2;">20%</h1>
-                                            <h5 style="color: #cf3c4f; margin-top: -8px;">Off</h5>
+                                        <div style="text-align: center; padding: 15px;">
+                                            <h3 style="color: #a804b2;">20%</h3>
+                                            <h1 style="color: #cf3c4f; margin-top: -8px; letter-spacing: 2px;">Off</h1>
                                         </div>
                                     </div>
                                 </div>
@@ -645,7 +646,6 @@
                 <!--                    </div>-->
                 <!--                </div>-->
             </div>
-
             <!--====================  End of category slider-1 ====================-->
 
 

@@ -49,46 +49,69 @@
         </div>
 
     </div>
+    <div *ngIf="showProducts">
         <div class="container">
-            <div *ngIf="showProducts" class="row Filter_row">
-                <div class="col-3 Filter_text">Oil</div>
-                <div class="col-3 Filter_text">Daal</div>
-                <div class="col-3 Filter_text">Rise</div>
-                <div class="col-3 Filter_text">Vagetables</div>
-            </div>
+
+<!--            <div class="row">-->
+<!--                <div *ngFor="let category of categories">-->
+<!--                    <div class="Filter_row">-->
+<!--                        <div (click)="get_subcategory(category.id)" *ngIf="!category.parent_category">-->
+<!--                            <a class="Filter_text">{{category.title}}</a>-->
+<!--                        </div>-->
+
+<!--                        <div (click)="get_subcategory_products(category.id)" *ngIf="category.parent_category">-->
+<!--                            <a class="Filter_text">{{category.title}}</a>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+
+                            <div class="Filter_row">
+                                <a class="Filter_text">oil</a>
+                                <a class="Filter_text">fruits</a>
+                                <a class="Filter_text">flowers</a>
+                                <a class="Filter_text">exotic</a>
+                                <a class="Filter_text">oil</a>
+                                <a class="Filter_text">fruits</a>
+                                <a class="Filter_text">flowers</a>
+                                <a class="Filter_text">exotic</a>
+                            </div>
+
         </div>
-    <div class="category-slider-area bg-color--grey products space-pb--25 space-mb--25">
-        <div class="container">
+        <div class="category-slider-area bg-color--grey products space-pb--25 space-mb--25">
+            <div class="container">
 
-            <div class="row">
-                <div *ngFor="let product of products" class=" col-12 products-box-right">
-                    <div class="item">
-                        <div *ngIf="product.discount" class="products_offer">
-                            <b>₹ &nbsp;{{product.discount}}</b> <br>Off
-                        </div>
-                        <a [routerLink]="['/tabs/product', product.id]">
-                            <div>
-                                <img alt="" class="injectable pruducts_img" src="{{product.image}}">
+                <div class="row">
+                    <div *ngFor="let product of products" class=" col-12 products-box-right">
+                        <div class="item">
+                            <div *ngIf="product.discount" class="products_offer">
+                                <b>₹ &nbsp;{{product.discount}}</b> <br>Off
                             </div>
+                            <a [routerLink]="['/tabs/product', product.id]">
+                                <div>
+                                    <img alt="" class="injectable pruducts_img" src="{{product.image}}">
+                                </div>
+                                <div class="content-div">
+                                    <p style=" height: 25px;"><b
+                                            style="color: #800080; font-size: 15px;">{{product.item_name}}</b>
+                                        &nbsp; |
+                                        &nbsp;
+                                        <b style="color: #95999c">{{product.weight}}</b></p>
+                                    <p style="color: #383d41 ">{{product.brand_name}}</p>
+                                    <p style="font-size:15px; height: 20px;">₹ <s
+                                            style="color: #95999c">{{product.selling_price}}</s>
+                                        <b> {{product.final_price}}</b></p>
+                                </div>
+
+                            </a>
                             <div class="content-div">
-                                <p style=" height: 25px;"><b
-                                        style="color: #800080; font-size: 15px;">{{product.item_name}}</b> &nbsp; |
-                                    &nbsp;
-                                    <b style="color: #95999c">{{product.weight}}</b></p>
-                                <p style="color: #383d41 ">{{product.brand_name}}</p>
-                                <p style="font-size:15px; height: 20px;">₹ <s
-                                        style="color: #95999c">{{product.selling_price}}</s>
-                                    <b> {{product.final_price}}</b></p>
+                                <a (click)="addTocart(product.id)">Add To Cart</a>
                             </div>
-
-                        </a>
-                        <div class="content-div">
-                            <a (click)="addTocart(product.id)">Add To Cart</a>
                         </div>
                     </div>
                 </div>
-            </div>
 
+            </div>
         </div>
     </div>
 </ion-content>

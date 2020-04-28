@@ -1,9 +1,10 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import {ActivatedRoute, NavigationExtras, Router} from '@angular/router';
 import {ProductService} from './product.service';
 import {CartService} from '../cart/cart.service';
 import {UtilsService} from '../utils.service';
 import {FormControl, FormGroup} from '@angular/forms';
+import {CategoryService} from '../category/category.service';
 
 @Component({
     selector: 'app-products',
@@ -17,13 +18,14 @@ export class ProductsPage implements OnInit {
     });
     showProducts = true;
     special;
+    categories: {};
     products;
+    showCategories = true;
 
-    constructor(private route: ActivatedRoute,
-                private productService: ProductService,
+    constructor(private route: ActivatedRoute, private router: Router,
+                private productService: ProductService, private categoryService: CategoryService,
                 private cartService: CartService,
-                private utils: UtilsService,
-                private router: Router) {
+                private utils: UtilsService) {
     }
 
     ngOnInit() {
@@ -36,7 +38,48 @@ export class ProductsPage implements OnInit {
 
             }
         });
+        this.get_categories();
     }
+
+    get_categories() {
+        this.categoryService.getCategories().subscribe(data => {
+            this.categories = data;
+        }, error => {
+            try {
+                this.utils.presentToast(error.error.error[0]);
+            } catch (e) {
+                // this.utils.presentToast('Some Error Occurred');
+
+            }
+        });
+    }
+    get_subcategory(pk) {
+        this.categoryService.getSubCategories(pk).subscribe(data => {
+            this.categories = data;
+        }, error => {
+            try {
+                if (error.status === 404) {
+                    this.utils.presentToast('No Subcategory found.');
+                } else {
+                    this.utils.presentToast(error.error.error[0]);
+                }
+            } catch (e) {
+                this.utils.presentToast('Some Error Occurred');
+
+            }
+        });
+    }
+
+    get_subcategory_products(pk) {
+        const params = {category: pk};
+        const navigationExtras: NavigationExtras = {
+            queryParams: {
+                special: JSON.stringify(params)
+            }
+        };
+        this.router.navigate(['/tabs/products'], navigationExtras);
+    }
+
 
     ionViewWillEnter() {
         this.route.queryParams.subscribe(params => {
@@ -48,7 +91,6 @@ export class ProductsPage implements OnInit {
 
             }
         });
-
     }
 
     ionViewWillLeave() {
@@ -84,7 +126,7 @@ export class ProductsPage implements OnInit {
             try {
                 this.utils.presentToast(error.error.error[0]);
             } catch (e) {
-                //this.utils.presentToast('Some Error Occurred');
+                this.utils.presentToast('Some Error Occurred');
 
             }
             if (error.status === 401) {

@@ -1,23 +1,31 @@
-.Filter_row {
+div.Filter_row {
   margin-bottom: 10px;
   margin-top: -20px;
   text-align: center;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+
+
 }
 
 .Filter_text {
   color: #989aa2;
   font-size: 15px;
-  padding: 0;
-  margin: 0;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-weight: bold;
   text-align: center;
-  text-overflow: ellipsis;
+  text-decoration: none;
+  overflow: hidden;
 }
 
 .Filter_text:hover {
   color: #800080;
-  padding: 0;
-  margin: 0;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-weight: bold;
   text-align: center;
   border-bottom: 2px solid #800080;

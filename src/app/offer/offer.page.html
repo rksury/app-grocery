@@ -15,38 +15,67 @@
         </div>
     </div>
 
+            <div *ngIf="showProducts"
+                    class="category-slider-area bg-color--grey products space-pb--25 space-mb--25">
+                <div class="container">
 
-    <div class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25" >
-        <div class="container">
-            <div class="row">
+                    <div class="row">
+                        <div *ngFor="let homeoffer of HomeOffers" class=" col-12 products-box-right">
+                            <div class="item">
+                                <div *ngIf="homeoffer.product4.discount" class="products_offer">
+                                    <b>₹ &nbsp;{{homeoffer.product4.discount}}</b> <br>Off
+                                </div>
+                                <a [routerLink]="['/tabs/product', homeoffer.product4.id]">
+                                    <div>
+                                        <img alt="" class="injectable pruducts_img" src="{{homeoffer.image}}">
+                                    </div>
+                                    <div class="content-div">
+                                        <p style=" height: 25px;"><b
+                                                style="color: #800080; font-size: 15px;">{{homeoffer.product4.item_name}}</b>
+                                            &nbsp; |
+                                            &nbsp;
+                                            <b style="color: #95999c">{{homeoffer.product4.weight}}</b></p>
+                                        <p style="color: #383d41 ">{{homeoffer.product4.brand_name}}</p>
+                                        <p style="font-size:15px; height: 20px;">₹ <s
+                                                style="color: #95999c">{{homeoffer.product4.selling_price}}</s>
+                                            <b> {{homeoffer.product4.final_price}}</b></p>
+                                    </div>
 
-                <div *ngFor="let homeoffer of HomeOffers" class=" col-6 products-box-right">
-                    <div class="item">
-
-                        <div *ngIf="homeoffer.product4.discount" class="offer"><a>₹ {{homeoffer.product4.discount}}
-                            &nbsp;Off</a></div>
-                        <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
-                        <a [routerLink]="['/tabs/product', homeoffer.product4.id]">
-                            <div style=" text-align: center">
-                                <img alt="" class="injectable pruduct_image" src="{{homeoffer.product4.image}}">
+                                </a>
+                                <div class="content-div">
+                                    <a (click)="addTocart(homeoffer.product4.id)">Add To Cart</a>
+                                </div>
                             </div>
-                            <div class="content-div">
-                                <p style="font-size:15px; height: 20px;">₹ <s>{{homeoffer.product4.selling_price}}</s>
-                                    <i style="color: #3a7be0"> {{homeoffer.product4.final_price}}</i></p>
-                                <p style=" height: 40px;">{{homeoffer.product4.item_name}}
-                                    |  {{homeoffer.product4.weight}}</p>
-                            </div>
+                        </div>
+                        <div *ngFor="let homeoffer of HomeOffers" class=" col-12 products-box-right">
+                            <div class="item">
+                                <div *ngIf="homeoffer.product3.discount" class="products_offer">
+                                    <b>₹ &nbsp;{{homeoffer.product3.discount}}</b> <br>Off
+                                </div>
+                                <a [routerLink]="['/tabs/product', homeoffer.product3.id]">
+                                    <div>
+                                        <img alt="" class="injectable pruducts_img" src="{{homeoffer.product3.image}}">
+                                    </div>
+                                    <div class="content-div">
+                                        <p style=" height: 25px;"><b
+                                                style="color: #800080; font-size: 15px;">{{homeoffer.product3.item_name}}</b>
+                                            &nbsp; |
+                                            &nbsp;
+                                            <b style="color: #95999c">{{homeoffer.product3.weight}}</b></p>
+                                        <p style="color: #383d41 ">{{homeoffer.product3.brand_name}}</p>
+                                        <p style="font-size:15px; height: 20px;">₹ <s
+                                                style="color: #95999c">{{homeoffer.product3.selling_price}}</s>
+                                            <b> {{homeoffer.product3.final_price}}</b></p>
+                                    </div>
 
-                        </a>
-                        <div class="content-div">
-                            <a (click)="addTocart(homeoffer.product4.id)">Add To Cart</a>
+                                </a>
+                                <div class="content-div">
+                                    <a (click)="addTocart(homeoffer.product3.id)">Add To Cart</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-
             </div>
-        </div>
-    </div>
-
 
 </ion-content>

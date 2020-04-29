@@ -141,8 +141,8 @@
 
                             <h4 class="grand-total-title" style="margin-top: 20px;">Total Price
                                 <span>{{cart.total_price | number: '1.2'}}</span></h4>
-                            <h4 class="grand-total-title">Total
-                                Discount<span>-{{cart.total_price - cart.final_price | number: '1.2'}}</span></h4>
+                            <h4 class="grand-total-title">Total Discount
+                                <span>{{cart.total_price - cart.final_price | number: '1.2'}}</span></h4>
                             <h4 class="grand-total-title">Final Price To
                                 Pay<span>{{cart.final_price | number: '1.2'}}</span></h4>
                             <a (click)="payWithRazor()"

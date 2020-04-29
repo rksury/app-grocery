@@ -2,58 +2,51 @@
 
     <ion-content>
         <ion-list>
-            <ion-menu-toggle auto-hide="true"><header>
+            <ion-menu-toggle auto-hide="true">
+
+                <header>
                     <div class="header-wrapper header-css">
                         <div class="container space-y--15">
 
                             <div class="row align-items-center">
-                                <div (click)="profile()" routerDirection="forward"
-                                     class="col d-flex justify-content-center">
+                                <div (click)="profile()" class="col d-flex justify-content-center"
+                                     routerDirection="forward">
                                     <div class="store-name-loc">
-                                        <a><i class="fa fa-user-circle user_icon"></i>&nbsp;
-                                            <b>{{user}}</b></a>
+                                        <span><i class="fa fa-user-circle user_icon"></i>&nbsp;
+                                            <b>{{user}}</b></span>
                                     </div>
                                     <a> <i class="fa fa-angle-right arrow_icon"></i></a>
                                 </div>
-                            </div>
+                                <div class="row align-items-center">
 
-                            <!--                            <div class="row align-items-center selector_city">-->
-                            <!--                                <div class="col d-flex" style="width:100%">-->
-                            <!--                                    <ion-row style="width: 100%;">-->
-                            <!--                                        <ion-col>-->
-                            <!--                                            <ion-item>-->
-                            <!--                                                <ion-label>City</ion-label>-->
-                            <!--                                                <ion-select interface="popover" value="select option">-->
-                            <!--                                                    <ion-select-option value="01">indore</ion-select-option>-->
-                            <!--                                                    <ion-select-option value="02">dewas</ion-select-option>-->
-                            <!--                                                    <ion-select-option value="03">ujjain</ion-select-option>-->
-                            <!--                                                </ion-select>-->
-                            <!--                                            </ion-item>-->
-                            <!--                                        </ion-col>-->
-                            <!--                                    </ion-row>-->
-                            <!--                                </div>-->
-                            <!--                            </div>-->
+                                </div>
+                            </div>
 
                         </div>
                     </div>
 
                 </header>
 
-
                 <div id="offcanvas-menu">
 
-                    <div class="profile-card text-center">
-                        <a>
-                            <div class="profile-card__image ">
-                                <img alt="" class="img-fluid" src="../../assets/img/icons/user-white.png">
-                                <div class="profile-card__content">
-                                    <p class="name">WelCome <span class="id"></span></p>
-                                </div>
-                            </div>
-                        </a>
+                    <div class="location">
+
+                        <ion-item></ion-item>
+
+                        <ion-item >
+                            <ion-icon color="primary" name="location-outline" slot="start"></ion-icon>
+                             <ion-label style="color: #800080"></ion-label>
+                            <ion-select interface="popover" placeholder="Select Area" class="select_location">
+                                <ion-select-option value="f">Female</ion-select-option>
+                                <ion-select-option value="m">Male</ion-select-option>
+                            </ion-select>
+                        </ion-item>
                     </div>
 
-                    <div *ngIf="islogedin" class="profile-card address help text-center">
+
+                    <!--********************** Side Login ***********************-->
+
+                    <div *ngIf="islogedin" class="profile-card address help text-center login-signup_side">
                         <div class="profile-card__image ">
                             <div class="profile-card__content">
                                 <p class="name">Register Here if You have Not</p>
@@ -63,7 +56,12 @@
                         </div>
                     </div>
 
-                    <div>
+                    <!--********************** //End Side Login ***********************-->
+
+
+                    <!--********************** Side Menu ***********************-->
+
+                    <div class="side_menu">
 
                         <ion-item (click)="my_orders()" class="menu_link">
                             <ion-icon class="menu_link" name="radio-button-on-outline" slot="start"></ion-icon>
@@ -95,6 +93,8 @@
 
                     </div>
 
+                    <!--********************** End Side Menu ***********************-->
+
                 </div>
 
             </ion-menu-toggle>
@@ -107,13 +107,14 @@
 
 <div class="ion-page" id="main-content">
 
+    <!--********************** Header ***********************-->
     <ion-header>
         <ion-toolbar class="header" color="#800080;">
             <ion-buttons>
                 <ion-menu-button color="light"></ion-menu-button>
                 <ion-toolbar class=" header" color="#800080;">
                     <ion-searchbar (change)="search($event)" [(ngModel)]="searchQuery" animated autocorrect="off"
-                                    showCancelButton="focus"></ion-searchbar>
+                                   showCancelButton="focus"></ion-searchbar>
                 </ion-toolbar>
 
                 <!--                    <ion-icon name="options" color="light"></ion-icon>-->
@@ -130,22 +131,11 @@
                 </ion-button>
             </ion-buttons>
         </ion-toolbar>
-
-<!--        <ion-toolbar class="header_2" color="#800080;">-->
-<!--            <ion-buttons>-->
-<!--                <section>-->
-<!--                            <ion-button class="filter_botton" size="small">oils</ion-button>-->
-<!--                            <ion-button class="filter_botton" size="small">daal</ion-button>-->
-<!--                            <ion-button class="filter_botton" size="small">Rise</ion-button>-->
-<!--                            <ion-button class="filter_botton" size="small">daal</ion-button>-->
-<!--                            <ion-button class="filter_botton" size="small">Rise</ion-button>-->
-<!--                            <ion-button class="filter_botton" size="small">Fruits</ion-button>-->
-
-<!--                </section>-->
-<!--            </ion-buttons>-->
-<!--        </ion-toolbar>-->
     </ion-header>
+    <!--********************** //End Header ***********************-->
 
+
+    <!--********************** Footer ***********************-->
     <ion-tabs>
         <ion-tab-bar color="light" slot="bottom">
             <ion-tab-button tab="tab1">
@@ -176,5 +166,6 @@
 
         </ion-tab-bar>
     </ion-tabs>
+    <!--********************** //End Footer ***********************-->
 
 </div>

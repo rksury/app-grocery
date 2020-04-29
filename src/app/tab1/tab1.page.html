@@ -184,37 +184,42 @@
                 <!--                    </div>-->
                 <!--                </div>-->
             </div>
+
             <div class="category-slider-area bg-color--grey slider3 space-pb--25 space-mb--25">
                 <div class="container">
                     <h2 class="section-title space-mt--10 space-mb--20">Featured Products</h2>
 
                     <div class="row">
-                        <div *ngFor="let featureproduct of FeatureProducts" class=" col-6 products-box-right">
+                        <div *ngFor="let featureproduct of FeatureProducts" class=" col-6 products-box-right Filter_row">
                             <div class="item">
 
-                                <div *ngIf="featureproduct.discount" class="offer">
-                                    <b>₹ &nbsp; {{featureproduct.discount}}</b><br>
-                                   <a style="letter-spacing: 1px; font-size: 14px; padding-top: 5px;">Off</a>
-                                </div>
-                                <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
-                                <!--                                <ion-icon class="heart_icon" name="heart"></ion-icon>-->
-                                <a [routerLink]="['/tabs/product', featureproduct.id]">
-                                    <div style=" text-align: center">
-                                        <img alt="" class="injectable pruduct_image" src="{{featureproduct.image}}">
+                                <a style="text-decoration: none; overflow: hidden;">
+                                    <div *ngIf="featureproduct.discount" class="offer">
+                                        <b>₹ &nbsp; {{featureproduct.discount}}</b><br>
+                                        <a style="letter-spacing: 1px; font-size: 14px; padding-top: 5px;">Off</a>
                                     </div>
-                                    <div class="content-div">
-                                        <p style="font-size:15px; height: 20px; color: #383d41">
-                                            ₹<s>{{featureproduct.selling_price}}</s>
-                                            <b style="color: #800080"> {{featureproduct.final_price}}</b></p>
-                                        <p style=" height: 40px;">{{featureproduct.item_name}}
-                                            |  {{featureproduct.weight}}</p>
-                                    </div>
+                                    <ion-icon class="sare_icon" name="share-social-outline"></ion-icon>
+                                    <!--                                <ion-icon class="heart_icon" name="heart"></ion-icon>-->
+                                    <a [routerLink]="['/tabs/product', featureproduct.id]">
+                                        <div style=" text-align: center">
+                                            <img alt="" class="injectable pruduct_image"
+                                                 src="{{featureproduct.image}}">
+                                        </div>
+                                        <div class="content-div">
+                                            <p style="font-size:15px; height: 20px; color: #383d41">
+                                                ₹<s>{{featureproduct.selling_price}}</s>
+                                                <b style="color: #800080"> {{featureproduct.final_price}}</b></p>
+                                            <p style=" height: 40px;">{{featureproduct.item_name}}
+                                                |  {{featureproduct.weight}}</p>
+                                        </div>
 
+                                    </a>
+                                    <div class="content-div">
+                                        <a (click)="addTocart(featureproduct.id)">Add To Cart</a>
+                                    </div>
                                 </a>
-                                <div class="content-div">
-                                    <a (click)="addTocart(featureproduct.id)">Add To Cart</a>
-                                </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

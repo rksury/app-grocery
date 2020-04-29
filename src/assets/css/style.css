@@ -5604,6 +5604,12 @@ header {
     padding-right: 10px;
 }
 
+.slider3 .Filter_row {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
 .slider3 .item {
     background: white;
     padding: 15px 15px 35px;
@@ -5612,6 +5618,7 @@ header {
     position: relative;
     margin-bottom: 19px;
     overflow: hidden;
+    text-decoration: none;
 
 }
 

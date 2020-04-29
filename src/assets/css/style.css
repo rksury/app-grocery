@@ -3266,9 +3266,7 @@ header .header-menu-trigger:focus {
     -webkit-justify-content: center;
     -ms-flex-pack: center;
     justify-content: center;
-    width: 100% !important;
     height: 180px;
-    margin: 2px;
     border-radius: 10px;
     -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -3276,7 +3274,6 @@ header .header-menu-trigger:focus {
 
 .hero-slider-item img{
     border-radius: 10px;
-    width: 100% !important;
     height: 180px;
 }
 
